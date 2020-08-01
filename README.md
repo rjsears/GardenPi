@@ -18,7 +18,7 @@
 <p><font size="3">
 GardenPi, powered by Neptune.py is designed to manage, monitor and control a series and a multitide of sensors or a large-scale irrigation / hydroponic / aquaponic project. It can be scaled (using the hardware I used) from 1 to 32 zones for water and 7 zones for power. It is built almost entirely in Python3 with a Flask web interface and releys on a lot of css to make the interface very fast. It is written and designed to run on the Raspberry Pi 4.  
 
-Hopefully, this might provide some inspiration for others in regard to their tank automation projects. Contributions are always welcome.</p>
+Hopefully, this might provide some inspiration for others in regard to their automation projects. Contributions are always welcome.</p>
 <div align="center"><a name="top_menu"></a>
   <h4>
     <a href="https://github.com/rjsears/GardenPi#overview">
