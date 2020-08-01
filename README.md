@@ -1,7 +1,7 @@
 <h1 align="center">
   <a name="gardenpi_logo" href="https://github.com/rjsears/GardenPi"><img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_cover.jpg" alt="GardenPi" height="400" width="300"></a>
   <br>
-  GardenPi Documentation (V1.0.0)
+  GardenPi (V1.0.0)
   </h1>
   <p align="center">
   Multizone Hydroponic / Aquaponic / Irrigation &amp; Fish Tank Water management and monitoring platform
