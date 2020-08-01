@@ -1,0 +1,130 @@
+version: 1
+disable_existing_loggers: False
+
+formatters:
+    extended-console:
+        format: '%(name)2s:%(lineno)s - %(funcName)3s: [%(levelname)3s] %(message)s'
+    console:
+        format: "%(message)s"
+    standard:
+        format: '%(asctime)s - %(name)2s:%(lineno)s - %(funcName)3s: [%(levelname)3s] %(message)s'
+    error:
+        format: "%(levelname)s <PID %(process)d:%(processName)s> %(name)s.%(funcName)s(): %(message)s"
+
+handlers:
+    console:
+        class: logging.StreamHandler
+        formatter: extended-console
+        stream: ext://sys.stdout
+
+    info_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: INFO
+        formatter: standard
+        filename: /var/log/gardenpi/info.log
+        maxBytes: 10485760 # 10MB
+        backupCount: 2
+        encoding: utf8
+
+    error_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: ERROR
+        formatter: error
+        filename: /var/log/gardenpi/errors.log
+        maxBytes: 10485760 # 10MB
+        backupCount: 2
+        encoding: utf8
+
+    debug_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: DEBUG
+        formatter: standard
+        filename: /var/log/gardenpi/debug.log
+        maxBytes: 10485760
+        backupCount: 2
+        encoding: utf8
+
+    critical_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: CRITICAL
+        formatter: standard
+        filename: /var/log/gardenpi/critical.log
+        maxBytes: 10485760 # 10MB
+        backupCount: 2
+        encoding: utf8
+
+    warning_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: WARNING
+        formatter: standard
+        filename: /var/log/gardenpi/warning.log
+        maxBytes: 10485760 # 10MB
+        backupCount: 2
+        encoding: utf8
+
+    notification_file_handler:
+      class: logging.handlers.RotatingFileHandler
+      formatter: standard
+      filename: /var/log/gardenpi/notifications.log
+      maxBytes: 10485760 # 10MB
+      backupCount: 2
+      encoding: utf8
+
+    use_database_file_handler:
+      class: logging.handlers.RotatingFileHandler
+      formatter: standard
+      filename: /var/log/gardenpi/use_database.log
+      maxBytes: 10485760 # 10MB
+      backupCount: 2
+      encoding: utf8
+
+    gardenpi_master_handler:
+      class: logging.handlers.RotatingFileHandler
+      formatter: standard
+      filename: /var/log/gardenpi/gardenpi_master.log
+      maxBytes: 10485760 # 10MB
+      backupCount: 2
+      encoding: utf8
+
+    zone_controller_handler:
+      class: logging.handlers.RotatingFileHandler
+      formatter: standard
+      filename: /var/log/gardenpi/zone_controller.log
+      maxBytes: 10485760 # 10MB
+      backupCount: 2
+      encoding: utf8
+
+    flask_route_handler:
+      class: logging.handlers.RotatingFileHandler
+      formatter: standard
+      filename: /var/log/gardenpi/routes.log
+      maxBytes: 100000
+      backupCount: 3
+      encoding: utf8
+
+root:
+    level: NOTSET
+    handlers:
+    propogate: no
+
+loggers:
+    __main__:
+        handlers: [console, info_file_handler, error_file_handler, critical_file_handler, debug_file_handler, warning_file_handler, gardenpi_master_handler]
+        propogate: no
+
+    notifications:
+        handlers: [console, info_file_handler, error_file_handler, critical_file_handler, debug_file_handler, warning_file_handler, gardenpi_master_handler, notification_file_handler]
+        propogate: yes
+
+    use_database:
+        handlers: [console, info_file_handler, error_file_handler, critical_file_handler, debug_file_handler, warning_file_handler, gardenpi_master_handler, use_database_file_handler]
+        propogate: yes
+
+    gardenpi.routes:
+      handlers: [console, info_file_handler, error_file_handler, critical_file_handler, debug_file_handler, gardenpi_master_handler, warning_file_handler, flask_route_handler]
+      propogate: yes
+
+
+    zone_controller:
+      handlers: [console, info_file_handler, error_file_handler, critical_file_handler, debug_file_handler, gardenpi_master_handler, warning_file_handler, zone_controller_handler]
+      propogate: yes

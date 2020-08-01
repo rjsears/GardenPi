@@ -4,8 +4,7 @@
 
 """
 __init__.py for usage with neptune/GardenPi V1.0.0
-I use Sentry.IO to track trackbacks and errors, remove if
-you are not using it.
+
 """
 
 VERSION = "V1.0.0 (2020-07-31)"
@@ -18,12 +17,12 @@ sys.path.append('/var/www/gardenpi_control/gardenpi')
 from flask import Flask
 
 sentry_sdk.init(
-    dsn="https://xxxxxxxxxxxxxxxxxxxxxxxxx@sentry.io/5189890",
+    dsn="https://e4f5fcf4e9ea4a2284e14e39d00d321d@sentry.io/5189890",
     integrations=[FlaskIntegration()])
 
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
-app.config['SECRET_KEY'] = 'kjashflkajshflkjhsalfkjhasdkjfha'
+app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba887'
 
 
 # Must import AFTER the above otherwise you will get a circular reference
