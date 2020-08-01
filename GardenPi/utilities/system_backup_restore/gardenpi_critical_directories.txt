@@ -1,0 +1,5 @@
+/var/www/gardenpi_control
+/etc/gardenpi
+/etc/postfix
+/etc/wiringpi
+/etc/mysql/mariadb.conf.d
