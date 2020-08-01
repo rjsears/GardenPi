@@ -1,0 +1,17 @@
+.success-wrapper {
+  background: white;
+  width: 400px;
+  padding: 30px;
+  text-align: center;
+  margin: 50px auto 0;
+  display: block;
+}
+
+.success-wrapper h1 {
+  margin-top: 0;
+}
+
+.success-wrapper p {
+  text-align: center;
+  color: #363a40;
+}

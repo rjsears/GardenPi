@@ -1,0 +1,375 @@
+.tools_button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 25px 60px;
+    border: 1px solid #1d85ae;
+    border-radius: 8px;
+    width: 300px;
+    background: #2fd8ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2fd8ff), to(#1d85ae));
+    background: -moz-linear-gradient(top, #2fd8ff, #1d85ae);
+    background: linear-gradient(to bottom, #2fd8ff, #1d85ae);
+    text-shadow: #12536d 1px 1px 1px;
+    font: normal normal bold 30px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.tools_button:hover,
+.tools_button:focus {
+    border: 1px solid #24a6da;
+    background: #38ffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#38ffff), to(#23a0d1));
+    background: -moz-linear-gradient(top, #38ffff, #23a0d1);
+    background: linear-gradient(to bottom, #38ffff, #23a0d1);
+    color: #ffffff;
+    text-decoration: none;
+}
+.tools_button:active {
+    background: #1d85ae;
+ toolsd: -webkit-gradient(linear, left top, left bottom, from(#1d85ae), to(#1d85ae));
+    background: -moz-linear-gradient(top, #1d85ae, #1d85ae);
+    background: linear-gradient(to bottom, #1d85ae, #1d85ae);
+}
+.tools_button:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 58px;
+    width: 58px;
+    line-height: 58px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: -30px;
+    background: url(garden_tools.png) no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+
+.reboot_button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 25px 60px;
+    border: 1px solid #1d85ae;
+    border-radius: 8px;
+    width: 300px;
+    background: #2fd8ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2fd8ff), to(#1d85ae));
+    background: -moz-linear-gradient(top, #2fd8ff, #1d85ae);
+    background: linear-gradient(to bottom, #2fd8ff, #1d85ae);
+    text-shadow: #12536d 1px 1px 1px;
+    font: normal normal bold 30px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.reboot_button:hover,
+.reboot_button:focus {
+    border: 1px solid #24a6da;
+    background: #38ffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#38ffff), to(#23a0d1));
+    background: -moz-linear-gradient(top, #38ffff, #23a0d1);
+    background: linear-gradient(to bottom, #38ffff, #23a0d1);
+    color: #ffffff;
+    text-decoration: none;
+}
+.reboot_button:active {
+    background: #1d85ae;
+ toolsd: -webkit-gradient(linear, left top, left bottom, from(#1d85ae), to(#1d85ae));
+    background: -moz-linear-gradient(top, #1d85ae, #1d85ae);
+    background: linear-gradient(to bottom, #1d85ae, #1d85ae);
+}
+.reboot_button:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 58px;
+    width: 58px;
+    line-height: 58px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: -30px;
+    background: url(reboot.png) no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+
+.halt_button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 25px 60px;
+    border: 1px solid #1d85ae;
+    border-radius: 8px;
+    width: 300px;
+    background: #2fd8ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2fd8ff), to(#1d85ae));
+    background: -moz-linear-gradient(top, #2fd8ff, #1d85ae);
+    background: linear-gradient(to bottom, #2fd8ff, #1d85ae);
+    text-shadow: #12536d 1px 1px 1px;
+    font: normal normal bold 30px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.halt_button:hover,
+.halt_button:focus {
+    border: 1px solid #24a6da;
+    background: #38ffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#38ffff), to(#23a0d1));
+    background: -moz-linear-gradient(top, #38ffff, #23a0d1);
+    background: linear-gradient(to bottom, #38ffff, #23a0d1);
+    color: #ffffff;
+    text-decoration: none;
+}
+.halt_button:active {
+    background: #1d85ae;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1d85ae), to(#1d85ae));
+    background: -moz-linear-gradient(top, #1d85ae, #1d85ae);
+    background: linear-gradient(to bottom, #1d85ae, #1d85ae);
+}
+.halt_button:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 58px;
+    width: 58px;
+    line-height: 58px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: -40px;
+    background: url(acdc_power.png) no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+
+.system_tools_button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 25px 60px;
+    border: 1px solid #1d85ae;
+    border-radius: 8px;
+    width: 300px;
+    background: #2fd8ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2fd8ff), to(#1d85ae));
+    background: -moz-linear-gradient(top, #2fd8ff, #1d85ae);
+    background: linear-gradient(to bottom, #2fd8ff, #1d85ae);
+    text-shadow: #12536d 1px 1px 1px;
+    font: normal normal bold 30px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.system_tools_button:hover,
+.system_tools_button:focus {
+    border: 1px solid #24a6da;
+    background: #38ffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#38ffff), to(#23a0d1));
+    background: -moz-linear-gradient(top, #38ffff, #23a0d1);
+    background: linear-gradient(to bottom, #38ffff, #23a0d1);
+    color: #ffffff;
+    text-decoration: none;
+}
+.system_tools_button:active {
+    background: #1d85ae;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1d85ae), to(#1d85ae));
+    background: -moz-linear-gradient(top, #1d85ae, #1d85ae);
+    background: linear-gradient(to bottom, #1d85ae, #1d85ae);
+}
+.system_tools_button:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 58px;
+    width: 58px;
+    line-height: 58px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: -50px;
+    background: url(system_tools.png) no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+
+.home_button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 25px 60px;
+    border: 1px solid #1d85ae;
+    border-radius: 8px;
+    width: 300px;
+    background: #2fd8ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2fd8ff), to(#1d85ae));
+    background: -moz-linear-gradient(top, #2fd8ff, #1d85ae);
+    background: linear-gradient(to bottom, #2fd8ff, #1d85ae);
+    text-shadow: #12536d 1px 1px 1px;
+    font: normal normal bold 30px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.home_button:hover,
+.home_button:focus {
+    border: 1px solid #26aee4;
+    background: #3bffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3bffff), to(#24a7da));
+    background: -moz-linear-gradient(top, #3bffff, #24a7da);
+    background: linear-gradient(to bottom, #3bffff, #24a7da);
+    color: #ffffff;
+    text-decoration: none;
+}
+.home_button:active {
+    background: #1e8bb6;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1e8bb6), to(#1e8bb6));
+    background: -moz-linear-gradient(top, #1e8bb6, #1e8bb6);
+    background: linear-gradient(to bottom, #1e8bb6, #1e8bb6);
+}
+.home_button:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 58px;
+    width: 58px;
+    line-height: 58px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: -90px;
+    background: url(home_icon.png) no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+
+.backups_button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 25px 60px;
+    border: 1px solid #1d85ae;
+    border-radius: 8px;
+    width: 300px;
+    background: #2fd8ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2fd8ff), to(#1d85ae));
+    background: -moz-linear-gradient(top, #2fd8ff, #1d85ae);
+    background: linear-gradient(to bottom, #2fd8ff, #1d85ae);
+    text-shadow: #12536d 1px 1px 1px;
+    font: normal normal bold 30px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.backups_button:hover,
+.backups_button:focus {
+    border: 1px solid #26aee4;
+    background: #3bffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3bffff), to(#24a7da));
+    background: -moz-linear-gradient(top, #3bffff, #24a7da);
+    background: linear-gradient(to bottom, #3bffff, #24a7da);
+    color: #ffffff;
+    text-decoration: none;
+}
+.backups_button:active {
+    background: #1e8bb6;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1e8bb6), to(#1e8bb6));
+    background: -moz-linear-gradient(top, #1e8bb6, #1e8bb6);
+    background: linear-gradient(to bottom, #1e8bb6, #1e8bb6);
+}
+.backups_button:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 58px;
+    width: 58px;
+    line-height: 58px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: -70px;
+    background: url(backup.png) no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+
+.desktop_button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 25px 60px;
+    border: 1px solid #1d85ae;
+    border-radius: 8px;
+    width: 300px;
+    background: #2fd8ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2fd8ff), to(#1d85ae));
+    background: -moz-linear-gradient(top, #2fd8ff, #1d85ae);
+    background: linear-gradient(to bottom, #2fd8ff, #1d85ae);
+    text-shadow: #12536d 1px 1px 1px;
+    font: normal normal bold 25px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.desktop_button:hover,
+.desktop_button:focus {
+    border: 1px solid #26aee4;
+    background: #3bffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3bffff), to(#24a7da));
+    background: -moz-linear-gradient(top, #3bffff, #24a7da);
+    background: linear-gradient(to bottom, #3bffff, #24a7da);
+    color: #ffffff;
+    text-decoration: none;
+}
+.desktop_button:active {
+    background: #1e8bb6;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1e8bb6), to(#1e8bb6));
+    background: -moz-linear-gradient(top, #1e8bb6, #1e8bb6);
+    background: linear-gradient(to bottom, #1e8bb6, #1e8bb6);
+}
+.desktop_button:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 58px;
+    width: 58px;
+    line-height: 58px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: -30px;
+    background: url(computer.png) no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+
+.kiosk_button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 25px 60px;
+    border: 1px solid #1d85ae;
+    border-radius: 8px;
+    width: 300px;
+    background: #2fd8ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2fd8ff), to(#1d85ae));
+    background: -moz-linear-gradient(top, #2fd8ff, #1d85ae);
+    background: linear-gradient(to bottom, #2fd8ff, #1d85ae);
+    text-shadow: #12536d 1px 1px 1px;
+    font: normal normal bold 30px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.kiosk_button:hover,
+.kiosk_button:focus {
+    border: 1px solid #26aee4;
+    background: #3bffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3bffff), to(#24a7da));
+    background: -moz-linear-gradient(top, #3bffff, #24a7da);
+    background: linear-gradient(to bottom, #3bffff, #24a7da);
+    color: #ffffff;
+    text-decoration: none;
+}
+.kiosk_button:active {
+    background: #1e8bb6;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1e8bb6), to(#1e8bb6));
+    background: -moz-linear-gradient(top, #1e8bb6, #1e8bb6);
+    background: linear-gradient(to bottom, #1e8bb6, #1e8bb6);
+}
+.kiosk_button:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 58px;
+    width: 58px;
+    line-height: 58px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: -30px;
+    background: url(kiosk.png) no-repeat left center transparent;
+    background-size: 100% 100%;
+}

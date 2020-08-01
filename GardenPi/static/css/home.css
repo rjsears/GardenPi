@@ -1,0 +1,20 @@
+.home-template .container {
+  padding: 40px;
+}
+
+.home-template a {
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+  color: #3979a4;
+}
+
+.home-template h1 {
+  margin-bottom: 30px;
+}
+
+.home-template i {
+  font-size: .9em;
+}

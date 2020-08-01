@@ -1,0 +1,144 @@
+form {
+  background: white;
+  width: 100%;
+}
+
+.form-field {
+  position: relative;
+}
+
+.container {
+  padding: 80px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.title {
+  font-size: 1.7rem;
+  color: #5f6988;
+  font-weight: 300;
+  border-bottom: 1px solid #dbe3ec;
+  padding-bottom: 5px;
+  margin: 0 0 40px 0;
+}
+
+.formwrapper {
+  background: white;
+  width: 650px;
+  box-shadow: 0 0 5px rgba(65, 67, 144, 0.1);
+  padding: 50px;
+}
+
+label {
+  font-size: .9em;
+  color: #5f6988;
+  margin-bottom: 3px;
+  display: block;
+  font-weight: 300;
+}
+
+input, textarea, select {
+  padding: 10px 13px;
+  margin-bottom: 15px;
+  width: -webkit-fill-available;
+  border-radius: 2px;
+  border: 1px solid #d4d9e3;
+  font-weight: 200;
+  color: #4d5060;
+  font-family: 'Poppins', sans-serif;
+  transition: all .3s ease-out;
+  font-size: .9em;
+  outline-color: transparent;
+  outline-style: none;
+}
+
+select {
+  -webkit-appearance: none;
+}
+
+select::after {
+  content: "hello";
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  display: block;
+  border-top: 20px solid #f00;
+}
+
+input[type="text"]::placeholder {
+  color: #d4d9e3;
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover,
+textarea:hover,
+select:hover {
+  border-color: #5eb9d7;
+  background: #d9f6ff;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  background: white;
+  border-color: #5eb9d7;
+  box-shadow: unset;
+}
+
+input[type="submit"] {
+  background: #5eb9d7;
+  border: 0;
+  color: white;
+  border-radius: 2px;
+  margin-top: 15px;
+  font-weight: 400;
+  border: 1px solid #5eb9d7;
+  transition: all .3s ease-out;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  background: white;
+  color: #5eb9d7;
+}
+
+.success-wrapper {
+  background: white;
+  width: 350px;
+  box-shadow: 0 0 5px rgba(65, 67, 144, 0.1);
+  padding: 50px;
+}
+
+.errors {
+  list-style: none;
+  margin: 10px 0;
+  position: absolute;
+  z-index: 10;
+  right: -222px;
+  top: 0;
+  bottom: 0;
+  background: #fae7ea;
+  padding: 9px 15px;
+  border-radius: 3px;
+  border: 1px solid #e1c5c5;
+  color: #8d7575;
+  width: 182px;
+  text-align: center;
+  height: fit-content;
+  margin: auto;
+}
+
+i {
+  position: absolute;
+  margin: auto;
+  top: 4px;
+  bottom: 0;
+  right: 16px;
+  height: fit-content;
+  color: grey;
+}
+
+.g-recaptcha div {
+  margin: auto;
+}
