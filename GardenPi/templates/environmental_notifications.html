@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+   <head>
+       <style>
+
+        p {text-align:center;color:blue;}
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border-width:0px;border-style:solid;text-align: center}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+        .tg .tg-6f4q{font-size:20px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#26ade4;color:#ffffff;border-color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-3a3g{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center;vertical-align:top}
+        .tg .tg-lrzf{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
+        </style>
+
+      <title>GardenPi Environmental Notifications</title>
+      <meta http-equiv="refresh" content="60" >
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='combodate.js')}}"></script>
+    <script src="{{url_for('static', filename='moment.js')}}"></script>
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/environmentals.css') }}" rel="stylesheet" type="text/css">
+      <link rel="icon" type="image/png" href="{{url_for('static', filename='gardenpi_favicon.png')}}">
+   </head>
+   <body>
+   <form method="post" action="">
+        {{ form.hidden_tag() }}
+      <p>
+
+         <img src="{{url_for('static', filename='heat.png')}}" height="150" width="150"><br><br>
+         <iframe src="http://free.timeanddate.com/clock/i767eypi/n197/tct/pct/ftb/tt0/th2" frameborder="0" width="332" height="18" allowTransparency="true"></iframe>
+      </p><center>
+
+          <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-23yt{border-color:#000000;text-align:center;vertical-align:top}
+.tg .tg-a6gf{font-size:20px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#26ade4;border-color:#000000;text-align:center;vertical-align:top}
+.tg .tg-9va1{font-weight:bold;font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;border-color:#000000;text-align:center;vertical-align:top}
+.tg .tg-uiz2{font-size:12px;border-color:#000000;text-align:center;vertical-align:top}
+</style>
+<table>
+    <tr>
+    <td colspan="3">
+      {% for category, message in get_flashed_messages(with_categories=True) %}
+  <a class="feedback feedback-{{category}}">{{ message }}</a><br><br>
+{% endfor %}
+    </td>
+  </tr>
+</table>
+
+<table class="tg">
+  <tr>
+    <th class="tg-a6gf" colspan="3"><span style="color:rgb(255, 255, 255)">Toggle Individual Temperature Notifications</span></th>
+  </tr>
+  <tr>
+    <td class="tg-9va1">Worm Farm<br>Max Temp</td>
+    <td class="tg-9va1">Pi CPU<br>Max Temp</td>
+    <td class="tg-9va1">Enclosure<br>Max Temp</td>
+  </tr>
+    <tr>
+    <tr>
+          {% if system_sms %}
+
+              {% if worm_farm_max_temp_sms %}
+              <td class="tg-vqzh">SMS<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='worm_farm_max_temp', notification='sms') }}"><img src="{{url_for('static', filename='on_disc.png')}}" height="45" width="85"></td>
+              {% else %}
+              <td class="tg-vqzh">SMS<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='worm_farm_max_temp', notification='sms') }}"><img src="{{url_for('static', filename='off_disc.png')}}" height="45" width="85"></td>
+              {% endif %}
+
+              {% if enclosure_max_temp_sms %}
+              <td class="tg-vqzh">SMS<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='enclosure_max_temp', notification='sms') }}"><img src="{{url_for('static', filename='on_disc.png')}}" height="45" width="85"></td>
+              {% else %}
+              <td class="tg-vqzh">SMS<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='enclosure_max_temp', notification='sms') }}"><img src="{{url_for('static', filename='off_disc.png')}}" height="45" width="85"></td>
+              {% endif %}
+
+              {% if pi_max_cpu_temp_sms %}
+              <td class="tg-vqzh">SMS<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='pi_max_cpu_temp', notification='sms') }}"><img src="{{url_for('static', filename='on_disc.png')}}" height="45" width="85"></td>
+              {% else %}
+              <td class="tg-vqzh">SMS<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='pi_max_cpu_temp', notification='sms') }}"><img src="{{url_for('static', filename='off_disc.png')}}" height="45" width="85"></td>
+              {% endif %}
+
+          {% else %}
+
+          {% endif %}
+              </tr>
+
+
+          {% if system_pb %}
+
+              <tr>
+              {% if worm_farm_max_temp_pb %}
+              <td class="tg-vqzh">Push<br>Bullet<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='worm_farm_max_temp', notification='pb') }}"><img src="{{url_for('static', filename='on_disc.png')}}" height="45" width="85"></td>
+              {% else %}
+              <td class="tg-vqzh">Push<br>Bullet<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='worm_farm_max_temp', notification='pb') }}"><img src="{{url_for('static', filename='off_disc.png')}}" height="45" width="85"></td>
+              {% endif %}
+
+              {% if enclosure_max_temp_pb %}
+              <td class="tg-vqzh">Push<br>Bullet<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='enclosure_max_temp', notification='pb') }}"><img src="{{url_for('static', filename='on_disc.png')}}" height="45" width="85"></td>
+              {% else %}
+              <td class="tg-vqzh">Push<br>Bullet<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='enclosure_max_temp', notification='pb') }}"><img src="{{url_for('static', filename='off_disc.png')}}" height="45" width="85"></td>
+              {% endif %}
+
+              {% if pi_max_cpu_temp_pb %}
+              <td class="tg-vqzh">Push<br>Bullet<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='pi_max_cpu_temp', notification='pb') }}"><img src="{{url_for('static', filename='on_disc.png')}}" height="45" width="85"></td>
+              {% else %}
+              <td class="tg-vqzh">Push<br>Bullet<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='pi_max_cpu_temp', notification='pb') }}"><img src="{{url_for('static', filename='off_disc.png')}}" height="45" width="85"></td>
+              {% endif %}
+              {% else %}
+          {% endif %}
+              </tr>
+
+          {% if system_email %}
+
+              <tr>
+              {% if worm_farm_max_temp_email %}
+              <td class="tg-vqzh">EMail<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='worm_farm_max_temp', notification='email') }}"><img src="{{url_for('static', filename='on_disc.png')}}" height="45" width="85"></td>
+              {% else %}
+              <td class="tg-vqzh">EMail<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='worm_farm_max_temp', notification='email') }}"><img src="{{url_for('static', filename='off_disc.png')}}" height="45" width="85"></td>
+              {% endif %}
+
+              {% if enclosure_max_temp_email %}
+              <td class="tg-vqzh">EMail<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='enclosure_max_temp', notification='email') }}"><img src="{{url_for('static', filename='on_disc.png')}}" height="45" width="85"></td>
+              {% else %}
+              <td class="tg-vqzh">EMail<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='enclosure_max_temp', notification='email') }}"><img src="{{url_for('static', filename='off_disc.png')}}" height="45" width="85"></td>
+              {% endif %}
+
+              {% if pi_max_cpu_temp_email %}
+              <td class="tg-vqzh">EMail<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='pi_max_cpu_temp', notification='email') }}"><img src="{{url_for('static', filename='on_disc.png')}}" height="45" width="85"></td>
+              {% else %}
+              <td class="tg-vqzh">EMail<br><br><a href="{{ url_for('toggle_environmental_notifications', zone='pi_max_cpu_temp', notification='email') }}"><img src="{{url_for('static', filename='off_disc.png')}}" height="45" width="85"></td>
+              {% endif %}
+              {% else %}
+          {% endif %}
+              </tr>
+
+            <tr>
+              <td class="tg-vqzh">Set Alert Limit<br><br>{{form.worm_farm_max_temp}}</td>
+              <td class="tg-vqzh">Set Alert Limit<br><br>{{form.pi_max_cpu_temp}}</td>
+              <td class="tg-vqzh">Set Alert Limit<br><br>{{form.enclosure_max_temp}}</td>
+            </tr>
+</table>
+<br>
+          <table>
+              <tr>
+              <td><center><button class="setlimit_button" type="submit">Update Limits</button></td>
+          </tr>
+          <tr>
+              <td><center><a class="environmentals_button" href="{{ url_for('environmentals') }}">Environmentals</a></td>
+          </tr>
+<tr>
+           <td><center>
+               <a class="home_button" href="{{ url_for('gardenpi') }}">Back Home</a>
+           </td>
+          </tr>
+              <tr>
+              <td><br><br>
+                 <img src="{{url_for('static', filename='flowers_butterfly_bottom.jpg')}}" height="200" width="600">
+              </td>
+          </tr>
+      </table>

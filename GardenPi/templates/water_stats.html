@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+   <head>
+       <style>
+
+        p {text-align:center;color:blue;}
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border-width:0px;border-style:solid;text-align: center}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+        .tg .tg-6f4q{font-size:20px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#26ade4;color:#ffffff;border-color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-3a3g{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center;vertical-align:top}
+        .tg .tg-lrzf{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
+        </style>
+
+      <title>Water Stats</title>
+      <meta http-equiv="refresh" content="60" >
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}" rel="stylesheet" type="text/css">
+      <link rel="icon" type="image/png" href="{{url_for('static', filename='gardenpi_favicon.png')}}">
+       <script src="{{url_for('static', filename='steelseries.js')}}"></script>
+   </head>
+   <body onload=init()>
+      <p>
+
+         <img src="{{url_for('static', filename='charts.png')}}" height="250" width="250"><br><br>
+         <iframe src="http://free.timeanddate.com/clock/i767eypi/n197/tct/pct/ftb/tt0/th2" frameborder="0" width="332" height="18" allowTransparency="true"></iframe>
+      </p><center>
+
+           <table>
+                <tr>
+                    <td>
+                       <canvas id=TotalZoneUseZone1></canvas>
+                    </td>
+                    <td>
+                      <canvas id=TotalZoneUseZone2></canvas>
+                   </td>
+                </tr>
+
+               <tr>
+
+               </tr>
+               <tr>
+                   <td>
+                      <canvas id=TotalZoneUseZone3></canvas>
+                   </td>
+                   <td>
+                      <canvas id=TotalZoneUseZone4></canvas>
+                   </td>
+               </tr>
+               <tr>
+
+               </tr>
+               <tr>
+                   <td>
+                      <canvas id=TotalZoneUseZone5></canvas>
+                   </td>
+                   <td>
+                      <canvas id=TotalZoneUseZone6></canvas>
+                   </td>
+               </tr>
+               <tr>
+
+               </tr>
+               <tr>
+                   <td>
+                      <canvas id=TotalZoneUseFish></canvas>
+                   </td>
+                   <td>
+                      <canvas id=TotalZoneUseFresh></canvas>
+                   </td>
+               </tr>
+               <tr>
+               </tr>
+           </table>
+
+<table>
+    <tr>
+           <td><center><br>
+               <a class="tools_button" href="{{ url_for('tools') }}">System Tools</a>
+           </td>
+          </tr>
+<tr>
+           <td><center>
+               <a class="home_button" href="{{ url_for('gardenpi') }}">Home</a>
+           </td>
+          </tr>
+          <tr>
+              <td><br><br>
+                 <img src="{{url_for('static', filename='splash.jpg')}}" height="200" width="600">
+              </td>
+          </tr>
+      </table>
+
+<script>
+          function init()
+          {
+
+
+                  total_zone_usage_zone1 = new steelseries.DisplaySingle('TotalZoneUseZone1', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Zone1 Gallons Used",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                   total_zone_usage_zone2 = new steelseries.DisplaySingle('TotalZoneUseZone2', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Zone2 Gallons Used",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                   total_zone_usage_zone3 = new steelseries.DisplaySingle('TotalZoneUseZone3', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Zone3 Gallons Used",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                   total_zone_usage_zone4 = new steelseries.DisplaySingle('TotalZoneUseZone4', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Zone4 Gallons Used",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                   total_zone_usage_zone5 = new steelseries.DisplaySingle('TotalZoneUseZone5', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Zone5 Gallons Used",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                   total_zone_usage_zone6 = new steelseries.DisplaySingle('TotalZoneUseZone6', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Zone6 Gallons Used",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                   total_zone_usage_fish = new steelseries.DisplaySingle('TotalZoneUseFish', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Fish Gallons Used",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                   total_zone_usage_fresh = new steelseries.DisplaySingle('TotalZoneUseFresh', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Fresh Gallons Used",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+
+              total_zone_usage_zone1.setValue({{zone1}});
+              total_zone_usage_zone2.setValue({{zone2}});
+              total_zone_usage_zone3.setValue({{zone3}});
+              total_zone_usage_zone4.setValue({{zone4}});
+              total_zone_usage_zone5.setValue({{zone5}});
+              total_zone_usage_zone6.setValue({{zone6}});
+              total_zone_usage_fish.setValue({{fish_water}});
+              total_zone_usage_fresh.setValue({{fresh_water}});
+}
+              </script>

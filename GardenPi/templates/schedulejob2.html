@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<head>
+       <style>
+
+        p {text-align:center;color:blue;}
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border-width:0px;border-style:solid;text-align: center}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+        .tg .tg-6f4q{font-size:20px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#26ade4;color:#ffffff;border-color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-3a3g{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center;vertical-align:top}
+        .tg .tg-lrzf{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
+
+
+        </style>
+
+      <title>Scheduling - Job Two</title>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='combodate.js')}}"></script>
+    <script src="{{url_for('static', filename='moment.js')}}"></script>
+      <meta http-equiv="refresh" content="60" >
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}" rel="stylesheet" type="text/css">
+      <link rel="icon" type="image/png" href="{{url_for('static', filename='gardenpi_favicon.png')}}">
+   </head>
+
+   </head>
+
+<body>
+
+ <form method="post" action="">
+        {{ form.hidden_tag() }}
+      <p>
+
+         <img src="{{url_for('static', filename='gardenPi_icon.jpg')}}" height="300" width="300"><br>
+         <iframe src="http://free.timeanddate.com/clock/i767eypi/n197/tct/pct/ftb/tt0/th2" frameborder="0" width="332" height="18" allowTransparency="true"></iframe>
+      </p><center>
+<center>
+
+
+
+
+{% if job2_enabled %}
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-zv4m{border-color:#ffffff;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+
+  <tr><center>
+    <td class="tg-zv4m" colspan="4">
+      {% for category, message in get_flashed_messages(with_categories=True) %}
+  <a class="feedback feedback-{{category}}">{{ message }}</a>
+{% endfor %}
+    </td>
+  </tr>
+
+  <tr><center>
+    <td class="tg-zv4m" colspan="4"><a class="job_button">Job Two</a></td>
+  </tr>
+    <tr>
+    <td class="tg-zv4m" colspan="4"><a class="job_enabled_button" href="{{ url_for('toggle_job', id = id, job='2') }}">Enabled</a></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m" colspan="2">Start Time:</td>
+    <td class="tg-zv4m" colspan="2">
+        {{form.start_hour_job2}}:{{form.start_minute_job2}}
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m" colspan="2">Minutes to Run:</td>
+    <td class="tg-zv4m" colspan="2">
+       {{form.duration_job2}}
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m" colspan="2" rowspan="7">Days to Run</td>
+    <td class="tg-zv4m">Monday</td>
+    <td class="tg-zv4m">{{form.monday_job2}}</td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Tuesday</td>
+    <td class="tg-zv4m">{{form.tuesday_job2}}</td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Wednesday</td>
+    <td class="tg-zv4m">{{form.wednesday_job2}}</td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Thursday</td>
+    <td class="tg-zv4m">{{form.thursday_job2}}</td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Friday</td>
+    <td class="tg-zv4m">{{form.friday_job2}}</td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Saturday</td>
+    <td class="tg-zv4m">{{form.saturday_job2}}</td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Sunday</td>
+    <td class="tg-zv4m">{{form.sunday_job2}}</td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m" colspan="4"></td>
+  </tr>
+    {% else %}
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color: #000000;}
+.tg .tg-zv4m{border-color:#ffffff;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+
+  <tr>
+    <td class="tg-zv4m" colspan="4"><a class="job_button">Job Two</a></td>
+  </tr>
+    <tr>
+    <td class="tg-zv4m" colspan="4"><a class="job_disabled_button" href="{{ url_for('toggle_job', id = id, job='2') }}">Disabled</a></td>
+  </tr>
+{% endif %}
+</table>
+          <table>
+            {% if job2_enabled %}
+            <tr>
+              <td>
+                <button class="submit_button" type="submit">Update Schedule</button>
+              </td>
+            </tr>
+            {% else %} {% endif %}
+            <tr>
+              <td><a class="scheduling_button" href="{{ url_for('schedule', id = id ) }}">To Jobs</a></td>
+            </tr>
+           <tr>
+    <td><center>
+               <a class="home_button" href="{{ url_for('zone', id = id) }}">To Zone {{id}}</a>
+           </td>
+  </tr>
+              <tr>
+                  <td>
+                      <a class="home_button" href="{{ url_for('gardenpi') }}">To Home</a>
+                  </td>
+              </tr>
+
+              </table><br>
+
+     </form>
+ <center>
+     <img src="{{url_for('static', filename='Grass_with_Flowers_and_Bee.png')}}" height="200" width="600">
+ </center>
+
+</body>
+</html>

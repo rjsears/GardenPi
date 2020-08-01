@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<head>
+       <style>
+
+        p {text-align:center;color:blue;}
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border-width:0px;border-style:solid;text-align: center}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+        .tg .tg-6f4q{font-size:20px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#26ade4;color:#ffffff;border-color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-3a3g{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center;vertical-align:top}
+        .tg .tg-lrzf{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
+        </style>
+
+      <title>Scheduling</title>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='combodate.js')}}"></script>
+    <script src="{{url_for('static', filename='moment.js')}}"></script>
+      <meta http-equiv="refresh" content="60" >
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}" rel="stylesheet" type="text/css">
+      <link rel="icon" type="image/png" href="{{url_for('static', filename='gardenpi_favicon.png')}}">
+   </head>
+
+   </head>
+
+<body>
+      <p>
+
+         <img src="{{url_for('static', filename='gardenPi_icon.jpg')}}" height="300" width="300"><br>
+         <iframe src="http://free.timeanddate.com/clock/i767eypi/n197/tct/pct/ftb/tt0/th2" frameborder="0" width="332" height="18" allowTransparency="true"></iframe>
+      </p><center>
+
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-zv4m{border-color:#ffffff;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <td class="tg-zv4m" colspan="4"><a class="job_button">Job One</a></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m" colspan="2">Start Time:</td>
+    <td class="tg-zv4m" colspan="2">
+        <input type="text" id="time" data-format="HH:mm" data-template="HH : mm" name="datetime">
+<script>
+$(function(){
+    $('#time').combodate({
+        firstItem: 'name', //show 'hour' and 'minute' string at first item of dropdown
+        minuteStep: 5
+    });
+});
+</script>
+
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m" colspan="2">Minutes to Run:</td>
+    <td class="tg-zv4m" colspan="2">
+        <select id="minutes">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="15">15</option>
+  <option value="20">20</option>
+  <option value="25">25</option>
+  <option value="30">30</option>
+
+</select>
+
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m" colspan="2" rowspan="7">Days to Run</td>
+    <td class="tg-zv4m">Monday</td>
+    <td class="tg-zv4m"><input type="checkbox" name="9"/></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Tuesday</td>
+    <td class="tg-zv4m"><input type="checkbox" name="10"/></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Wednesday</td>
+    <td class="tg-zv4m"><input type="checkbox" name="11"/></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Thursday</td>
+    <td class="tg-zv4m"><input type="checkbox" name="12"/></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Friday</td>
+    <td class="tg-zv4m"><input type="checkbox" name="13"/></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Saturday</td>
+    <td class="tg-zv4m"><input type="checkbox" name="14"/></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Sunday</td>
+    <td class="tg-zv4m"><input type="checkbox" name="15"/></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m" colspan="4"></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m" colspan="4"><a class="job_button">Job Two</a></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m" colspan="2">Start Time:</td>
+    <td class="tg-zv4m" colspan="2">
+        <input type="text" id="time2" data-format="HH:mm" data-template="HH : mm" name="datetime">
+<script>
+$(function(){
+    $('#time2').combodate({
+        firstItem: 'name', //show 'hour' and 'minute' string at first item of dropdown
+        minuteStep: 5
+    });
+});
+</script>
+
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m" colspan="2">Minutes to Run:</td>
+    <td class="tg-zv4m" colspan="2">
+        <select id="minutes">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="15">15</option>
+  <option value="20">20</option>
+  <option value="25">25</option>
+  <option value="30">30</option>
+
+</select>
+
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m" colspan="2" rowspan="7">Days to Run</td>
+    <td class="tg-zv4m">Monday</td>
+    <td class="tg-zv4m"><input type="checkbox" name="9"/></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Tuesday</td>
+    <td class="tg-zv4m"><input type="checkbox" name="10"/></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Wednesday</td>
+    <td class="tg-zv4m"><input type="checkbox" name="11"/></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Thursday</td>
+    <td class="tg-zv4m"><input type="checkbox" name="12"/></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Friday</td>
+    <td class="tg-zv4m"><input type="checkbox" name="13"/></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Saturday</td>
+    <td class="tg-zv4m"><input type="checkbox" name="14"/></td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">Sunday</td>
+    <td class="tg-zv4m"><input type="checkbox" name="15"/></td>
+  </tr>
+

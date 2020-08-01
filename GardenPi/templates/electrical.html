@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+   <head>
+       <style>
+
+        p {text-align:center;color:blue;}
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border-width:0px;border-style:solid;text-align: center}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+        .tg .tg-6f4q{font-size:20px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#26ade4;color:#ffffff;border-color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-3a3g{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center;vertical-align:top}
+        .tg .tg-lrzf{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
+        </style>
+
+      <title>GardenPi Electrical</title>
+      <meta http-equiv="refresh" content="60" >
+       <script src="{{url_for('static', filename='steelseries-min.js')}}"></script>
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}" rel="stylesheet" type="text/css">
+      <link rel="icon" type="image/png" href="{{url_for('static', filename='gardenpi_favicon.png')}}">
+   </head>
+   <body onload=init()>
+      <p>
+
+         <img src="{{url_for('static', filename='acdc_power.png')}}" height="150" width="150"><br><br>
+         <iframe src="http://free.timeanddate.com/clock/i767eypi/n197/tct/pct/ftb/tt0/th2" frameborder="0" width="332" height="18" allowTransparency="true"></iframe>
+      </p><center>
+           <table>
+                <tr>
+                    <td>
+                       <canvas id=DCCurrent></canvas>
+                    </td>
+                    <td>
+                      <canvas id=DCVoltage></canvas>
+                   </td>
+                </tr>
+
+               <tr>
+
+               </tr>
+               <tr>
+                   <td>
+                      <canvas id=DCPower></canvas>
+                   </td>
+                   <td>
+                      <canvas id=DCShuntVoltage></canvas>
+                   </td>
+               </tr>
+               <tr>
+
+               </tr>
+               <tr>
+                   <td>
+                      <canvas id=ACCurrent></canvas>
+                   </td>
+                   <td>
+                      <canvas id=ACVoltage></canvas>
+                   </td>
+               </tr>
+               <tr>
+
+
+           </table>
+
+<table>
+     {% if not system_sms and not system_pb and not system_email %}
+                         <tr>
+                         <td><center><a class="no_notification_source_warning_button" href="{{ url_for('systemwide_notifications') }}">No Notification Source</a></td>
+                  {% else %}
+                       {% if systemwide_notifications_enabled and any_notification_source_available %}
+                            <tr>
+                            <td><center><a class="zone_notifications_button" href="{{ url_for('power_usage_notifications') }}">Notifications</a></td>
+                       {% elif not systemwide_notifications_enabled or not any_notification_source_available %}
+                                 <tr>
+                                 <td><center><a class="main_notifications_disabled_button">Notifications</a></td>
+                       {% endif %}
+                           </tr>
+                  {% endif %}
+    <tr>
+           <td><center>
+               <a class="tools_button" href="{{ url_for('tools') }}">System Tools</a>
+           </td>
+          </tr>
+<tr>
+           <td><center>
+               <a class="home_button" href="{{ url_for('gardenpi') }}">Home</a>
+           </td>
+          </tr>
+          <tr>
+              <td><br><br>
+                 <img src="{{url_for('static', filename='flowers_butterfly_bottom.jpg')}}" height="200" width="600">
+              </td>
+          </tr>
+      </table>
+
+<script>
+          function init()
+          {
+
+
+                  dc_voltage = new steelseries.DisplaySingle('DCVoltage', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  2,
+                                    unitString: " Volts",
+                                    unitStringVisible: true,
+                                    headerString: "5V Bus Voltage",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                   dc_current = new steelseries.DisplaySingle('DCCurrent', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  3,
+                                    unitString: " A",
+                                    unitStringVisible: true,
+                                    headerString: "5V Bus Current",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                   dc_power = new steelseries.DisplaySingle('DCPower', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  3,
+                                    unitString: " W",
+                                    unitStringVisible: true,
+                                    headerString: "5V Bus Power",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                   dc_shunt_voltage = new steelseries.DisplaySingle('DCShuntVoltage', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  3,
+                                    unitString: " V",
+                                    unitStringVisible: true,
+                                    headerString: "DC Shunt Voltage",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                   ac_current = new steelseries.DisplaySingle('ACCurrent', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  2,
+                                    unitString: " A",
+                                    unitStringVisible: true,
+                                    headerString: "120V AC Current",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                   ac_voltage = new steelseries.DisplaySingle('ACVoltage', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  2,
+                                    unitString: " V",
+                                    unitStringVisible: true,
+                                    headerString: "120V AC Volts",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+
+              dc_voltage.setValue({{dc_voltage}});
+              dc_current.setValue({{dc_current}});
+              dc_power.setValue({{dc_power}});
+              dc_shunt_voltage.setValue({{dc_shunt_voltage}});
+              ac_current.setValue({{ac_current}});
+              ac_voltage.setValue({{ac_voltage}});
+}
+              </script>

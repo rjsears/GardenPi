@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<head>
+       <style>
+
+        p {text-align:center;color:blue;}
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border-width:0px;border-style:solid;text-align: center}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+        .tg .tg-6f4q{font-size:20px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#26ade4;color:#ffffff;border-color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-3a3g{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center;vertical-align:top}
+        .tg .tg-lrzf{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
+        </style>
+
+      <title>Zone {{id}} Control</title>
+      <meta http-equiv="refresh" content="60" >
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/zone_buttons.css') }}" rel="stylesheet" type="text/css">
+      <link rel="icon" type="image/png" href="{{url_for('static', filename='gardenpi_favicon.png')}}">
+    <script src="{{url_for('static', filename='steelseries.js')}}"></script>
+   </head>
+
+<body onload=init()>
+      <p>
+         <img src="{{url_for('static', filename='zone' ~ id ~ '.png')}}" height="200" width="200"><br><br>
+          <img src="{{url_for('static', filename='garden_pi_zone' ~ id ~ '.jpg')}}" height="40" width="150"><br><br>
+         <iframe src="http://free.timeanddate.com/clock/i767eypi/n197/tct/pct/ftb/tt0/th2" frameborder="0" width="332" height="18" allowTransparency="true"></iframe>
+      </p>
+
+      <center>
+<table>
+     {% if zone_enabled and not is_zone_running %}
+          <tr>
+           <td><center>
+               <a class="enabled_button" href="{{ url_for('toggle_zone', id = id) }}">Enabled</a>
+               {% elif not is_zone_running %}
+               <a class="disabled_button" href="{{ url_for('toggle_zone', id = id) }}">Disabled</a>
+           </td>
+          </tr>
+          {% else %}
+          {% endif %}
+
+            <tr>
+                {% if current_water_source == 'system_disabled' %}
+                <a class="disabled_button" href="{{ url_for('water_source') }}">No Water!</a>
+                    {% else %}
+                        {% if any_zones_running and not is_zone_running %}
+                            {% elif zone_enabled and not is_zone_running %}
+                                <td><center><a class="manual_button" href="{{ url_for('manual_run', id = id) }}">Manual Run</a></td>
+                            {% elif zone_enabled and is_zone_running and is_zone_running_manually %}
+                                <td><center><a class="stop_zone_running_button" href="{{ url_for('stop_zone', id = id) }}">Stop Zone {{id}}</a></td>
+                            {% elif zone_enabled and is_zone_running and job1_running %}
+                                <td><center><a class="stop_zone_running_button" href="{{ url_for('force_stop_zone_scheduled', id = id, job_id = job_id) }}">Stop Zone {{id}}</a></td>
+                            {% elif zone_enabled and is_zone_running and job2_running %}
+                                <td><center><a class="stop_zone_running_button" href="{{ url_for('force_stop_zone_scheduled', id = id, job_id = job_id) }}">Stop Zone {{id}}</a></td>
+                        {% else %}
+                        {% endif %}
+                {% endif %}
+          </tr>
+
+          {% if zone_enabled and not is_zone_running %}
+                    {% if job1_enabled or job2_enabled %}
+                        <tr>
+                            <td><center><a class="scheduling_button" href="{{ url_for('schedule', id = id ) }}">Schedule</a></td>
+                    {% else %}
+                            <tr>
+                             <td><center><a class="disabled_button" href="{{ url_for('schedule', id = id ) }}">Schedule</a></td>
+                    {% endif %}
+                        </tr>
+          {% else %}
+          {% endif %}
+
+           {% if zone_enabled and not is_zone_running %}
+                  {% if not email_enabled and not sms_enabled and not pb_enabled %}
+                         <tr>
+                         <td><center><a class="no_notification_source_warning_button" href="{{ url_for('systemwide_notifications') }}">No Notification Source</a></td>
+                  {% else %}
+                       {% if notifications_enabled and systemwide_notifications_enabled and any_notification_source_available %}
+                            <tr>
+                            <td><center><a class="zone_notifications_button" href="{{ url_for('notifications', id = id ) }}">Notifications</a></td>
+                       {% elif systemwide_notifications_enabled and any_notification_source_available %}
+                             <tr>
+                             <td><center><a class="main_notifications_disabled_button" href="{{ url_for('notifications', id = id ) }}">Notifications</a></td>
+                       {% elif not systemwide_notifications_enabled or not any_notification_source_available %}
+                                 <tr>
+                                 <td><center><a class="main_notifications_disabled_button">Notifications</a></td>
+                       {% endif %}
+                           </tr>
+                  {% endif %}
+           {% else %}
+           {% endif %}
+
+        <tr>
+           <td><center>
+               <a class="back_to_zones_button" href="{{ url_for('zone_control') }}">Back to Zones</a>
+           </td>
+          </tr>
+
+          <tr>
+           <td><center>
+               <a class="home_button" href="{{ url_for('gardenpi') }}">Back Home</a>
+           </td>
+          </tr>
+
+          <tr>
+              <td><br>
+                 <img src="{{url_for('static', filename='zone_bottom_grass.png')}}" height="300" width="600">
+              </td>
+          </tr>
+
+
+
+      </table>
+
+          <table>
+              <tr>{% if is_zone_running %}
+        <td>
+            <canvas id=CurrentGPH></canvas>
+        </td>
+        <td>
+            <canvas id=CurrentTotalGallons></canvas>
+        </td>
+        <td>
+            <canvas id=TotalZoneUse></canvas>
+        </td>
+                  {% else %}
+
+         <td>
+            <canvas id=TotalZoneUse></canvas>
+        </td>
+
+                  {% endif %}
+    </tr>
+
+          </table>
+
+      </body>
+{% if is_zone_running %}
+    <script>
+          function init()
+          {
+
+
+                  total_zone_usage = new steelseries.DisplaySingle('TotalZoneUse', {
+                                    width: 120,
+                                    height: 40,
+                                    lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Total Zone Gallons",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+                  current_gallons_per_hour = new steelseries.DisplaySingle('CurrentGPH', {
+                                    width: 120,
+                                    height: 40,
+    		    	                lcdDecimals:  2,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Current Gallons/Hour",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                  current_total_gallons = new steelseries.DisplaySingle('CurrentTotalGallons', {
+                                    width: 120,
+                                    height: 40,
+    		    	                lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Current Total Gallons",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+
+
+
+
+                  total_zone_usage.setValue({{total_zone_water_usage}});
+                  current_gallons_per_hour.setValue({{current_gpm}});
+                  current_total_gallons.setValue({{running_current_total_gallons}});
+
+
+
+
+            }
+   </script>
+{% else %}
+
+<script>
+          function init()
+          {
+
+
+                  total_zone_usage = new steelseries.DisplaySingle('TotalZoneUse', {
+                                    width: 120,
+                                    height: 40,
+                                    lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Total Zone Gallons",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+
+
+                  total_zone_usage.setValue({{total_zone_water_usage}});
+                  }
+</script>
+{% endif %}
+
+           </html>

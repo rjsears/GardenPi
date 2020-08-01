@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+   <head>
+       <style>
+
+        p {text-align:center;color:blue;}
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border-width:0px;border-style:solid;text-align: center}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+        .tg .tg-6f4q{font-size:20px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#26ade4;color:#ffffff;border-color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-3a3g{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center;vertical-align:top}
+        .tg .tg-lrzf{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
+        </style>
+
+      <title>GardenPi Hydroponics</title>
+      <meta http-equiv="refresh" content="60" >
+       <script src="{{url_for('static', filename='steelseries-min.js')}}"></script>
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/hydroponics_buttons.css') }}" rel="stylesheet" type="text/css">
+      <link rel="icon" type="image/png" href="{{url_for('static', filename='gardenpi_favicon.png')}}">
+   </head>
+    <body onload=init()>
+      <p>
+
+         <img src="{{url_for('static', filename='RODI_on.png')}}" height="200" width="200"><br>
+         <iframe src="http://free.timeanddate.com/clock/i767eypi/n197/tct/pct/ftb/tt0/th2" frameborder="0" width="332" height="18" allowTransparency="true"></iframe>
+      </p><center>
+
+          <table>
+
+               <tr>
+                    <td>
+                        {% if rodiwater_tank_enabled %}
+                      <canvas id="RODIWater" width="220" height="220"></canvas>
+                        {% else %}
+                        {% endif %}
+                   </td>
+                   <td>
+                        {% if rodiwater_tank_enabled %}
+                      <canvas id="RODIWaterTemp" width="220" height="220"></canvas>
+                        {% else %}
+                        {% endif %}
+                   </td>
+                </tr>
+
+
+           </table>
+
+          <table>
+              {% if is_zone_enabled and not is_zone_running %}
+           <tr>
+              <td><center>
+                 <a class="rodi_enabled_button" href="{{ url_for('toggle_rodi_zone') }}">Enabled</a>
+                  {% elif not is_zone_running %}
+               <a class="rodi_disabled_button" href="{{ url_for('toggle_rodi_zone') }}">Disabled</a>
+               </td>
+           </tr>
+              {% else %}
+              {% endif %}
+              <tr>
+
+                      {% if is_zone_enabled and not is_zone_running %}
+                      <td><center><a class="manual_button" href="{{ url_for('manual_run_rodi') }}">Fill RODI Tank</a></td>
+                  {% elif is_zone_enabled and is_zone_running and is_zone_running_manually %}
+                                <td><center><a class="stop_zone_running_button" href="{{ url_for('stop_rodi_zone') }}">Stop Filling RODI</a></td>
+                  {% else %}
+                  {% endif %}
+                  </td>
+              </tr>
+                   <tr>
+           <td><center>
+               <a class="hydroponics_button" href="{{ url_for('hydroponics') }}">Hydroponics</a>
+           </td>
+          </tr>
+           <td><center>
+               <a class="home_button" href="{{ url_for('gardenpi') }}">Back Home</a>
+           </td>
+          </tr>
+          <tr>
+              <td><br><br>
+                  <img src="{{url_for('static', filename='splash.jpg')}}" height="200" width="600">
+              </td>
+          </tr>
+      </table>
+
+
+
+      </body>
+ </html>
+
+<script>
+          function init()
+          {
+              var rodiwater_tank_level = new steelseries.Radial(
+                              'RODIWater', {
+                                      minValue: 0,
+                                      maxValue: 325,
+                                      ledVisible: false,
+                                      lcdVisible: true,
+                                      //threshold: 1400,
+                                      titleString: 'RODI Water',
+                                      unitString: 'Gallons',
+                                      lcdDecimals: 0,
+                                      frameDesign: steelseries.FrameDesign.BLACK_METAL,
+                                      backgroundColor: steelseries.BackgroundColor.LIGHT_GRAY,
+                                      lcdColor: steelseries.LcdColor.RED,
+                                      pointerType: steelseries.PointerType.TYPE16
+                              });
+
+              var rodiwater_temp = new steelseries.Radial(
+                              'RODIWaterTemp', {
+                                      minValue: 0,
+                                      maxValue: 120,
+                                      ledVisible: false,
+                                      lcdVisible: true,
+                                      //threshold: 1400,
+                                      titleString: 'RODI Water',
+                                      unitString: 'Temp °F',
+                                      lcdDecimals: 0,
+                                      frameDesign: steelseries.FrameDesign.BLACK_METAL,
+                                      backgroundColor: steelseries.BackgroundColor.LIGHT_GRAY,
+                                      lcdColor: steelseries.LcdColor.RED,
+                                      pointerType: steelseries.PointerType.TYPE16
+                              });
+
+               rodiwater_tank_level.setValue({{rodiwater_tank_level}});
+               rodiwater_temp.setValue({{rodiwater_temp}});
+          }
+           </script>

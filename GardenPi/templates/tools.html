@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+   <head>
+       <style>
+
+        p {text-align:center;color:blue;}
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border-width:0px;border-style:solid;text-align: center}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+        .tg .tg-6f4q{font-size:20px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#26ade4;color:#ffffff;border-color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-3a3g{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center;vertical-align:top}
+        .tg .tg-lrzf{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
+        </style>
+
+      <title>GardenPi System Tools</title>
+      <meta http-equiv="refresh" content="60" >
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}" rel="stylesheet" type="text/css">
+      <link rel="icon" type="image/png" href="{{url_for('static', filename='gardenpi_favicon.png')}}">
+   </head>
+   <body>
+      <p>
+
+         <img src="{{url_for('static', filename='garden_tools.png')}}" height="300" width="300"><br>
+         <iframe src="http://free.timeanddate.com/clock/i767eypi/n197/tct/pct/ftb/tt0/th2" frameborder="0" width="332" height="18" allowTransparency="true"></iframe>
+      </p><center>
+      <table>
+          <tr>
+              <td><center><a class="environmentals_button" href="{{ url_for('environmentals') }}">Environmentals</a></td>
+          </tr>
+
+          <tr>
+           <td><center>
+               <a class="acdc_power_button" href="{{ url_for('electrical') }}">AC & DC Power</a>
+           </td>
+          </tr>
+                   <tr>
+           <td><center>
+               <a class="system_tools_button" href="{{ url_for('base_system_tools') }}">Main System</a>
+           </td>
+          </tr>
+
+        <tr>
+            {% if systemwide_notifications_enabled and any_notification_source_available %}
+              <td><center><a class="notifications_button" href="{{ url_for('systemwide_notifications') }}">Notifications</a></td>
+            {% else%}
+              <td><center><a class="notifications_disabled_button" href="{{ url_for('systemwide_notifications') }}">Notifications</a></td>
+            {% endif %}
+          </tr>
+
+          <tr>
+           <td><center>
+               <a class="stats_button" href="{{ url_for('water_stats') }}">Water Stats</a>
+           </td>
+          </tr>
+        <tr>
+           <td><center>
+               <a class="home_button" href="{{ url_for('gardenpi') }}">Home</a>
+           </td>
+          </tr>
+          <tr>
+              <td><br>
+                 <img src="{{url_for('static', filename='flowers_butterfly_bottom.jpg')}}" height="200" width="600">
+              </td>
+          </tr>
+      </table>
+
+
+      </body>
+ </html>
+

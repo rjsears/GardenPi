@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+   <head>
+       <style>
+
+        p {text-align:center;color:blue;}
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border-width:0px;border-style:solid;text-align: center}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+        .tg .tg-6f4q{font-size:20px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#26ade4;color:#ffffff;border-color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-3a3g{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center;vertical-align:top}
+        .tg .tg-lrzf{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
+        </style>
+
+      <title>GardenPi Environmentals</title>
+      <meta http-equiv="refresh" content="60" >
+       <script src="{{url_for('static', filename='steelseries-min.js')}}"></script>
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/environmentals.css') }}" rel="stylesheet" type="text/css">
+      <link rel="icon" type="image/png" href="{{url_for('static', filename='gardenpi_favicon.png')}}">
+   </head>
+   <body onload=init()>
+      <p>
+
+         <img src="{{url_for('static', filename='heat.png')}}" height="150" width="150"><br><br>
+         <iframe src="http://free.timeanddate.com/clock/i767eypi/n197/tct/pct/ftb/tt0/th2" frameborder="0" width="332" height="18" allowTransparency="true"></iframe>
+
+      </p><center>
+           <table>
+                <tr>
+                    <td>
+                       <canvas id='ShedTemp'></canvas>
+                    </td>
+                    <td>
+                       <canvas id='ShedHumidity'></canvas>
+                   </td>
+                </tr>
+
+               <tr>
+                   <td>
+                     <canvas id='EnclosureTemp'></canvas>
+
+                   </td>
+                   <td>
+                       <canvas id='EnclosureHumidity'></canvas>
+                   </td>
+               </tr>
+
+               <tr>
+                   <td>
+                       <canvas id='PiCPUTemp'></canvas>
+                   </td>
+                   <td>
+                        <canvas id='EnclosureBaro'></canvas>
+                   </td>
+               </tr>
+
+               <tr>
+                   <td>
+                       <canvas id='WormFarmTemp'></canvas>
+                   </td>
+                   <td>
+                        <canvas id='OutDoorTemp'></canvas>
+                   </td>
+               </tr>
+
+           </table>
+
+<table>
+                  {% if not system_sms and not system_pb and not system_email %}
+                         <tr>
+                         <td><center><a class="no_notification_source_warning_button" href="{{ url_for('systemwide_notifications') }}">No Notification Source</a></td>
+                  {% else %}
+                       {% if systemwide_notifications_enabled and any_notification_source_available %}
+                            <tr>
+                            <td><center><a class="zone_notifications_button" href="{{ url_for('environmental_notifications') }}">Notifications</a></td>
+                       {% elif not systemwide_notifications_enabled or not any_notification_source_available %}
+                                 <tr>
+                                 <td><center><a class="main_notifications_disabled_button">Notifications</a></td>
+                       {% endif %}
+                           </tr>
+                  {% endif %}
+
+    <tr>
+           <td><center>
+               <a class="tools_button" href="{{ url_for('tools') }}">System Tools</a>
+           </td>
+          </tr>
+<tr>
+           <td><center>
+               <a class="home_button" href="{{ url_for('gardenpi') }}">Home</a>
+           </td>
+          </tr>
+          <tr>
+              <td><br><br>
+                 <img src="{{url_for('static', filename='flowers_butterfly_bottom.jpg')}}" height="200" width="600">
+              </td>
+          </tr>
+      </table>
+
+<script>
+          function init()
+          {
+                  pi_cpu_temp = new steelseries.DisplaySingle('PiCPUTemp', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  1,
+                                    unitString: " °F",
+                                    unitStringVisible: true,
+                                    headerString: "Pi CPU Temp",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                  enclosure_temp = new steelseries.DisplaySingle('EnclosureTemp', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  1,
+                                    unitString: " °F",
+                                    unitStringVisible: true,
+                                    headerString: "Enclosure Temp",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                  enclosure_humidity = new steelseries.DisplaySingle('EnclosureHumidity', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  1,
+                                    unitString: " %",
+                                    unitStringVisible: true,
+                                    headerString: "Enclosure Humidity",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                  enclosure_baro = new steelseries.DisplaySingle('EnclosureBaro', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  2,
+                                    unitString: "inHg",
+                                    unitStringVisible: true,
+                                    headerString: "Enclosure Baro",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                  shed_temp = new steelseries.DisplaySingle('ShedTemp', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  1,
+                                    unitString: " °F",
+                                    unitStringVisible: true,
+                                    headerString: "Shed Temp",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                  shed_humidity = new steelseries.DisplaySingle('ShedHumidity', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  2,
+                                    unitString: " %",
+                                    unitStringVisible: true,
+                                    headerString: "Shed Humidity",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                  worm_farm_temp = new steelseries.DisplaySingle('WormFarmTemp', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  1,
+                                    unitString: " °F",
+                                    unitStringVisible: true,
+                                    headerString: "Worm Farm Temp",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                  outdoor_temperature = new steelseries.DisplaySingle('OutDoorTemp', {
+                                    width: 210,
+                                    height: 80,
+                                    lcdDecimals:  1,
+                                    unitString: " °F",
+                                    unitStringVisible: true,
+                                    headerString: "Outdoor Temp",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+
+              pi_cpu_temp.setValue({{pi_cpu_temp}});
+              enclosure_temp.setValue({{enclosure_temp}});
+              enclosure_humidity.setValue({{enclosure_humidity}});
+              enclosure_baro.setValue({{enclosure_baro}});
+              shed_temp.setValue({{shed_temp}});
+              shed_humidity.setValue({{shed_humidity}});
+              worm_farm_temp.setValue({{worm_farm_temp}});
+              outdoor_temperature.setValue({{outdoor_temperature}});
+}
+              </script>

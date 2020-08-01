@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+   <head>
+       <style>
+
+        p {text-align:center;color:blue;}
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border-width:0px;border-style:solid;text-align: center}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+        .tg .tg-6f4q{font-size:20px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#26ade4;color:#ffffff;border-color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-3a3g{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center;vertical-align:top}
+        .tg .tg-lrzf{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
+        </style>
+
+      <title>GardenPi Irrigation & Hydroponics</title>
+      <meta http-equiv="refresh" content="60" >
+       <script src="{{url_for('static', filename='steelseries-min.js')}}"></script>
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}" rel="stylesheet" type="text/css">
+      <link rel="icon" type="image/png" href="{{url_for('static', filename='gardenpi_favicon.png')}}">
+   </head>
+   <body onload=init()>
+      <p>
+
+         <img src="{{url_for('static', filename='gardenPi_icon.jpg')}}" height="300" width="300"><br>
+         <iframe src="http://free.timeanddate.com/clock/i767eypi/n197/tct/pct/ftb/tt0/th2" frameborder="0" width="332" height="18" allowTransparency="true"></iframe>
+      </p><center>
+      <table>
+          <tr> {% if any_zones_running %}
+              <td><center><a class="zone_running_button" href="{{ url_for('zone_control') }}">Zones are Running</a></td>
+              {% else %}
+              <td><center><a class="zone_m_button" href="{{ url_for('zone_control') }}">Water Zones</a></td>
+               {% endif %}
+          </tr>
+
+          <tr>{% if current_water_source == 'system_disabled' %}
+                  <td><center><a class="no_source_warning_button" href="{{ url_for('water_source') }}">No Water Available!</a></td>
+              {% else %}
+           <td><center>
+               <a class="water_source_button" href="{{ url_for('water_source') }}">Water Source</a>
+               {% endif %}
+           </td>
+          </tr>
+
+
+                   <tr>
+           <td><center>
+               <a class="hydroponics_button" href="{{ url_for('hydroponics') }}">Hydroponics</a>
+           </td>
+          </tr>
+
+
+        <tr> {% if any_power_zones_running %}
+              <td><center><a class="power_zone_running_button" href="{{ url_for('power_zone_control') }}">Power is Running</a></td>
+              {% else %}
+              <td><center><a class="power_zone_manager_button" href="{{ url_for('power_zone_control') }}">Power Outlets</a></td>
+               {% endif %}
+          </tr>
+          <tr>
+           <td><center>
+               <a class="tank_level_button" href="{{ url_for('tank_levels') }}">Tank Levels</a>
+           </td>
+        </tr>
+        <tr>
+           <td><center>
+               <a class="tools_button" href="{{ url_for('tools') }}">System Tools</a>
+           </td>
+        </tr>
+          <tr>
+              <td><br>
+                 <img src="{{url_for('static', filename='sea_grass.png')}}" height="150" width="600">
+              </td>
+          </tr>
+      </table>
+
+      <table>
+              <tr>
+
+        <td>
+            <canvas id=TotalPowerUse></canvas>
+        </td>
+        <td>
+            <canvas id=TotalSolar></canvas>
+        </td>
+        <td>
+            <canvas id=TotalPowerImporting></canvas>
+
+        </td>
+    </tr>
+
+          </table>
+
+      </body>
+ </html>
+
+    <script>
+          function init()
+          {
+
+                  watts_in_use = new steelseries.DisplaySingle('TotalPowerUse', {
+                                    width: 120,
+                                    height: 40,
+                                    lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Total Watts in Use",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                  watts_importing = new steelseries.DisplaySingle('TotalPowerImporting', {
+                                    width: 120,
+                                    height: 40,
+    		    	                lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Watts from APS",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.RED,
+                                    });
+
+                  watts_solar = new steelseries.DisplaySingle('TotalSolar', {
+                                    width: 120,
+                                    height: 40,
+    		    	                lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Solar Generation Watts",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+          watts_in_use.setValue({{total_current_power_utilization}});
+	      watts_importing.setValue({{total_current_power_import}});
+	      watts_solar.setValue({{total_current_solar_production}});
+
+
+             }
+   </script>
+
+

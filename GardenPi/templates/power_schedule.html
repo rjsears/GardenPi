@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+       <style>
+
+        p {text-align:center;color:blue;}
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border-width:0px;border-style:solid;text-align: center}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+        .tg .tg-6f4q{font-size:20px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#26ade4;color:#ffffff;border-color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-3a3g{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center;vertical-align:top}
+        .tg .tg-lrzf{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
+
+
+        </style>
+
+      <title>Power Scheduling</title>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='combodate.js')}}"></script>
+    <script src="{{url_for('static', filename='moment.js')}}"></script>
+      <meta http-equiv="refresh" content="60" >
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}" rel="stylesheet" type="text/css">
+      <link rel="icon" type="image/png" href="{{url_for('static', filename='gardenpi_favicon.png')}}">
+   </head>
+
+   </head>
+
+<body>
+
+ <p>
+
+         <img src="{{url_for('static', filename='gardenPi_icon.jpg')}}" height="300" width="300"><br>
+         <iframe src="http://free.timeanddate.com/clock/i767eypi/n197/tct/pct/ftb/tt0/th2" frameborder="0" width="332" height="18" allowTransparency="true"></iframe>
+      </p><center>
+<center>{% if job1_enabled %}
+    <a class="job_button" href="{{ url_for('powerschedulejob1', id = id) }}">Job One</a>
+    {% else %}
+    <a class="disabled_button" href="{{ url_for('powerschedulejob1', id = id) }}">Job One</a>
+    {% endif %}
+    <br><br>
+    {% if job2_enabled %}
+    <a class="job_button" href="{{ url_for('powerschedulejob2', id = id) }}">Job Two</a>
+    {% else %}
+    <a class="disabled_button" href="{{ url_for('powerschedulejob2', id = id) }}">Job Two</a>
+    {% endif %}
+    <br><br>
+    <a class="power_zone_manager_button" href="{{ url_for('power', id = id) }}">Back to Outlet {{id}}</a>
+    <br><br>
+                 <img src="{{url_for('static', filename='flowers_butterfly_bottom.jpg')}}" height="200" width="600">

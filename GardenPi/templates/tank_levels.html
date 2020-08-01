@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+   <head>
+       <style>
+
+        p {text-align:center;color:blue;}
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border-width:0px;border-style:solid;text-align: center}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+        .tg .tg-6f4q{font-size:20px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#26ade4;color:#ffffff;border-color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-3a3g{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center;vertical-align:top}
+        .tg .tg-lrzf{font-size:14px;font-family:Arial, Helvetica, sans-serif !important;;text-align:center}
+        </style>
+
+      <title>GardenPi Electrical</title>
+      <meta http-equiv="refresh" content="60" >
+       <script src="{{url_for('static', filename='steelseries-min.js')}}"></script>
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}" rel="stylesheet" type="text/css">
+      <link rel="icon" type="image/png" href="{{url_for('static', filename='gardenpi_favicon.png')}}">
+   </head>
+   <body onload=init()>
+      <p>
+
+         <img src="{{url_for('static', filename='water-tank.png')}}" height="150" width="150"><br><br>
+         <iframe src="http://free.timeanddate.com/clock/i767eypi/n197/tct/pct/ftb/tt0/th2" frameborder="0" width="332" height="18" allowTransparency="true"></iframe>
+      </p><center>
+           <table>
+                <tr>
+                    <td>
+                        {% if fishwater_tank_enabled %}
+                       <canvas id="FishWater" width="220" height="220"></canvas>
+                        {% else %}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if fishwater_tank_enabled %}
+                        <canvas id="FishWaterTemp" width="220" height="220"></canvas>
+                        {% else %}
+                        {% endif %}
+                    </td>
+                </tr>
+               <tr>
+                    <td>
+                        {% if rodiwater_tank_enabled %}
+                      <canvas id="RODIWater" width="220" height="220"></canvas>
+                        {% else %}
+                        {% endif %}
+                   </td>
+                   <td>
+                        {% if rodiwater_tank_enabled %}
+                      <canvas id="RODIWaterTemp" width="220" height="220"></canvas>
+                        {% else %}
+                        {% endif %}
+                   </td>
+                </tr>
+               <tr>
+                   <td>
+                      {% if hydroponic_tank_enabled %}
+                      <canvas id="HydroponicTank" width="220" height="220"></canvas>
+                       {% else %}
+                       {% endif %}
+                   </td>
+                   <td>
+                       {% if hydroponic_tank_enabled %}
+                      <canvas id="HydroponicWaterTemp" width="220" height="220"></canvas>
+                       {% else %}
+                       {% endif %}
+                   </td>
+               </tr>
+
+           </table>
+
+<table>
+
+           <td><center>
+               <a class="home_button" href="{{ url_for('gardenpi') }}">Back Home</a>
+           </td>
+          </tr>
+          <tr>
+              <td><br><br>
+                 <img src="{{url_for('static', filename='flowers_butterfly_bottom.jpg')}}" height="200" width="600">
+              </td>
+          </tr>
+      </table>
+
+<script>
+          function init()
+          {
+                  {% if fishwater_tank_enabled %}
+                  var fishwater_tank_level = new steelseries.Radial(
+                              'FishWater', {
+                                      minValue: 0,
+                                      maxValue: 325,
+                                      ledVisible: false,
+                                      lcdVisible: true,
+                                      //threshold: 1400,
+                                      titleString: 'Fish Water',
+                                      unitString: 'Gallons',
+                                      lcdDecimals: 0,
+                                      frameDesign: steelseries.FrameDesign.BLACK_METAL,
+                                      backgroundColor: steelseries.BackgroundColor.LIGHT_GRAY,
+                                      lcdColor: steelseries.LcdColor.RED,
+                                      pointerType: steelseries.PointerType.TYPE16
+                              });
+                  {% else %}
+                  {% endif %}
+
+                  {% if rodiwater_tank_enabled %}
+                  var rodiwater_tank_level = new steelseries.Radial(
+                              'RODIWater', {
+                                      minValue: 0,
+                                      maxValue: 325,
+                                      ledVisible: false,
+                                      lcdVisible: true,
+                                      //threshold: 1400,
+                                      titleString: 'RODI Water',
+                                      unitString: 'Gallons',
+                                      lcdDecimals: 0,
+                                      frameDesign: steelseries.FrameDesign.BLACK_METAL,
+                                      backgroundColor: steelseries.BackgroundColor.LIGHT_GRAY,
+                                      lcdColor: steelseries.LcdColor.RED,
+                                      pointerType: steelseries.PointerType.TYPE16
+                              });
+                  {% else %}
+                  {% endif %}
+
+                  {% if hydroponic_tank_enabled %}
+                   var hydroponic_tank_level = new steelseries.Radial(
+                              'HydroponicTank', {
+                                      minValue: 0,
+                                      maxValue: 75,
+                                      ledVisible: false,
+                                      lcdVisible: true,
+                                      //threshold: 1400,
+                                      titleString: 'Hydroponic Tank',
+                                      unitString: 'Gallons',
+                                      lcdDecimals: 0,
+                                      frameDesign: steelseries.FrameDesign.BLACK_METAL,
+                                      backgroundColor: steelseries.BackgroundColor.LIGHT_GRAY,
+                                      lcdColor: steelseries.LcdColor.RED,
+                                      pointerType: steelseries.PointerType.TYPE16
+                              });
+                   {% else %}
+                   {% endif %}
+
+                    {% if fishwater_tank_enabled %}
+                    var fishwater_temp = new steelseries.Radial(
+                              'FishWaterTemp', {
+                                      minValue: 0,
+                                      maxValue: 120,
+                                      ledVisible: false,
+                                      lcdVisible: true,
+                                      //threshold: 1400,
+                                      titleString: 'Fish Water',
+                                      unitString: 'Temp °F',
+                                      lcdDecimals: 0,
+                                      frameDesign: steelseries.FrameDesign.BLACK_METAL,
+                                      backgroundColor: steelseries.BackgroundColor.LIGHT_GRAY,
+                                      lcdColor: steelseries.LcdColor.RED,
+                                      pointerType: steelseries.PointerType.TYPE16
+                              });
+                    {% else %}
+                    {% endif %}
+
+                    {% if rodiwater_tank_enabled %}
+                    var rodiwater_temp = new steelseries.Radial(
+                              'RODIWaterTemp', {
+                                      minValue: 0,
+                                      maxValue: 120,
+                                      ledVisible: false,
+                                      lcdVisible: true,
+                                      //threshold: 1400,
+                                      titleString: 'RODI Water',
+                                      unitString: 'Temp °F',
+                                      lcdDecimals: 0,
+                                      frameDesign: steelseries.FrameDesign.BLACK_METAL,
+                                      backgroundColor: steelseries.BackgroundColor.LIGHT_GRAY,
+                                      lcdColor: steelseries.LcdColor.RED,
+                                      pointerType: steelseries.PointerType.TYPE16
+                              });
+                    {% else %}
+                    {% endif %}
+
+                    {% if hydroponic_tank_enabled %}
+                    var hydroponic_tank_temp = new steelseries.Radial(
+                              'HydroponicWaterTemp', {
+                                      minValue: 0,
+                                      maxValue: 120,
+                                      ledVisible: false,
+                                      lcdVisible: true,
+                                      //threshold: 1400,
+                                      titleString: 'Hydroponic Water',
+                                      unitString: 'Temp °F',
+                                      lcdDecimals: 0,
+                                      frameDesign: steelseries.FrameDesign.BLACK_METAL,
+                                      backgroundColor: steelseries.BackgroundColor.LIGHT_GRAY,
+                                      lcdColor: steelseries.LcdColor.RED,
+                                      pointerType: steelseries.PointerType.TYPE16
+                              });
+                    {% else %}
+                    {% endif %}
+
+              {% if fishwater_tank_enabled %}
+              fishwater_tank_level.setValue({{fishwater_tank_level}});
+              {% else %}
+              {% endif %}
+
+              {% if rodiwater_tank_enabled %}
+              rodiwater_tank_level.setValue({{rodiwater_tank_level}});
+              {% else %}
+              {% endif %}
+
+              {% if hydroponic_tank_enabled %}
+              hydroponic_tank_level.setValue({{hydroponic_tank_level}});
+              {% else %}
+              {% endif %}
+
+              {% if fishwater_tank_enabled %}
+              fishwater_temp.setValue({{fish_water}});
+              {% else %}
+              {% endif %}
+
+              {% if hydroponic_tank_enabled %}
+              hydroponic_tank_temp.setValue({{hydroponic_tank}});
+              {% else %}
+              {% endif %}
+
+              {% if rodiwater_tank_enabled %}
+              rodiwater_temp.setValue(100);
+              {% else %}
+              {% endif %}
+          }
+              </script>
