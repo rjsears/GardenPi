@@ -51,4 +51,15 @@ I chose this case because I will need maximum cooling where I will be placing th
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_geekwork_case.jpg" alt="GardenPi Case" height="175" width="250">
 Purchase Location: <a href="https://smile.amazon.com/Geekworm-Raspberry-Computer-Aluminum-Compatible/dp/B07VD6LHS1/ref=sr_1_4?dchild=1&keywords=geekworm+case&qid=1596485916&s=electronics&sr=1-4">Amazon.com</a><br>
 Purchase Price: <b><em>$17.89</em></b>
+<br><hr>
+
+### Sainsmart 5V 2A 8-Channel Solid State Relay Module (High Level Trigger) x 4
+One thing I have learned in my past projects with a lot of electrical and sensors, mechanical relays can cause interference in various parts of the system. I chased a problem wit my pool control project where every time I triggered my mechanical relay, I would get weird reading and other glitches, even with optoisolated mechanical relays. I moved to solid-state relays and never looked back. 
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_ss_relays_8.jpg" alt="GardenPi SS Relays" height="175" width="350">
+Purchase Location: <a href="https://smile.amazon.com/gp/product/B00ZZW7MI6/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1">Amazon.com</a><br>
+Purchase Price: <b><em>$17.89</em></b>
+<br><hr>
+
+
 
