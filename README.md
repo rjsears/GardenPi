@@ -76,5 +76,5 @@ The system designed for our needs ended up with the following configuration:
 
 In additional to these zones/sensors, the system would also interact directly with our already installed power and water monitoring systems. This system were build on EmonCMS which is part of the OpenEnergy Project. We use our EmonCMS data to gather water utilization information for GardenPi via smart water meters on our property and do the same for monitoring the AC circuit utilization for GardenPi. Other data such as outside temperature and humidity is likewise drawn from an outside source, namely a David Vantage PRO2 system we have installed on the property.
 
-This is the overview of how the system will be put together:<br>
-<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_physical_20200803.jpg" alt="GardenPi Physical Layout" height="200" width="400"></a>
+This is the overview of how the system will be put together:<br><br>
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_physical_20200803.jpg" alt="GardenPi Physical Layout" height="600" width="800"></a>
