@@ -110,3 +110,11 @@ I will be utilizing a hard-wired ethernet connection and I want all connections 
 Purchase Location: <a href="https://smile.amazon.com/gp/product/B077C6W2MP/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1">Amazon.com</a><br>
 Purchase Price: <b><em>$9.99</em></b>
 <br><hr>
+
+### Schurter 120V, 15A Power Entry connector
+Provides a nice and clean way to connect a power cable to our enclosure. One of the very few 15A plug/switch combos that I was able to find.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_input_120v_outlet.jpg" alt="GardenPi AC Input Outlet" height="275" width="250">
+Purchase Location: <a href="https://www.digikey.com/products/en?keywords=486-3013-ND">DigiKey.com</a><br>
+Purchase Price: <b><em>$24.18</em></b>
+<br><hr>
