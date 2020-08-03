@@ -252,7 +252,15 @@ Purchase Price: <b><em>~$2.00/each</em></b>
 ### 18/10 Black Solid UL Sprinkler System Wire
 I run a cable from my enclosure to a "zone extension box" where I tie in all of my zones. This way I do not have to run every zone back to my enclosure. I also use this wire for all of my internal sprinkler-relay wiring in the enclosure. The total length you need will depend on how far your zones are and how far you extension boxes are located. 
 
-<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_1810.jpg" alt="GardenPi Terminal Blocks" height="100" width="200">
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_1810.jpg" alt="GardenPi Sprinkler Wire" height="100" width="200">
 Purchase Location: <a href="https://www.homedepot.com/p/Southwire-By-the-Foot-18-10-Black-Solid-UL-Sprinkler-System-Wire-49270299/204724972">HomeDepot.com</a><br>
 Purchase Price: <b><em>$0.73/foot</em></b>
+<br><hr>
+
+### 18/4 Gray Stranded CU CL3R Shielded Security Cable
+I use this wire to extend my onewire temperature probes as well as our ultrasonic sensors and non-contact liquid sensors.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_184.jpg" alt="GardenPi Security Wire" height="100" width="300">
+Purchase Location: <a href="https://www.homedepot.com/p/Southwire-By-the-Foot-18-4-Gray-Stranded-CU-CL3R-Shielded-Security-Cable-57573099/204725141">HomeDepot.com</a><br>
+Purchase Price: <b><em>$0.55/foot</em></b>
 <br><hr>
