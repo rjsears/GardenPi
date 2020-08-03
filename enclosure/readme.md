@@ -25,7 +25,7 @@ Part Numbers Ordered:
   <li>2 x UA-023 80mm Large Fan Vents <b>$7.16/ea</b></li>
   <li>2 x YX-1412K Panel for YH/YQ Series Enclosures <b>$24.61/ea</b></li>
 </ul>
-<em>Total with Shipping/Tax: $181.62</em>
+</b><em>Total with Shipping/Tax: $181.62</em></b>
 <br>
 <hr>
 
@@ -37,4 +37,12 @@ Purchase Location: <a href="https://www.amazon.com/gp/product/B07TC2BK1X/ref=ppx
 Purchase Price: <b><em>$60.50</em></b>
 <br><hr>
 
+### Samsung Endurance Pro 128GB SD Card
+I chose the Sansung Pro Endurance 128GB card for several reasons. First I have <em>never</em> had any issues with any Samsung SD card that I have purchased, next the Pro Endurance is designed to be a very long endurance card. The 128GB cards is rated to last up to 43,800 hours of continuous video recording, while the 64GB card was half that time. Since the 128GB card is good for a full 5 years of <em>continuous</em> video recording, I figured it would be good with the little bit GardenPi woud be doing with it.
 
+
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_samsung_pro.jpg" alt="GardenPi SD Card" height="100" width="150">
+Purchase Location: <a href="https://www.amazon.com/Samsung-Endurance-128GB-Micro-Adapter/dp/B07B984HJ5">Amazon.com</a><br>
+Purchase Price: <b><em>$28.99</em></b>
+<br><hr>
