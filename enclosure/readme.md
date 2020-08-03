@@ -127,14 +127,19 @@ Purchase Location: <a href="https://www.amazon.com/gp/product/B07D8SJMG7/ref=ppx
 Purchase Price: <b><em>$11.99/each</em></b>
 <br><hr>
 
-
 ### SP21 Waterproof 3-Pin Thru-bulkhead heavy-duty connector
 This is used for our DS18B20 Onewire temperature probes. 
-
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_3pin_plug.jpg" alt="GardenPi 3-Pin Plug" height="250" width="350">
 Purchase Location: <a href="https://smile.amazon.com/gp/product/B07D8XDYKY/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1">Amazon.com</a><br>
 Purchase Price: <b><em>$11.99</em></b>
 <br><hr>
 
+### LowPowerLabs MightyHat
+Very cool RaspberryPi power controller, UPS system and 433Mhz gateway. Provides full UPS and completely safe unattended shutdown of your Pi if you run out of battery power before power is restored. System displays messages on LCD screen as well.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_mightyhat.jpg" alt="GardenPi MightyHat" height="250" width="350">
+Purchase Location: <a href="https://lowpowerlab.com/shop/mightyhat">LowPowerLabs.com</a><br>
+Purchase Price: <b><em>$45.00</em></b>
+<br><hr>
 
