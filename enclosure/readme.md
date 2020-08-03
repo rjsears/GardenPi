@@ -232,4 +232,10 @@ Purchase Location: <a href="https://www.ebay.com/itm/121200480686">EBay.com</a><
 Purchase Price: <b><em>$15.95/each</em></b>
 <br><hr>
 
+### 120VAC Brushless Cooling Fan 80mm x 25mm x 2
+These are AC powered 40CFM brushless cooling fans to help cool the system enclosure. These are connected to the two-port solid-state relay board and temperature controlled by GardenPi. 67,000 Hour lifespan.
 
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_ac_fans.jpg" alt="GardenPi AC Fans" height="175" width="175">
+Purchase Location: <a href="https://www.amazon.com/gp/product/B07SDDSCY1/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1">Amazon.com</a><br>
+Purchase Price: <b><em>$18.99/each</em></b>
+<br><hr>
