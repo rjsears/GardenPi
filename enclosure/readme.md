@@ -9,7 +9,7 @@
 <h2 align="center">BOM For GardenPi</h2>
 <br>
 
-There are a <b><em>lot</em></b> of parts that went into building <b><em>our</em></b> version of GardenPi. GardenPi is designed to be scaled from a few zones to as many as 32 water zones or anywhere in between. Since you have to build your own enclosure, you can decide what parts of GardenPi meet your needs (such as the need for power control) and decide what you need from there. I love lots of data so I have sensors for AC and DC power, water utilization (albeit not from GardenPi), humidity, barometric pressure, etc. So when you view this parts list, keep in mind you may not need everything listed here.
+There are a <b><em>lot</em></b> of parts that went into building <b><em>our</em></b> version of GardenPi. GardenPi is designed to be scaled from a few zones to as many as 32 water zones or anywhere in between. Since you have to build your own enclosure, you can decide what parts of GardenPi meet your needs (such as the need for power control) and decide what you need from there. I love lots of data so I have sensors for AC and DC power, water utilization (albeit not from GardenPi), humidity, barometric pressure, etc. So when you view this parts list, keep in mind you may not need everything listed here and some are options (touchscreen, cover).
 <hr>
 
 ### System Enclosure - Polycase YH-141206 NEMA Hinged Electrical Enclosure
@@ -191,3 +191,12 @@ System touchscreen interface display for GardenPi. Provided for local control.
 Purchase Location: <a href="https://www.adafruit.com/product/2407">Adafruit.com</a><br>
 Purchase Price: <b><em>$89.95</em></b>
 <br><hr>
+
+### Front Panel Express Custom Panel Mount
+I designed this panel in FrontDesign by Front Panel Express. This exactly fits the Adafruit 800x400 touchscreen display and provides a secure and nice way to mount the screen.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_front_panel.jpg" alt="GardenPi Touchscreen Panel" height="400" width="420">
+Purchase Location: <a href="frontpanelexpress.com">Frontpanelexpress.com</a><br>
+Purchase Price: <b><em>$145.00</em></b>
+<br><hr>
+
