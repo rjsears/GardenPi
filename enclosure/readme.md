@@ -143,7 +143,7 @@ Purchase Location: <a href="https://lowpowerlab.com/shop/mightyhat">LowPowerLabs
 Purchase Price: <b><em>$45.00</em></b>
 <br><hr>
 
-### Adafruit Industries 6.2AH 3.7V Lithium battery (DigiKey, $29.50)
+### Adafruit Industries 6.2AH 3.7V Lithium battery
 Provides battery backup power to the MightyHat. Will run the Pi for several hours (if not more) in idle mode. 
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_backup_battery.jpg" alt="GardenPi Backup Battery" height="250" width="250">
@@ -166,3 +166,12 @@ Utilized to monitor the water level in various tanks including fish water and hy
 Purchase Location: <a href="https://www.digikey.com/product-detail/en/dfrobot/SEN0204/SEN0204-ND/6579443">DigiKey.com</a><br>
 Purchase Price: <b><em>$10.00/each</em></b>
 <br><hr>
+
+### DFRobot Gravity: I2C Bosch BME280 Environmental Sensor
+Sensor to provide Temperature, humidity and barometric pressure inside our project enclosure. Used to determine when to run the onboard fans to cool the enclosure and provide enclosure environmental data for graphing.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_BME280.jpg" alt="GardenPi NC Liquid Sensor" height="225" width="260">
+Purchase Location: <a href="https://www.digikey.com/products/en?keywords=SEN0236">DigiKey.com</a><br>
+Purchase Price: <b><em>$15.78</em></b>
+<br><hr>
+
