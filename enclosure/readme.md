@@ -182,3 +182,12 @@ High-resolution, high-precision measurement module to monitor the voltage and cu
 Purchase Location: <a href="https://www.amazon.com/Gravity-Wattmeter-Bi-Directional-Measurement-Breakout/dp/B07N3QQ2Q7">Amazon.com</a><br>
 Purchase Price: <b><em>$11.90</em></b>
 <br><hr>
+
+
+### Adafruit 800x480 Touchscreen HDMI Display
+System touchscreen interface display for GardenPi. Provided for local control.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_touchscreen.jpg" alt="GardenPi Touchscreen" height="200" width="220">
+Purchase Location: <a href="https://www.adafruit.com/product/2407">Adafruit.com</a><br>
+Purchase Price: <b><em>$89.95</em></b>
+<br><hr>
