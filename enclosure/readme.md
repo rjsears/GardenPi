@@ -25,7 +25,7 @@ Part Numbers Ordered:
   <li>2 x UA-023 80mm Large Fan Vents <b>$7.16/ea</b></li>
   <li>2 x YX-1412K Panel for YH/YQ Series Enclosures <b>$24.61/ea</b></li>
 </ul>
-<b><em>Total with Shipping/Tax: $181.62</em></b>
+<em>Total with Shipping/Tax: $181.62</em>
 <br>
 <hr>
 
@@ -33,7 +33,7 @@ Part Numbers Ordered:
 You could get by with a lower powered version of the RaspberryPi, but I choose the Rpi4 with 4/GB RAM for this project.
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/canakit_rpi_4.jpg" alt="GardenPi RPi4" height="200" width="250">
-Purchase Location: <a href="https://www.amazon.com/gp/product/B07TC2BK1X/ref=ppx_yo_dt_b_asin_title_o00_s01?ie=UTF8&psc=1">Amazon.com</a>
+Purchase Location: <a href="https://www.amazon.com/gp/product/B07TC2BK1X/ref=ppx_yo_dt_b_asin_title_o00_s01?ie=UTF8&psc=1">Amazon.com</a><br>
 Purchase Price: <b><em>$60.50</em></b>
 <br><hr>
 
