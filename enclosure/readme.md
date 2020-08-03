@@ -239,3 +239,12 @@ These are AC powered 40CFM brushless cooling fans to help cool the system enclos
 Purchase Location: <a href="https://www.amazon.com/gp/product/B07SDDSCY1/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1">Amazon.com</a><br>
 Purchase Price: <b><em>$18.99/each</em></b>
 <br><hr>
+
+
+### Power Distribution screw Terminal Blocks x 9
+These are very nice, small power distribution blocks. I use them for AC, DC and onewire connections.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_terminal_blocks.jpg" alt="GardenPi Terminal Blocks" height="175" width="300">
+Purchase Location: <a href="https://www.ebay.com/vod/FetchOrderDetails?itemid=293062941310&transid=1804265334019&ul_noapp=true">EBay.com</a><br>
+Purchase Price: <b><em>~$2.00/each</em></b>
+<br><hr>
