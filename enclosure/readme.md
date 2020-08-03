@@ -38,7 +38,7 @@ Purchase Price: <b><em>$60.50</em></b>
 <br><hr>
 
 ### Samsung Endurance Pro 128GB SD Card
-I chose the Sansung Pro Endurance 128GB card for several reasons. First I have <em>never</em> had any issues with any Samsung SD card that I have purchased, next the Pro Endurance is designed to be a very long endurance card. The 128GB cards is rated to last up to 43,800 hours of continuous video recording, while the 64GB card was half that time. Since the 128GB card is good for a full 5 years of <em>continuous</em> video recording, I figured it would be good with the little bit GardenPi woud be doing with it.
+I chose the Samsung Pro Endurance 128GB card for several reasons. First I have never had any issues with any Samsung SD card that I have purchased, next the Pro Endurance is designed to be a very long endurance card. The 128GB cards is rated to last up to 43,800 hours of continuous video recording, while the 64GB card was half that time. Since the 128GB card is good for a full 5 years of continuous video recording, I figured it would be good with the little bit GardenPi would be doing with it.
 
 
 
