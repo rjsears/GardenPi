@@ -143,3 +143,10 @@ Purchase Location: <a href="https://lowpowerlab.com/shop/mightyhat">LowPowerLabs
 Purchase Price: <b><em>$45.00</em></b>
 <br><hr>
 
+### Adafruit Industries 6.2AH 3.7V Lithium battery (DigiKey, $29.50)
+Provides battery backup power to the MightyHat. Will run the Pi for several hours (if not more) in idle mode. 
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_backup_battery.jpg" alt="GardenPi Backup Battery" height="250" width="250">
+Purchase Location: <a href="https://www.digikey.com/products/en?mpart=353&v=1528">DigiKey.com</a><br>
+Purchase Price: <b><em>$29.50</em></b>
+<br><hr>
