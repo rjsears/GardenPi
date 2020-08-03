@@ -95,6 +95,11 @@ Purchase Location: <a href="https://smile.amazon.com/Potter-Brumfield-Circuit-Br
 Purchase Price: <b><em>$7.25</em></b>
 <br><hr>
 
+### Black US 3-Pin Power Socket Plugs x 10 (Amazon, $12.00)
+Thru panel mount standard 3-pole, 15A 120V plugs for plugging in equipment to be controlled by the GardenPi system. Bag of 10.
 
-
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_110v_plugs.jpg" alt="GardenPi 120V Outlets" height="175" width="250">
+Purchase Location: <a href="https://smile.amazon.com/gp/product/B01M3URWIT/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1">Amazon.com</a><br>
+Purchase Price: <b><em>$8.99</em></b>
+<br><hr>
 
