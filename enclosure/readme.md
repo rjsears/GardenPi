@@ -9,7 +9,7 @@
 <h2 align="center">BOM For GardenPi</h2>
 <br>
 
-There are a <em>lot</em> or parts that went into building <em>my</em> version of GardenPi. GardenPi is designed to be scaled from a few zones to as many as 32 water zones or anywhere in between. SInce you have to build your own enclosure, you can decide what parts of GardenPi meet your needs (such as the need for power control) and decide what you need from there. I <em>love</em> lots of data so I have sensors for AC and DC power, water utiliation (albeit not from GardenPi), humidity, barometric pressure, etc. So when you view this parts list, keep in mind you may not need everything listed here.
+There are a <b><em>lot</em></b of parts that went into building <b><em>our</em></b> version of GardenPi. GardenPi is designed to be scaled from a few zones to as many as 32 water zones or anywhere in between. Since you have to build your own enclosure, you can decide what parts of GardenPi meet your needs (such as the need for power control) and decide what you need from there. I love lots of data so I have sensors for AC and DC power, water utilization (albeit not from GardenPi), humidity, barometric pressure, etc. So when you view this parts list, keep in mind you may not need everything listed here.
 <hr>
 
 ### System Enclosure - Polycase YH-141206 NEMA Hinged Electrical Enclosure
