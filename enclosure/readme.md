@@ -61,5 +61,12 @@ Purchase Location: <a href="https://smile.amazon.com/gp/product/B00ZZW7MI6/ref=p
 Purchase Price: <b><em>$17.89</em></b>
 <br><hr>
 
+### Emerson 90-T40F3 120V to 24V AC-to-AC transformer 
+Thistransformer is used to power our irrigation valves. Most irrigation valves areAC due to the length of the wire runs, but there are some DC valves out there.If you are planning on using DC valves, the Sainsmart relays above <b>WILL NOT WORK</b> as the relays use <a href="https://www.electronics-notes.com/articles/electronic_components/scr/what-is-a-triac.php">Triacs</a>. They will only work for AC voltage. Read the notes <a href="https://www.sainsmart.com/products/8-channel-5v-2a-solid-state-relay-high-level-trigger">HERE</a> for more information!
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_transformer.jpg" alt="GardenPi Transformer" height="175" width="175">
+Purchase Location: <a href="https://smile.amazon.com/gp/product/B00ZZW7MI6/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1">Amazon.com</a><br>
+Purchase Price: <b><em>$17.89</em></b>
+<br><hr>
 
 
