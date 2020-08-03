@@ -25,7 +25,7 @@ Hopefully, this might provide some inspiration for others in regard to their aut
       Overview
     </a>
     <span> | </span>
-    <a href="https://github.com/rjsears/GardenPi#parts">
+    <a href="https://github.com/rjsears/GardenPi/blob/master/enclosure/readme.md">
       Pieces & Parts
     </a>
     <span> | </span>
@@ -41,8 +41,8 @@ Hopefully, this might provide some inspiration for others in regard to their aut
       Code
     </a>
     <span> | </span>
-    <a href="https://github.com/rjsears/GardenPi#diagram">
-      Diagram
+    <a href="https://github.com/rjsears/GardenPi#schematics">
+      Schematics
     </a>
     <span> | </span>
     <a href="https://github.com/rjsears/GardenPi/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc">
