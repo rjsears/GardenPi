@@ -61,6 +61,16 @@ Purchase Location: <a href="https://smile.amazon.com/gp/product/B00ZZW7MI6/ref=p
 Purchase Price: <b><em>$17.89</em></b>
 <br><hr>
 
+### Sainsmart 5V 2A 2-Channel Solid State Relay Module
+This relay drives my two AC fans in the enclosure.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_two_channel_relay.jpg" alt="GardenPi SS Relays" height="175" width="250">
+Purchase Location: <a href="https://smile.amazon.com/SainSmart-2-Channel-Duemilanove-MEGA2560-MEGA1280/dp/B0079WI2ZC/ref=sr_1_25?crid=2XATJMBNW9EN0&dchild=1&keywords=sainsmart+relay+module&qid=1596487851&sprefix=sainsmart+relay%2Caps%2C205&sr=8-25">Amazon.com</a><br>
+Purchase Price: <b><em>$13.99</em></b>
+<br><hr>
+
+
+
 ### Emerson 90-T40F3 120V to 24V AC-to-AC transformer 
 This transformer is used to power our sprinkler valves (27 of them). Most irrigation valves utilize AC due to the length of the wire runs, but there are some DC valves out there. If you are planning on using DC valves, the Sainsmart relays above <b>WILL NOT WORK</b> as these relays use <a href="https://www.electronics-notes.com/articles/electronic_components/scr/what-is-a-triac.php">Triacs</a>. They will only work for AC circuits. Read the notes <a href="https://www.sainsmart.com/products/8-channel-5v-2a-solid-state-relay-high-level-trigger">HERE</a> for more information!
 
