@@ -119,12 +119,22 @@ Purchase Location: <a href="https://www.digikey.com/products/en?keywords=486-301
 Purchase Price: <b><em>$24.18</em></b>
 <br><hr>
 
-### SP21 Waterproof 9-Pin Thru-bulkhead heavy-duty connector x 4
-These are used for all of sprinkler valve 24v AC wiring.
+### SP21 Waterproof 9-Pin Thru-bulkhead heavy-duty connector x 8
+These are used for all of sprinkler valve 24v AC wiring, non-contact liquid level sensors and ultrasonic liquid level sensors. For the latter two you can opt for the 8-Pin plugs but you need the 9-pin for the sprinkler valves. You need one connector for every 8 valves.
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_9pin_plgs.jpg" alt="GardenPi 9-Pin Plug" height="250" width="350">
 Purchase Location: <a href="https://www.amazon.com/gp/product/B07D8SJMG7/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1&pldnSite=1">Amazon.com</a><br>
 Purchase Price: <b><em>$11.99/each</em></b>
+<br><hr>
+
+
+### SP21 Waterproof 3-Pin Thru-bulkhead heavy-duty connector
+This is used for our DS18B20 Onewire temperature probes. 
+
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_3pin_plug.jpg" alt="GardenPi 3-Pin Plug" height="250" width="350">
+Purchase Location: <a href="https://smile.amazon.com/gp/product/B07D8XDYKY/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1">Amazon.com</a><br>
+Purchase Price: <b><em>$11.99</em></b>
 <br><hr>
 
 
