@@ -193,7 +193,7 @@ Purchase Price: <b><em>$89.95</em></b>
 <br><hr>
 
 ### Front Panel Express Custom Panel Mount
-I designed this panel in FrontDesign by Front Panel Express. This exactly fits the Adafruit 800x400 touchscreen display and provides a secure and nice way to mount the screen.
+I designed this panel in FrontDesign by Front Panel Express. This exactly fits the Adafruit 800x400 touchscreen display and provides a secure and nice way to mount the screen. It is painted aluminum and the wording is etched and painted.
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_front_panel.jpg" alt="GardenPi Touchscreen Panel" height="400" width="420">
 Purchase Location: <a href="frontpanelexpress.com">Frontpanelexpress.com</a><br>
