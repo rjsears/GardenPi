@@ -200,3 +200,11 @@ Purchase Location: <a href="frontpanelexpress.com">Frontpanelexpress.com</a><br>
 Purchase Price: <b><em>$145.00</em></b>
 <br><hr>
 
+### Dallas DS18B20 Onewire Temperature Probes x 5
+These are for monitoring temperatures in our worm farm along with water temps in our various tanks. I purchased these from DFRobot along with other things and they come with authentic Dallis chips.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_ds18b20.jpg" alt="GardenPi DS18B20" height="200" width="220">
+Purchase Location: <a href="https://www.dfrobot.com/product-689.html">DFRobot.com</a><br>
+Purchase Price: <b><em>$6.90/each</em></b>
+<br><hr>
+
