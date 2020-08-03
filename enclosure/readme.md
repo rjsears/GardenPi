@@ -208,3 +208,10 @@ Purchase Location: <a href="https://www.dfrobot.com/product-689.html">DFRobot.co
 Purchase Price: <b><em>$6.90/each</em></b>
 <br><hr>
 
+### Waveshare I2C Serial Expansion Module x 2
+This module adds two additional serial ports to the Raspberry Pi. We need a total of four additional serial ports to talk to our Ultrasonic water level detectors. It also adds additional GPIOs, but I do not use them. Each module requires an inturrupt pin on the Pi.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_serial_expander.jpg" alt="GardenPi Serial Expander" height="200" width="250">
+Purchase Location: <a href="https://www.amazon.com/gp/product/B07KCR3Y7W/ref=ppx_od_dt_b_asin_title_s00?ie=UTF8&psc=1">Amazon.com</a><br>
+Purchase Price: <b><em>$18.99/each</em></b>
+<br><hr>
