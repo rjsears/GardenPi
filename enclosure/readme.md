@@ -12,7 +12,7 @@
 There are a <em>lot</em> or parts that went into building <em>my</em> version of GardenPi. GardenPi is designed to be scaled from a few zones to as many as 32 water zones or anywhere in between. SInce you have to build your own enclosure, you can decide what parts of GardenPi meet your needs (such as the need for power control) and decide what you need from there. I <em>love</em> lots of data so I have sensors for AC and DC power, water utiliation (albeit not from GardenPi), humidity, barometric pressure, etc. So when you view this parts list, keep in mind you may not need everything listed here.
 <hr>
 
-#### System Enclosure - Polycase YH-141206 NEMA Hinged Electrical Enclosure
+### System Enclosure - Polycase YH-141206 NEMA Hinged Electrical Enclosure
 The system enclosure that I chose was pretty large due to all of the parts that needed to fit inside. I chose not the cheapest enclosure, but one that would do the job for me.
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_system_enclosure.jpg" alt="GardenPi System Enclosure" height="200" width="400">
@@ -29,7 +29,7 @@ Part Numbers Ordered:
 <br>
 <hr>
 
-#### Canakit Raspberry Pi4 Model B - 4GB
+### Canakit Raspberry Pi4 Model B - 4GB
 You could get by with a lower powered version of the RaspberryPi, but I choose the Rpi4 with 4/GB RAM for this project.
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/canakit_rpi_4.jpg" alt="GardenPi RPi4" height="200" width="250">
