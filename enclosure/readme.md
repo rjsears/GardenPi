@@ -25,7 +25,7 @@ Part Numbers Ordered:
   <li>2 x UA-023 80mm Large Fan Vents <b>$7.16/ea</b></li>
   <li>2 x YX-1412K Panel for YH/YQ Series Enclosures <b>$24.61/ea</b></li>
 </ul>
-</b><em>Total with Shipping/Tax: $181.62</em></b>
+<b>Total with Shipping/Tax: $181.62</b>
 <br>
 <hr>
 
@@ -58,7 +58,7 @@ One thing I have learned in my past projects with a lot of electrical and sensor
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_ss_relays_8.jpg" alt="GardenPi SS Relays" height="175" width="350">
 Purchase Location: <a href="https://smile.amazon.com/gp/product/B00ZZW7MI6/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1">Amazon.com</a><br>
-Purchase Price: <b><em>$17.89</em></b>
+Purchase Price: <b><em>$17.89/each</em></b>
 <br><hr>
 
 ### Sainsmart 5V 2A 2-Channel Solid State Relay Module
@@ -95,7 +95,7 @@ Purchase Location: <a href="https://smile.amazon.com/Potter-Brumfield-Circuit-Br
 Purchase Price: <b><em>$7.25</em></b>
 <br><hr>
 
-### Black US 3-Pin Power Socket Plugs x 10 (Amazon, $12.00)
+### Black US 3-Pin Power Socket Plugs x 10
 Thru panel mount standard 3-pole, 15A 120V plugs for plugging in equipment to be controlled by the GardenPi system. Bag of 10.
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_110v_plugs.jpg" alt="GardenPi 120V Outlets" height="175" width="250">
@@ -118,3 +118,13 @@ Provides a nice and clean way to connect a power cable to our enclosure. One of 
 Purchase Location: <a href="https://www.digikey.com/products/en?keywords=486-3013-ND">DigiKey.com</a><br>
 Purchase Price: <b><em>$24.18</em></b>
 <br><hr>
+
+### SP21 Waterproof 9-Pin Thru-bulkhead heavy-duty connector x 4
+These are used for all of sprinkler valve 24v AC wiring.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_9pin_plugs.jpg" alt="GardenPi 9-Pin Plug" height="250" width="250">
+Purchase Location: <a href="https://www.amazon.com/gp/product/B07D8SJMG7/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1&pldnSite=1">Amazon.com</a><br>
+Purchase Price: <b><em>$11.99/each</em></b>
+<br><hr>
+
+
