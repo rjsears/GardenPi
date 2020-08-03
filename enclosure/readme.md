@@ -248,3 +248,11 @@ These are very nice, small power distribution blocks. I use them for AC, DC and 
 Purchase Location: <a href="https://www.ebay.com/vod/FetchOrderDetails?itemid=293062941310&transid=1804265334019&ul_noapp=true">EBay.com</a><br>
 Purchase Price: <b><em>~$2.00/each</em></b>
 <br><hr>
+
+### 18/10 Black Solid UL Sprinkler System Wire
+I run a cable from my enclosure to a "zone extension box" where I tie in all of my zones. This way I do not have to run every zone back to my enclosure. I also use this wire for all of my internal sprinkler-relay wiring in the enclosure. The total length you need will depend on how far your zones are and how far you extension boxes are located. 
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_1810.jpg" alt="GardenPi Terminal Blocks" height="100" width="200">
+Purchase Location: <a href="https://www.homedepot.com/p/Southwire-By-the-Foot-18-10-Black-Solid-UL-Sprinkler-System-Wire-49270299/204724972">HomeDepot.com</a><br>
+Purchase Price: <b><em>$0.73/foot</em></b>
+<br><hr>
