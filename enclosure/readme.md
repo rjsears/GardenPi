@@ -159,3 +159,10 @@ Purchase Location: <a href="https://www.digikey.com/products/en?mpart=DFR0626&v=
 Purchase Price: <b><em>$4.55/each</em></b>
 <br><hr>
 
+### DFRobot Gravity: Non-contact Digital Water / Liquid Level Sensor For Arduino x 4
+Utilized to monitor the water level in various tanks including fish water and hydroponic solutions. This sensor is what we use to make actual decisions.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_non-contact_sensor.jpg" alt="GardenPi NC Liquid Sensor" height="225" width="260">
+Purchase Location: <a href="https://www.digikey.com/product-detail/en/dfrobot/SEN0204/SEN0204-ND/6579443">DigiKey.com</a><br>
+Purchase Price: <b><em>$10.00/each</em></b>
+<br><hr>
