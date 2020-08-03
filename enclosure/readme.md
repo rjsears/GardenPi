@@ -241,7 +241,7 @@ Purchase Price: <b><em>$18.99/each</em></b>
 <br><hr>
 
 
-### Power Distribution screw Terminal Blocks x 9
+### Power Distribution screw Terminal Blocks x 10
 These are very nice, small power distribution blocks. I use them for AC, DC and onewire connections.
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_terminal_blocks.jpg" alt="GardenPi Terminal Blocks" height="175" width="300">
