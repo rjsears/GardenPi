@@ -87,5 +87,14 @@ Purchase Location: <a href="https://www.digikey.com/product-detail/en/mean-well-
 Purchase Price: <b><em>$11.54</em></b>
 <br><hr>
 
+### Potter Brumfield 15A, 120V push thru circuit breaker 
+W28XQ1A-15. Used for AC circuit current protection.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_ac_circuit_breaker.jpg" alt="GardenPi AC Circuit Breaker" height="175" width="250">
+Purchase Location: <a href="https://smile.amazon.com/Potter-Brumfield-Circuit-Breaker-W28XQ1A-15/dp/B002PXG1BC/ref=sr_1_1?dchild=1&keywords=W28XQ1A-15&qid=1596488260&sr=8-1">Amazon.com</a><br>
+Purchase Price: <b><em>$7.25</em></b>
+<br><hr>
+
+
 
 
