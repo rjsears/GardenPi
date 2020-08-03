@@ -152,7 +152,7 @@ Purchase Price: <b><em>$29.50</em></b>
 <br><hr>
 
 ### DFRobot Gravity: MCP23017 I2C 16 Digital IO Expansion Module x 4 
-Adds 64 additional GPIO ports to the Raspberry Pi
+Adds 64 additional GPIO ports to the Raspberry Pi. Utilizes I2C in GardenPi. Everything that utilizes GPIOs in GardenPi are run from the MCP23017s.
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_mcp23017.jpg" alt="GardenPi MCP23017" height="225" width="250">
 Purchase Location: <a href="https://www.digikey.com/products/en?mpart=DFR0626&v=1738">DigiKey.com</a><br>
