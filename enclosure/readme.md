@@ -122,7 +122,7 @@ Purchase Price: <b><em>$24.18</em></b>
 ### SP21 Waterproof 9-Pin Thru-bulkhead heavy-duty connector x 4
 These are used for all of sprinkler valve 24v AC wiring.
 
-<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_9pin_plugs.jpg" alt="GardenPi 9-Pin Plug" height="250" width="250">
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_9pin_plgs.jpg" alt="GardenPi 9-Pin Plug" height="250" width="350">
 Purchase Location: <a href="https://www.amazon.com/gp/product/B07D8SJMG7/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1&pldnSite=1">Amazon.com</a><br>
 Purchase Price: <b><em>$11.99/each</em></b>
 <br><hr>
