@@ -71,10 +71,11 @@ The system designed for our needs ended up with the following configuration:
   <li>AC Current and Voltage Sensors</li>
   <li>4 x Ultrasonic Water Level Detectors</li>
   <li>4 x Non-Contact Liquid Level Sensors</li>
-  <li>3 x 330 Gallon IBC Holding Tanks</li>
 </ul>
 
 In additional to these zones/sensors, the system would also interact directly with our already installed power and water monitoring systems. This system were build on EmonCMS which is part of the OpenEnergy Project. We use our EmonCMS data to gather water utilization information for GardenPi via smart water meters on our property and do the same for monitoring the AC circuit utilization for GardenPi. Other data such as outside temperature and humidity is likewise drawn from an outside source, namely a David Vantage PRO2 system we have installed on the property.
 
 This is the overview of how the system will be put together:<br><br>
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_physical_20200803.jpg" alt="GardenPi Physical Layout" height="600" width="800"></a>
+<br><br>
+The goal of version 1.0.0 of GardenPi was to build and test the hardware and get the garden irrigation, sensor readings, and automatic water switching installed and working. As I progress with other version I will continue to build out all other functionality as we continue to build out our gardens, hydroponics and aquaponics. 
