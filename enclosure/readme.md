@@ -103,3 +103,10 @@ Purchase Location: <a href="https://smile.amazon.com/gp/product/B01M3URWIT/ref=p
 Purchase Price: <b><em>$8.99</em></b>
 <br><hr>
 
+### UBIDE IP67 Waterproof CAT5 RJ45 Feed-Thru Coupler
+I will be utilizing a hard-wired ethernet connection and I want all connections into the enclosure to be thru-mount, waterproof and to look very nice.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_ethernet_jack.jpg" alt="GardenPi Ethernet Jack" height="175" width="250">
+Purchase Location: <a href="https://smile.amazon.com/gp/product/B077C6W2MP/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1">Amazon.com</a><br>
+Purchase Price: <b><em>$9.99</em></b>
+<br><hr>
