@@ -78,4 +78,4 @@ In additional to these zones/sensors, the system would also interact directly wi
 This is the overview of how the system will be put together:<br><br>
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_physical_20200803.jpg" alt="GardenPi Physical Layout" height="600" width="800"></a>
 <br><br>
-The goal of version 1.0.0 of GardenPi was to build and test the hardware and get the garden irrigation, sensor readings, and automatic water switching installed and working. As I progress with other version I will continue to build out all other functionality as we continue to build out our gardens, hydroponics and aquaponics. 
+The goal of version 1.0.0 of GardenPi was to build and test the hardware and get the garden irrigation, sensor readings, and automatic water switching installed and working. As I progress with other versions I will continue to build out all other functionality as we continue to build out our gardens, hydroponics and aquaponics. 
