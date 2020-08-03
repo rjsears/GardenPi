@@ -54,7 +54,7 @@ Purchase Price: <b><em>$17.89</em></b>
 <br><hr>
 
 ### Sainsmart 5V 2A 8-Channel Solid State Relay Module (High Level Trigger) x 4
-One thing I have learned in my past projects with a lot of electrical and sensors, mechanical relays can cause interference in various parts of the system. I chased a problem wit my pool control project where every time I triggered my mechanical relay, I would get weird reading and other glitches, even with optoisolated mechanical relays. I moved to solid-state relays and never looked back. 
+One thing I have learned in my past projects with a lot of electrical and sensors, mechanical relays can cause interference in various parts of the system. I chased a problem wit my pool control project where every time I triggered my mechanical relay, I would get weird reading and other glitches, even with optoisolated mechanical relays. I moved to solid-state relays and never looked back. These relays are 2A max which is more than enough to power a sprinkler valve.
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_ss_relays_8.jpg" alt="GardenPi SS Relays" height="175" width="350">
 Purchase Location: <a href="https://smile.amazon.com/gp/product/B00ZZW7MI6/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1">Amazon.com</a><br>
@@ -62,11 +62,19 @@ Purchase Price: <b><em>$17.89</em></b>
 <br><hr>
 
 ### Emerson 90-T40F3 120V to 24V AC-to-AC transformer 
-Thistransformer is used to power our irrigation valves. Most irrigation valves areAC due to the length of the wire runs, but there are some DC valves out there.If you are planning on using DC valves, the Sainsmart relays above <b>WILL NOT WORK</b> as the relays use <a href="https://www.electronics-notes.com/articles/electronic_components/scr/what-is-a-triac.php">Triacs</a>. They will only work for AC voltage. Read the notes <a href="https://www.sainsmart.com/products/8-channel-5v-2a-solid-state-relay-high-level-trigger">HERE</a> for more information!
+This transformer is used to power our sprinkler valves (27 of them). Most irrigation valves utilize AC due to the length of the wire runs, but there are some DC valves out there. If you are planning on using DC valves, the Sainsmart relays above <b>WILL NOT WORK</b> as these relays use <a href="https://www.electronics-notes.com/articles/electronic_components/scr/what-is-a-triac.php">Triacs</a>. They will only work for AC circuits. Read the notes <a href="https://www.sainsmart.com/products/8-channel-5v-2a-solid-state-relay-high-level-trigger">HERE</a> for more information!
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_transformer.jpg" alt="GardenPi Transformer" height="175" width="175">
 Purchase Location: <a href="https://smile.amazon.com/dp/B00WGMX9TY?tag=amz-mkt-chr-us-20&ascsubtag=1ba00-01000-org00-mac00-other-smile-us000-pcomp-feature-scomp-wm-5&ref=aa_scomp_sosp1">Amazon.com</a><br>
 Purchase Price: <b><em>$13.99</em></b>
+<br><hr>
+
+### Mean Well RS-25-5 AC-to-DC 5V, 5A Switching Power Supply
+While the Canakit comes with a very nice 3A USB-C power supply, I will be running 27 relays and lot of other 3.3/5V boards and sensors, so I opted to get a 5A switched 5V power supply. I have had great luck with Mean Well over the years so that is why I chose this power supply.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_5V_power_supply.jpg" alt="GardenPi 5V Power Supply" height="175" width="250">
+Purchase Location: <a href="https://www.digikey.com/product-detail/en/mean-well-usa-inc/RS-25-5/1866-4145-ND/7706180">DigiKey.com</a><br>
+Purchase Price: <b><em>$11.54</em></b>
 <br><hr>
 
 
