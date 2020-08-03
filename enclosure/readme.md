@@ -175,3 +175,10 @@ Purchase Location: <a href="https://www.digikey.com/products/en?keywords=SEN0236
 Purchase Price: <b><em>$15.78</em></b>
 <br><hr>
 
+### DFRobot Gravity: I2C Digital Wattmeter
+High-resolution, high-precision measurement module to monitor the voltage and current usage of our 5V loads.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_DC_watt_meter.jpg" alt="GardenPi NC Liquid Sensor" height="200" width="220">
+Purchase Location: <a href="https://www.amazon.com/Gravity-Wattmeter-Bi-Directional-Measurement-Breakout/dp/B07N3QQ2Q7">Amazon.com</a><br>
+Purchase Price: <b><em>$11.90</em></b>
+<br><hr>
