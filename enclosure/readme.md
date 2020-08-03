@@ -224,3 +224,12 @@ Purchase Location: <a href="https://www.amazon.com/gp/product/B07Y33RZ8F/ref=ppx
 Purchase Price: <b><em>$11.50/each</em></b>
 <br><hr>
 
+### I2C Extender/Expander
+This extender provides 8 x I2C ports for all of our IC2 connected components.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_i2c_expander.jpg" alt="GardenPi I2C Expander" height="100" width="175">
+Purchase Location: <a href="https://www.ebay.com/itm/121200480686">EBay.com</a><br>
+Purchase Price: <b><em>$15.95/each</em></b>
+<br><hr>
+
+
