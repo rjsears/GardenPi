@@ -150,3 +150,12 @@ Provides battery backup power to the MightyHat. Will run the Pi for several hour
 Purchase Location: <a href="https://www.digikey.com/products/en?mpart=353&v=1528">DigiKey.com</a><br>
 Purchase Price: <b><em>$29.50</em></b>
 <br><hr>
+
+### DFRobot Gravity: MCP23017 I2C 16 Digital IO Expansion Module x 4 
+Adds 64 additional GPIO ports to the Raspberry Pi
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_mcp23017.jpg" alt="GardenPi MCP23017" height="225" width="250">
+Purchase Location: <a href="https://www.digikey.com/products/en?mpart=DFR0626&v=1738">DigiKey.com</a><br>
+Purchase Price: <b><em>$4.55/each</em></b>
+<br><hr>
+
