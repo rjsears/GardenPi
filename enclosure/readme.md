@@ -264,3 +264,12 @@ I use this wire to extend my onewire temperature probes as well as our ultrasoni
 Purchase Location: <a href="https://www.homedepot.com/p/Southwire-By-the-Foot-18-4-Gray-Stranded-CU-CL3R-Shielded-Security-Cable-57573099/204725141">HomeDepot.com</a><br>
 Purchase Price: <b><em>$0.55/foot</em></b>
 <br><hr>
+
+### Carlon 4" x 4" x 2" Junction Box
+I use these waterproof junction boxes as my "extenders". My zone and sensor cables leave my enclosure and run to these boxes. From there I extend to where I need the final runs.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_junction_extension_box.jpg" alt="GardenPi Junction Extension Box" height="150" width="200">
+Purchase Location: <a href="https://www.homedepot.com/p/Carlon-4-in-x-4-in-x-2-in-PVC-Junction-Box-Gray-E989NNJ-CAR/100404097">HomeDepot.com</a><br>
+Purchase Price: <b><em>$8.76/each</em></b>
+<br><hr>
+
