@@ -17,7 +17,6 @@ The system enclosure that I chose was pretty large due to all of the parts that 
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_system_enclosure.jpg" alt="GardenPi System Enclosure" height="200" width="400"><br>
 Purchase Location: <a href="https://www.polycase.com/yh-141206">Polycase.com</a><br>
-<br><br>
 Part Numbers Ordered:
 <ul>
   <li>YH-141206-02 NEMA Hinged Electrical Enclosure - <b>$87.41</b></li>
