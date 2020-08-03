@@ -40,9 +40,15 @@ Purchase Price: <b><em>$60.50</em></b>
 ### Samsung Endurance Pro 128GB SD Card
 I chose the Samsung Pro Endurance 128GB card for several reasons. First I have never had any issues with any Samsung SD card that I have purchased, next the Pro Endurance is designed to be a very long endurance card. The 128GB cards is rated to last up to 43,800 hours of continuous video recording, while the 64GB card was half that time. Since the 128GB card is good for a full 5 years of continuous video recording, I figured it would be good with the little bit GardenPi would be doing with it.
 
-
-
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_samsung_pro.jpg" alt="GardenPi SD Card" height="100" width="150">
 Purchase Location: <a href="https://www.amazon.com/Samsung-Endurance-128GB-Micro-Adapter/dp/B07B984HJ5">Amazon.com</a><br>
 Purchase Price: <b><em>$28.99</em></b>
 <br><hr>
+
+### Geekworm Aluminum alloy Armor case with dual fans
+I chose this case because I will need maximum cooling where I will be placing this system. My ambient temperature in the shed where my enclosure is installed can reach 135°F in the summer. I have had amazing luck running a Pi3B in 120-degree weather here in Phoenix for years with just a cooling fan in the overall enclosure for my pool control system. I will try this case out to see how well it works and how long the fans last. I track enclosure and Pi CPU temps every minute, I have not had an throttling issues as of yet, even on the hottest of days.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_geekwork_case.jpg" alt="GardenPi Case" height="175" width="250">
+Purchase Location: <a href="https://smile.amazon.com/Geekworm-Raspberry-Computer-Aluminum-Compatible/dp/B07VD6LHS1/ref=sr_1_4?dchild=1&keywords=geekworm+case&qid=1596485916&s=electronics&sr=1-4">Amazon.com</a><br>
+Purchase Price: <b><em>$17.89</em></b>
+
