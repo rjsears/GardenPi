@@ -215,3 +215,12 @@ This module adds two additional serial ports to the Raspberry Pi. We need a tota
 Purchase Location: <a href="https://www.amazon.com/gp/product/B07KCR3Y7W/ref=ppx_od_dt_b_asin_title_s00?ie=UTF8&psc=1">Amazon.com</a><br>
 Purchase Price: <b><em>$18.99/each</em></b>
 <br><hr>
+
+### Inkbird 40A SOlid State Relays x 8
+These relays are used on the 120V side of GardenPi. One relay per outlet (7) and an additional relay to power our AC-to-AC transformer as opposed to having it powered on 24x7.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_40a_ss_relay.jpg" alt="GardenPi Serial Expander" height="200" width="175">
+Purchase Location: <a href="https://www.amazon.com/gp/product/B07Y33RZ8F/ref=ppx_od_dt_b_asin_title_s00?ie=UTF8&psc=1">Amazon.com</a><br>
+Purchase Price: <b><em>$11.50/each</em></b>
+<br><hr>
+
