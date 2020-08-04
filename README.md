@@ -166,6 +166,7 @@ chown www-data:www-data /var/log/gardenpi
 ```
 
 All directories should be owned by your web server user, in my case this is ```www-data```.
+<hr>
 
 ##### Database Configuration for GardenPi
 Next you will need to setup your MySQL/OtherSQL database. Add the necessary user (we use a database name of ```neptune``` and a user of ```neptune``` but these can be anything you like. Use the <a href="https://github.com/rjsears/GardenPi/blob/master/neptune.sql">neptune.sql</a> file to get your structure and initial data setup. 
