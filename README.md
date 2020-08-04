@@ -219,7 +219,9 @@ Now, let's create any external accounts that you may need to use for your notifi
 ##### Cloning the Repo
 Next, grab the repo via git or download it and place it in the ```/var/www/gardenpi_control``` directory. Once you have done that, we need to modify the system_info.py file. This is the file where all of our database information and API credentials for Email, Twilio, Pushbullet are stored. Make all necessary changes and save the file. 
 
-The GardenPi software is written to utilize several other automation platforms that I have installed in our house. These are some areas within system_info.py you should attention to:
+
+#### Initial changes to make before starting
+The GardenPi software is written to utilize several other automation platforms that I have installed in our house. These system monitor our water usage with smart water meters and per-circuit power consumption for our AC circuits. The power information is simply dispayed on the main page of the GardenPi app while the water information is used to calculate and display zone water usage. If you have some type of power monitoring, then you could very easily These are some areas within system_info.py you should attention to:
 
 ```
 ## Setup our EmonCMS Database Connection
@@ -237,17 +239,6 @@ irrigation_gallons_total = "feed_62"
 current_gpm = "feed_63"
 ```
 
-And these entire down the same for our power information:
-```
-gardenpi_power_circuit_current = 'XXX340_ch9_a'
-gardenpi_power_circuit_volts = 'XXX340_volts'
-```
-
-These entires are only good if you have a Rachio sprinkler system:
-```
-rachio_headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer xxxxxxxxxxxxxxxxxxxxxxxxx'}
-rachio_url = 'https://api.rach.io/1/public/device/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx/current_schedule'
-```
 
 Because these settings are integrated into GardenPi, changes would have to be made before you can start the system, you would have to modify GardenPi to <em>not</em> grab information from those systems.
 
@@ -261,3 +252,8 @@ water_monitoring = True
 
 If you set them to False, then the interface will just show 0 for water utilization and solar utilization. Otherwise you could also modify the ```routes.py``` and associated template files to remove that code altogether.
 
+These entires are only good if you have a Rachio sprinkler system:
+```
+rachio_headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer xxxxxxxxxxxxxxxxxxxxxxxxx'}
+rachio_url = 'https://api.rach.io/1/public/device/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx/current_schedule'
+```
