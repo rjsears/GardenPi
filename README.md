@@ -323,6 +323,8 @@ The Halt and reboot functions should now work from the web interface. This assum
 Here are the system electrical schematics for GardenPi
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_schematics_page1.jpg" alt="GardenPi Schematics Page 1" height="600" width="1000"><br>
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_schematics_page2.jpg" alt="GardenPi Schematics Page 2" height="600" width="1000"><br>
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_schematics_page3.jpg" alt="GardenPi Schematics Page 3" height="600" width="1000"><br>
 
 
 #### In Conclusion
