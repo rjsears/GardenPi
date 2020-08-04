@@ -552,11 +552,14 @@ def calculate_job_water_usage(zone_name):
 def update_water_stats():
     """Updates the water stats on running zone."""
     log.debug('update_water_stats() called')
-    if any_zones_running('water'):
-        zone_name = what_zone_is_running_now('water')
-        current_fill_gallons = calculate_current_run_gallons(zone_name)
-        log.info(f'Total {zone_name} Gallons this run: {current_fill_gallons}')
-        log.debug(f'Total {zone_name} Gallons this run: {current_fill_gallons}')
+    if system_info.water_monitoring:
+        if any_zones_running('water'):
+            zone_name = what_zone_is_running_now('water')
+            current_fill_gallons = calculate_current_run_gallons(zone_name)
+            log.info(f'Total {zone_name} Gallons this run: {current_fill_gallons}')
+            log.debug(f'Total {zone_name} Gallons this run: {current_fill_gallons}')
+        else:
+            pass
     else:
         pass
 
