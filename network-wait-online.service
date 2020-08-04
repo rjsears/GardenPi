@@ -1,0 +1,18 @@
+#
+# Uses 'hostname --all-fqdns' to confirm that both: IP address[es] assigned, and DNS operational
+#
+
+[Unit]
+Description=Wait for Network to be Online
+Documentation=man:systemd.service(5) man:systemd.special(7)
+Conflicts=shutdown.target
+After=network.target
+Before=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c 'while [ -z $(hostname --all-fqdns) ]; do sleep 1; done'
+TimeoutStartSec=1min 30s
+
+[Install]
+WantedBy=network-online.target
