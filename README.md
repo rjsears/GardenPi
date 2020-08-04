@@ -290,8 +290,6 @@ Finally, since we use SQLAlchemy, you need to modify the following line to suit 
 # SQLAlchemy URI Info
 sqlalchemy_db_uri = 'mysql+mysqlconnector://neptune:your_secret_password@gardenpi/neptune'
 ```
-
-
 <hr>
 
 #### Kiosk Mode Setup
