@@ -252,7 +252,7 @@ rachio_url = 'https://api.rach.io/1/public/device/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxx
 Because these settings are integrated into GardenPi, changes would have to be made before you can start the system, you would have to modify GardenPi to <em>not</em> grab information from those systems.
 
 For example, on the main page we have solar and power monitoring showing up at the bottom of the page:<br>
-<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_main_screen.jpg" alt="GardenPi Control Panel" height="600" width="400">
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_main_screen.jpg" alt="GardenPi Control Panel" height="600" width="300">
 
 <br>
 
