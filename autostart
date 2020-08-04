@@ -1,0 +1,5 @@
+@sed -i 's/"exited_cleanly": false/"exited_cleanly": true/' ~/.config/chromium-browser Default/Preferences
+
+@chromium-browser --noerrdialogs --kiosk --enable-kiosk-mode --force-device-scale-factor=0.65 http://gardenpi --incognito --disable-translate --check-for-update-interval=1209600 --simulate-critical-update --disable-sync --disable-translate --disable-ipv6 --touch-events --touch-events-ui 
+
+@unclutter -idle 0
