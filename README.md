@@ -144,9 +144,11 @@ Please note on the ```dtoverlay=disable_wifi``` only set this if you are hardwir
 Reboot your Pi and make sure that everything such as your network, SSH, etc still all work as required.
 <hr>
 <br><br>
+
 ##### Installation Setup
 Please read over the software dependancies above and install and configure <b><em>at least</em></b> your web server (and uWSGI if using it) and database engines. Python3 should already be installed, but if not, go ahead and install that as well. Don't worry about the other Python requirements, we will get to that later in the install. You should be able to connect to your database from the command line and you should be able to get to your web server default webpage. If you cannot, please do not go any further until your resolve any issues you have with those installations.
 <br>
+
 ###### Directory Structure
 Here is the overall directory structure that I use with my installation:
 
@@ -214,10 +216,12 @@ MariaDB [neptune]> show tables;
 ```
 <hr>
 <br><br>
+
 ##### External Account Creation
 Now, let's create any external accounts that you may need to use for your notifications. If you plan on using email notifications, please remember that your Pi <em>must</em> be configured ahead of time to send emails. This setup will vary based on what MTA you are using. I utilize Postfix, but please read the documentation for your particular MTA and make sure you can send emails from the command line before turning on email notifications. Signup and set up Pushbullet (free) and/or Twilio ($) if you plan on using them for notifications. Make sure to note down your API credentials as we will need them later in the setup. 
 <hr>
 <br><br>
+
 ##### Cloning the Repo
 Next, grab the repo via git or download it above and place it in the ```/var/www/gardenpi_control``` directory. Once you have done that, we need to modify the system_info.py file. This is the file where all of our database information and API credentials for Email, Twilio, Pushbullet are stored. Make all necessary changes and save the file. 
 
