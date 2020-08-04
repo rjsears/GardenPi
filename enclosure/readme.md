@@ -315,7 +315,7 @@ Purchase Price: <b><em>$12.99</em></b>
 <br><hr>
 
 ### 240 Pieces M3 Male Female Hex Brass Spacer Standoff Screw Nut Threaded Pillar PCB Motherboard Assortment Kit x 2
-Used to mount all sensores, relays, terminal blocks, etc to the inside of the enclosure plates.
+Used to mount all sensors, relays, terminal blocks, etc to the inside of the enclosure plates.
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_standoff_kit.jpg" alt="GardenPi Countersunk Screws" height="150" width="300">
 Purchase Location: <a href="https://www.amazon.com/gp/product/B07PK23VC4/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1">Amazon.com</a><br>
