@@ -319,6 +319,11 @@ www-data ALL = NOPASSWD: /sbin/shutdown
 ```
 The Halt and reboot functions should now work from the web interface. This assumes that your web server runs as ```www-data```, if not, use the appropriate account here.
 
+#### <a name="schematics"></a>Electrical Schematics
+Here are the system electrical schematics for GardenPi
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_schematics_page1.jpg" alt="GardenPi Schematics Page 1" height="200" width="400"><br>
+
 
 #### In Conclusion
 I hope these instructions are enough to get you started on your project. As time permits I will be updating the code to make it mode modular at the system level, but until then, someone using this software will have to take the time to go through the code and modify it to meet their needs. I will do what I can to help, please just open an issue and I will do what I can to help out. Check back here often as I expand this readme and the install instruction as I make modifications to make things (installing and running) easier. 
