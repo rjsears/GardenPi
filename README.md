@@ -60,7 +60,7 @@ The gardening part would have been pretty easy, we could have used a simple irri
 
 As with any project, I wanted to look more long term. Our family sat down and talked about what we really wanted to do. One was to get into much larger fish tanks ~200-500 gallons), greatly expand our garden to provide more space for year-around growing (we live in Phoenix), start to dabble into full hydroponics and eventually move into full aquaponics and eliminate street water gardening altogether, relying 100% on old fishtank & aquaponic wastewater instead. Street water would be managed by a RODI system and fed into the fish and aquaponic tanks and all plant water would come from the fish. As you can imagine this would require quite a bit of management and thinking ahead and out-of-the-box.
 
-The system designed for <em>our<em> needs ended up with the following configuration:
+The system designed for <em>our</em> needs ended up with the following configuration:
 <ul>
   <li>27  x "Water" Zones (Expandable to 32 Zones total)</li>
   <li>8 x "Power" Zones</li>
@@ -74,7 +74,7 @@ The system designed for <em>our<em> needs ended up with the following configurat
   <li>7" Touchscreen for local control</li>
 </ul>
 
-In addition to these zones/sensors, the system would also interact directly with our already installed power and water monitoring systems. This system was build on EmonCMS which is part of the OpenEnergy Project. We use our EmonCMS data to gather water utilization information for GardenPi via smart water meters on our property and do the same for monitoring the AC circuit utilization for GardenPi. Other data such as outside temperature and humidity is likewise drawn from an outside source, namely a Davis Vantage PRO2 system we have installed on the property. This information is written directly to the ```neptune``` database automatically by outside scripts. If you do not use these readings you can set them to 0 in the database and that is all that will be displayed in the web interface.
+In addition to these zones/sensors, the system also interacts directly with our already installed power and water monitoring systems. This system was build on EmonCMS which is part of the OpenEnergy Project. We use our EmonCMS data to gather water utilization information for GardenPi via smart water meters on our property and do the same for monitoring the AC circuit utilization for GardenPi. Other data such as outside temperature and humidity are likewise drawn from an outside source, namely a Davis Vantage PRO2 system we have installed on the property. A script grabs all of this data and writes it to a MySQL database and sends the necessary information over to GardenPi. This information is written directly to the ```neptune``` database automatically by outside scripts. If you do not use these readings you can set them to 0 in the database and that is all that will be displayed in the web interface.
 
 This is the broad overview of how the system is designed:<br><br>
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_physical_20200803.jpg" alt="GardenPi Physical Layout" height="600" width="800"></a>
