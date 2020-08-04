@@ -290,3 +290,10 @@ Purchase Location: <a href="https://www.homedepot.com/p/Gardner-Bender-3-in-Leng
 Purchase Price: <b><em>$15.44/each</em></b>
 <br><hr>
 
+### 1/4 in. Fully Insulated Wire Disconnects in Blue (15-Pack) x 2
+Used for AC power connection to internal enclosure 120V power outlets.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_wire_disconnects.jpg" alt="GardenPi Wie Disconnects" height="275" width="175">
+Purchase Location: <a href="https://www.homedepot.com/p/Gardner-Bender-1-4-in-Fully-Insulated-Wire-Disconnects-in-Blue-15-Pack-15-153F/202521914">Home Depot.com</a><br>
+Purchase Price: <b><em>$3.23/box</em></b>
+<br><hr>
