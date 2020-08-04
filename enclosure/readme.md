@@ -297,3 +297,13 @@ Used for AC power connection to internal enclosure 120V power outlets.
 Purchase Location: <a href="https://www.homedepot.com/p/Gardner-Bender-1-4-in-Fully-Insulated-Wire-Disconnects-in-Blue-15-Pack-15-153F/202521914">Home Depot.com</a><br>
 Purchase Price: <b><em>$3.23/box</em></b>
 <br><hr>
+
+### 32 Red In-Sure 2-Port Connectors (100-Pack)
+I use this type of wire connectors in my external zone/sensor extension boxes to connect the internal wiring. I prefer these to wire nuts. 
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_wire_connectors.jpg" alt="GardenPi Wie Connectors" height="125" width="175">
+Purchase Location: <a href="https://www.homedepot.com/p/Ideal-32-Red-In-Sure-2-Port-Connectors-100-Pack-30-1032P/202894308">Home Depot.com</a><br>
+Purchase Price: <b><em>$7.32/package</em></b>
+<br><hr>
+
+
