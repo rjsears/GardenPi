@@ -117,7 +117,6 @@ There are a lot of moving parts to any particular project. I will try and list a
  </ul>
  <hr>
 
-
 #### <a name="install"></a>Installation & Configuration
 There are a <b><em>LOT</em></b> of different sites that will explain how to install and configure Nginx/Apache, MySQL, InfluxDB, Grafana, PHP, etc so I will not waste space here duplicating those instructions. 
 <hr>
