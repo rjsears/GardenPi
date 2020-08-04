@@ -376,7 +376,9 @@ current_gpm = neptune.get_current_gpm()
 current_water_source = (neptune.get_water_source()['source_to_use'])
 ```    
 <br>
+
 And then remove their reference within ```zone.html```, removing this entire section:
+
 ```
 <table>
               <tr>{% if is_zone_running %}
@@ -477,6 +479,7 @@ And then remove their reference within ```zone.html```, removing this entire sec
 </script>
 {% endif %}
 ```
+
 <br>
 Hopefully, you get the idea of what types of things you need to look for and modify in order to make GardenPi <b><em>Your Own!</em></b>! 
 
