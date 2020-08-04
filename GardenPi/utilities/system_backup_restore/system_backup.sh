@@ -8,7 +8,7 @@
 ##
 ## system_backup.sh
 ##
-## V1.00
+## V1.0.0
 ## July 31th, 2020
 ##
 ##
@@ -145,7 +145,7 @@ check_dialog(){
 
 # change zzenity to zenity below to use zenity if installed
 determine_display() {
-    if [[ -x "$(command -v zzenity)" ]] && [[ $DISPLAY ]]; then
+    if [[ -x "$(command -v zenity)" ]] && [[ $DISPLAY ]]; then
         display="zenity"
     elif [[ -x "$(command -v dialog)" ]]; then
         display="dialog"
