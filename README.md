@@ -84,17 +84,33 @@ GardenPi is very flexable in regards to what you use, how many zones you want, i
 
 
 #### <a name="dependencies"></a>Software Dependencies
-GardenPi runs on the Raspberry Pi4. The following software is what I am using and to the extent you can replace the functionality with something else (apache vs nginx, for example) it should work fine. This is just what I chose to use. This is the base software, please see <a href="https://github.com/rjsears/GardenPi/blob/master/GardenPi/requirements.txt">requirements.txt</a> for a list of necessary python libraries needed to run GardenPi. If you are going to run GardenPi and the system backup and restore utility for GardenPi, you will need all of these programs:
-
-
+There are a lot of moving parts to any particular project. I will try and list all of the dependencies that you will need to use this repo. It is outside the scope of this documentation to cover the installation and configuration of some of these items. Also, some of these are optional (like Influx/Grafana) depending on how much you want to impliment. Also, I don't plan on listing the more common libraries (like datetime) that come prepackaged with Python. If I had to add them (pip3 install xxx), I will try to list them here. I have included a <a href="https://github.com/rjsears/GardenPi/blob/master/GardenPi/requirements.txt">"requirements.txt"</a> file for use with pip3 for the items not listed here. Versions were as of this writing.
 <ul>
-  <li>Lastest Version of the Raspberry Pi OS - Full version with Desktop</li>
-  <li>Python3</li>
-  <li>Nginx</li>
-  <li>MarinaDB</li>
-  <li>uWsgi & uWsgi Emperor</li>
-  <li>Locate</li>
-  <li>Unclutter - Used to hide mouse in Kiosk mode</li>
-  <li>Postfix (or other MAT) - Used for sending email notifications</li>
-  <li>Dialog - Default interface for our system backup and restore script</li>
-</ul>
+  <li><a href="https://httpd.apache.org/">Apache2</a> or <a href="https://www.nginx.com/">Nginx</a> Web Server</li>
+  <li><a href="https://www.mysql.com/">MySQL</a> or other SQL server</li>
+  <li><a href="https://uwsgi-docs.readthedocs.io/en/latest/">Web Server Gateway Interface</a> (uWSGI) (for Flask)</li>
+  <li><a href="https://www.influxdata.com/">InfluxDB</a></li>
+  <li><a href="https://grafana.com/">Grafana</a></li>
+  <li><a href="https://flask.palletsprojects.com/en/1.1.x/">Flask (1.1.2)</a></li>
+  <li><a href="https://pypi.org/project/Flask-WTF/">Flask WTF (0.14.3)</a></li>
+  <li><a href="https://requests.readthedocs.io/en/master/">Requests</a></li>
+  <li><a href="https://pyyaml.org/wiki/PyYAMLDocumentation">PyYaml</a></li>
+  <li><a href="https://dev.mysql.com/doc/connector-python/en/">MySQL Connector</a></li>
+  <li><a href="https://github.com/influxdata/influxdb-python">InfluxDBClient</a></li>
+  <li><a href="https://www.sqlalchemy.org/">SQLAlchemy (1.3.18)</a></li>
+  <li><a href="https://docs.sentry.io/platforms/python/">Sentry-SDK (Optional, I use it for error tracking)</a></li>
+  <li><a href="https://pypi.org/project/pyserial/">PySerial (3.4)</a></li>
+  <li><a href="https://pypi.org/project/PyYAML/">PyYaml (5.3.1)</a></li>
+  <li><a href="https://wtforms.readthedocs.io/en/2.3.x/">WTForms (2.3.3)</a></li>
+  <li><a href="https://pypi.org/project/adafruit-circuitpython-bme280/">Adafruit BME280 Libraries (2.4.3)</a></li>
+  <li><a href="https://pypi.org/project/pi-ina219/">Pi INA219 Libraries (1.3.0)</a></li>
+  <li><a href="https://pypi.org/project/pushbullet.py/0.11.0/">Pushbullet (0.11.0) - (Optional, used for notifications)</a></li>
+  <li><a href="https://pypi.org/project/twilio/">Twilio (6.44.1) - (Optional, used for notifications)</a></li>
+  <li><a href="https://pypi.org/project/wiringpi/">WiringPi (2.6.0)</a></li>
+  <li><a href="https://pypi.org/project/PyYAML/">PyYaml (5.3.1)</a></li>
+ </ul>
+ <hr>
+
+
+#### <a name="install"></a>Installation & Configuration
+
