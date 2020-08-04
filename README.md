@@ -115,7 +115,7 @@ There are a lot of moving parts to any particular project. I will try and list a
 #### <a name="install"></a>Installation & Configuration
 There are a <b><em>LOT</em></b> of different sites that will explain how to install and configure Nginx/Apache, MySQL, InfluxDB, Grafana, PHP, etc so I will not waste space here duplicating those instructions. 
 
-## Raspian Image
+# Raspian Image
 I would highly recommend starting with a brand new Raspian image. Once you have installed your new image, login and update it:
 ```
 sudo apt update && apt upgrade -y
