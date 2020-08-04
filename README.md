@@ -26,7 +26,7 @@ Hopefully, this might provide some inspiration for others in regard to their aut
     </a>
     <span> | </span>
     <a href="https://github.com/rjsears/GardenPi/blob/master/enclosure/readme.md">
-      Pieces & Parts
+      Parts List
     </a>
     <span> | </span>
     <a href="https://github.com/rjsears/GardenPi#dependencies">
