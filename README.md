@@ -71,11 +71,12 @@ The system designed for <em>our<em> needs ended up with the following configurat
   <li>AC Current and Voltage Sensors</li>
   <li>4 x Ultrasonic Water Level Detectors</li>
   <li>4 x Non-Contact Liquid Level Sensors</li>
+  <li>7" Touchscreen for local control</li>
 </ul>
 
-In additional to these zones/sensors, the system would also interact directly with our already installed power and water monitoring systems. This system were build on EmonCMS which is part of the OpenEnergy Project. We use our EmonCMS data to gather water utilization information for GardenPi via smart water meters on our property and do the same for monitoring the AC circuit utilization for GardenPi. Other data such as outside temperature and humidity is likewise drawn from an outside source, namely a David Vantage PRO2 system we have installed on the property.
+In additional to these zones/sensors, the system would also interact directly with our already installed power and water monitoring systems. This system were build on EmonCMS which is part of the OpenEnergy Project. We use our EmonCMS data to gather water utilization information for GardenPi via smart water meters on our property and do the same for monitoring the AC circuit utilization for GardenPi. Other data such as outside temperature and humidity is likewise drawn from an outside source, namely a Davis Vantage PRO2 system we have installed on the property. This information is written directly to the ```neptune``` database automatically by outside scripts. If you do not use these readings you can set them to 0 in the database and that is all that will be displayed in the web interface.
 
-This is the overview of how the system will be put together:<br><br>
+This is the broad overview of how the system will be put together:<br><br>
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_physical_20200803.jpg" alt="GardenPi Physical Layout" height="600" width="800"></a>
 <br><br>
 The goal of version 1.0.0 of GardenPi was to build and test the hardware and get the garden irrigation, sensor readings, and automatic water switching installed and working. As I progress with other versions I will continue to build out all other functionality as we continue to build out our gardens, hydroponics and aquaponics. 
@@ -176,7 +177,7 @@ All directories should be owned by your web server user, in my case this is ```w
 <hr>
 
 ##### Database Configuration for GardenPi
-Next you will need to setup your MySQL/OtherSQL database. Add the necessary user (we use a database name of ```neptune``` and a user of ```neptune``` but these can be anything you like. Use the <a href="https://github.com/rjsears/GardenPi/blob/master/neptune.sql">neptune.sql</a> file to get your structure and initial data setup. 
+Next you will need to setup your MySQL/OtherSQL database. Once you have installed and secured your SQL installation, add the necessary user (we use a database name of ```neptune``` and a user of ```neptune``` but these can be anything you like. Use the <a href="https://github.com/rjsears/GardenPi/blob/master/neptune.sql">neptune.sql</a> file to get your structure and initial data setup. 
 
 Once you are done with setting up and securing your database engine, then you can grab the neptune.sql file and run the following command:
 ```
@@ -283,6 +284,13 @@ Otherwsie make sure to update these variables:
 sprinklerstart = '04:00:00'
 sprinklerstop = '06:00:00'
 ```
+
+Finally, since we use SQLAlchemy, you need to modify the following line to suit your setup:
+```
+# SQLAlchemy URI Info
+sqlalchemy_db_uri = 'mysql+mysqlconnector://neptune:your_secret_password@gardenpi/neptune'
+```
+
 
 <hr>
 
