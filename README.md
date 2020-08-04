@@ -1,7 +1,7 @@
 <h2 align="center">
   <a name="gardenpi_logo" href="https://github.com/rjsears/GardenPi"><img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_cover.jpg" alt="GardenPi" height="700" width="550"></a>
   <br>
-  GardenPi (V1.0.0 - August 3rd, 2020)
+  GardenPi (V1.0.0 - August 4th, 2020)
   </h2>
   <p align="center">
   Multizone Hydroponic / Aquaponic / Irrigation &amp; Fish Tank Water management and monitoring platform
@@ -76,7 +76,7 @@ The system designed for <em>our<em> needs ended up with the following configurat
 
 In additional to these zones/sensors, the system would also interact directly with our already installed power and water monitoring systems. This system were build on EmonCMS which is part of the OpenEnergy Project. We use our EmonCMS data to gather water utilization information for GardenPi via smart water meters on our property and do the same for monitoring the AC circuit utilization for GardenPi. Other data such as outside temperature and humidity is likewise drawn from an outside source, namely a Davis Vantage PRO2 system we have installed on the property. This information is written directly to the ```neptune``` database automatically by outside scripts. If you do not use these readings you can set them to 0 in the database and that is all that will be displayed in the web interface.
 
-This is the broad overview of how the system will be put together:<br><br>
+This is the broad overview of how the system is designed:<br><br>
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_physical_20200803.jpg" alt="GardenPi Physical Layout" height="600" width="800"></a>
 <br><br>
 The goal of version 1.0.0 of GardenPi was to build and test the hardware and get the garden irrigation, sensor readings, and automatic water switching installed and working. As I progress with other versions I will continue to build out all other functionality as we continue to build out our gardens, hydroponics and aquaponics. 
