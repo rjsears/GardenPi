@@ -7,7 +7,7 @@ Holds some basic system information and configuration.
 Will slowly move most of this to MySQL.
 """
 
-VERSION = "V1.0.0 (2020-07-31)"
+VERSION = "V1.0.0 (2020-08-04)"
 
 
 # URL that we use to check and see if we have internet connectivity.
@@ -16,6 +16,10 @@ check_url = 'www.google.com'
 # See neptune.py/run_job()
 check_gpm = 1
 
+# What systems are we using
+# Set these to False if you are not using EmonCMS style power and water monitoring
+power_monitoring = True
+water_monitoring = True
 
 # Here is all of our MySQL Connection information
 mysql_servername = "gardenpi"
