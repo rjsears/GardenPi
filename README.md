@@ -82,6 +82,7 @@ The goal of version 1.0.0 of GardenPi was to build and test the hardware and get
 
 GardenPi is very flexable in regards to what you use, how many zones you want, if you want power zones, etc. If you have specific questions about the code or how things are put together, fell free to open an issue and I will do my best to help.
 
+<hr>
 <em>PLEASE NOTE: This project <b>IS NOT</b> intended to be a "plug-and-play" installation. There will be significant modifications required by the user even if they are using a clearn Pi install. Things in the code such as smart water monitoring and electrical monitoring are integrated with other sensors and automation platforms that I am currently using. I will try my best to point these areas out, but if you do not use those things, major code changes will have to be made to make GardenPi work for you. If you are not comfortable using Python and making these types of changes, this project might not be for you.</em>
 
 <hr>
@@ -210,6 +211,7 @@ MariaDB [neptune]> show tables;
 17 rows in set (0.001 sec)
 ```
 <hr>
+
 ##### External Account Creation
 Now, let's create any external accounts that you may need to use for your notifications. If you plan on using email notifications, please remember that your Pi <em>must</em> be configured ahead of time to send emails. This setup will vary based on what MTA you are using. I utilize Postfix, but please read the documentation for your particular MTA and make sure you can send emails from the command line before turning on email notifications. Signup and set up Pushbullet (free) and/or Twilio ($) if you plan on using them for notifications. Make sure to note down your API credentials as we will need them later in the setup. 
 <hr>
