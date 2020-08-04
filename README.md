@@ -116,13 +116,31 @@ There are a lot of moving parts to any particular project. I will try and list a
 There are a <b><em>LOT</em></b> of different sites that will explain how to install and configure Nginx/Apache, MySQL, InfluxDB, Grafana, PHP, etc so I will not waste space here duplicating those instructions. 
 <hr>
 
-##### Raspian Image
+##### Raspian Image & Pi Basic Setup
 I would highly recommend starting with a brand new Raspian image. Once you have installed your new image, login and update it:
 ```
 sudo apt update && apt upgrade -y
 ```
 
-Please read over the software dependancies above and install <em>at least</em> your web server and database engines. Python3 should already be installed, but if not, go ahead and install that as well. Don't worry about the other Python requirements, we will get to that later in the install.
+I have included a <b>Pi4</b> compatible <a href="https://github.com/rjsears/GardenPi/blob/master/confix.txt">config.txt</a> file that you can place in your ```/boot``` directory, but ONLY if you used a brand new image for this project and are using a Pi4. Otherwise you should look at the entries and determine what you need based on how you currently have your Pi configured. Again, I would highly recommand starting with a fresh image. If you are reusing your Pi, pay close attention to these entries in ```/boot/config.txt```. If you need to change them from the defaults, you will need to also alter code within the project:
+```
+dtparam=i2c_arm=on
+dtoverlay=disable_wifi
+dtoverlay=disable-bt
+enable_uart=1
+dtoverlay=w1-gpio
+dtoverlay=sc16is752-i2c,int_pin=24,addr=0x48
+dtoverlay=sc16is752-i2c,int_pin=26,addr=0x4d
+```
+
+Please note on the ```dtoverlay=disable_wifi``` only set this if you are hardwiring your Pi, otherwise you will not have any wifi capabilities.
+
+Reboot your Pi and make sure that everything such as your network, SSH, etc still all work as required.
+<hr>
+
+##### Installation Setup
+
+Please read over the software dependancies above and install and configure <em>at least</em> your web server and database engines. Python3 should already be installed, but if not, go ahead and install that as well. Don't worry about the other Python requirements, we will get to that later in the install.
 
 Next, create any external accounts that you may need to use for your notifications. If you plan on using email notifications, please remember that your Pi <em>must</em> be configured ahead of time to send emails. This setup will vary based on what MTA you are using. I utilize Postfix, but please read the documentation for your particular MTA and make sure you can send emails from the command line before turning on email notifications. Signup and set up Pushbullet (free) and/or Twilio ($) if you plan on using them for notifications. Make sure to note down your API credentials as we will need them later in the setup. 
 
