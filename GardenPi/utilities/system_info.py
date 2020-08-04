@@ -14,12 +14,12 @@ VERSION = "V1.0.0 (2020-08-04)"
 check_url = 'www.google.com'
 
 # See neptune.py/run_job()
-check_gpm = 1
+check_gpm = 0
 
 # What systems are we using
 # Set these to False if you are not using EmonCMS style power and water monitoring
-power_monitoring = True
-water_monitoring = True
+power_monitoring = False
+water_monitoring = False
 
 # Here is all of our MySQL Connection information
 mysql_servername = "gardenpi"
