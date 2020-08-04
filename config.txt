@@ -62,9 +62,6 @@ dtparam=audio=on
 # Set GPIOs for our project
 #gpio=5-6,9-13,16-24=op,dl
 
-# For tank level sensor
-#gpio=24=ip,pd
-
 [pi4]
 # Enable DRM VC4 V3D driver on top of the dispmanx display stack
 dtoverlay=vc4-fkms-v3d
@@ -78,7 +75,3 @@ enable_uart=1
 dtoverlay=w1-gpio
 dtoverlay=sc16is752-i2c,int_pin=24,addr=0x48
 dtoverlay=sc16is752-i2c,int_pin=26,addr=0x4d
-#dtoverlay=mcp23017,addr=0x24
-#dtoverlay=mcp23017,addr=0x25
-#dtoverlay=mcp23017,addr=0x26
-#dtoverlay=mcp23017,addr=0x27
