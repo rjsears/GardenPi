@@ -273,3 +273,20 @@ Purchase Location: <a href="https://www.homedepot.com/p/Carlon-4-in-x-4-in-x-2-i
 Purchase Price: <b><em>$8.76/each</em></b>
 <br><hr>
 
+### Cable Glands - Various Sizes
+If you are running your zone and sensor wiring to extension boxes like I am doing, then these cable glands are for your sensor/zone wiring to your extension boxes. Make sure you get the right sizes!
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_cable_glands.jpg" alt="GardenPi Cable Glands" height="170" width="200">
+Purchase Location: <a href="https://www.adafruit.com/product/762">Adafruit.com</a><br>
+Purchase Price: <b><em>$1.95/each</em></b>
+<br><hr>
+
+
+### Assorted heat shrink tubing
+Used to protect solder joints.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_heat_shrink.jpg" alt="GardenPi Heat Shrink" height="275" width="175">
+Purchase Location: <a href="https://www.homedepot.com/p/Gardner-Bender-3-in-Length-Assorted-Heat-Shrink-Black-Tubing-160-Kit-HST-ASTB/202797328">Home Depot.com</a><br>
+Purchase Price: <b><em>$15.44/each</em></b>
+<br><hr>
+
