@@ -219,6 +219,9 @@ Now, let's create any external accounts that you may need to use for your notifi
 ##### Cloning the Repo
 Next, grab the repo via git or download it and place it in the ```/var/www/gardenpi_control``` directory. Once you have done that, we need to modify the system_info.py file. This is the file where all of our database information and API credentials for Email, Twilio, Pushbullet are stored. Make all necessary changes and save the file. 
 
+Once you have done this, the first thing you need to do is switch into the directory where you have placed the repo and run pip3 against the requirements.txt file:
+```pip3 install -r requirements.txt```
+This will install all of the current python requirements needed for GardenPi to run.
 
 #### Initial changes to make before starting
 These setup instructions assume that you have built your GardenPi system exactly as I have built mine, including that all of your sensors and GPIO expanders are using the same I2C addresses that I am using in my setup. You can change these settings in the various function files as necessary to meet your needs. Take a look in ```zone_controller.py``` for the settings for GPIOs 64 - 95 and in ```power_controller.py``` for GPIOs 96 - 111. 
@@ -278,4 +281,16 @@ Otherwsie make sure to update these variables:
 sprinklerstart = '04:00:00'
 sprinklerstop = '06:00:00'
 ```
+<br>
 <hr>
+<br>
+
+#### In Conclusion
+I hope these instructions are enough to get you started on your project. As time permits I will be updating the code to make it mode modular at the system level, but until then, someone using this software will have to take the time to go through the code and modify it to meet their needs. I will do what I can to help, please just open an issue and I will do what I can to help out. Check back here often as I expand this readme and the install instruction as I make modifications to make things (installing and running) easier. 
+
+Also, take a minute to check out the <a href="https://github.com/rjsears/GardenPi/blob/master/GardenPi/utilities/system_backup_restore/system_backup.sh">"system backup and restore script"</a>. This is the utility that I wrote to backup a fully operational GardenPi instance including every configuration file needed to make gardenPi run and to restore it to a new Pi OS image automatically. I will be writing the basic readme soon with full instruction to follow. If you look at the code carefully, in the restore functionality you will find absolutely everything that I do to restore the image, what software is installed,   
+
+
+
+
+
