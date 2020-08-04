@@ -253,11 +253,112 @@ Because these settings are integrated into GardenPi, changes would have to be ma
 
 For example, on the main page we have solar and power monitoring showing up at the bottom of the page:<br>
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_main_screen.jpg" alt="GardenPi Control Panel" height="600" width="300">
-
 <br>
+<br>
+In order to remove that (since we do not have the data) we would need to modify both the routes.py file and the agrdenpi_index.html files as follows:
+
+#### routes.py
+Here is the code before modification:
+```
+@app.route('/')
+def gardenpi():
+    # Get Power Readings
+    log.debug('gardenpi() called')
+    current_power_keys = ['total_current_power_utilization', 'total_current_power_import',
+                          'total_current_solar_production']
+    power_data = {}
+    for key in current_power_keys:
+        power_data[key] = read_mysql_database("power_solar", key)
+    any_zones_running = neptune.any_zones_running('water')
+    any_power_zones_running = neptune.any_zones_running('power')
+    current_water_source = (neptune.get_water_source()['source_to_use'])
+    return render_template('gardenpi_index.html',
+                           any_zones_running = any_zones_running,current_water_source = current_water_source,
+                           any_power_zones_running = any_power_zones_running,
+                           **power_data)
+```
+Here we can see that we are reading data for ```total_current_power_utilization```, ```total_current_power_import``` and ```total_current_power_import``` from our MySQL database and then rendering that ```**power_data``` to our template ```gardenpi_index.html```. If we attempt to run this before changing it, you will get an error and it will not start. So we need to modify it as follows:
+```
+@app.route('/')
+def gardenpi():
+    # Get Power Readings
+    log.debug('gardenpi() called')
+    any_zones_running = neptune.any_zones_running('water')
+    any_power_zones_running = neptune.any_zones_running('power')
+    current_water_source = (neptune.get_water_source()['source_to_use'])
+    return render_template('gardenpi_index.html',
+                           any_zones_running = any_zones_running,current_water_source = current_water_source,
+                           any_power_zones_running = any_power_zones_running)
+```
+
+#### gardenpi_index.html
+Next we would have to modify our template to remove that bottom banner with the power information:
+
+Here is the what we would need to remove:
+```
+<table>
+              <tr>
+        <td>
+            <canvas id=TotalPowerUse></canvas>
+        </td>
+        <td>
+            <canvas id=TotalSolar></canvas>
+        </td>
+        <td>
+            <canvas id=TotalPowerImporting></canvas>
+
+        </td>
+    </tr>
+          </table>
+
+    <script>
+          function init()
+          {
+
+                  watts_in_use = new steelseries.DisplaySingle('TotalPowerUse', {
+                                    width: 120,
+                                    height: 40,
+                                    lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Total Watts in Use",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                  watts_importing = new steelseries.DisplaySingle('TotalPowerImporting', {
+                                    width: 120,
+                                    height: 40,
+    		    	                lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Watts from APS",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.RED,
+                                    });
+
+                  watts_solar = new steelseries.DisplaySingle('TotalSolar', {
+                                    width: 120,
+                                    height: 40,
+    		    	                lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Solar Generation Watts",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+        watts_in_use.setValue({{total_current_power_utilization}});
+	      watts_importing.setValue({{total_current_power_import}});
+	      watts_solar.setValue({{total_current_solar_production}});
+
+
+             }
+   </script>
+```
 
 
 
-Once you have completed all of these steps, you can change into your base directory and run the test flask file:
+Once you have completed all of these steps, the front page should load without any issues.
 
 
