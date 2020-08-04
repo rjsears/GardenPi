@@ -113,11 +113,19 @@ There are a lot of moving parts to any particular project. I will try and list a
 
 
 #### <a name="install"></a>Installation & Configuration
-There are a <b><em>LOT</em></b> of different sites that will explain how to install and configure Nginx/Apache, MySQL, InfluxDB, Grafana, PHP, etc so I will not waste space here duplicating those instructions.
+There are a <b><em>LOT</em></b> of different sites that will explain how to install and configure Nginx/Apache, MySQL, InfluxDB, Grafana, PHP, etc so I will not waste space here duplicating those instructions. 
 
-First, create any other accounts that you may need to use for your notifications. If you plan on using email notifications, please remember that your server must be configured ahead of time to send emails. This will vary based on what MTA you are using. I utilize Postfix, but please read the documentation for your particular MTA and make sure you can send emails from the command line before turning on email notifications. Signup and set up Pushbullet (free) and/or Twilio ($) if you plan on using them for notifications. Make sure to note down your API credentials as we will need them later in the setup. 
+## Raspian Image
+I would highly recommend starting with a brand new Raspian image. Once you have installed your new image, login and update it:
+```
+sudo apt update && apt upgrade -y
+```
 
-Here is the directory structure that I use with my installation:
+Please read over the software dependancies above and install <em>at least</em> your web server and database engines. Python3 should already be installed, but if not, go ahead and install that as well. Don't worry about the other Python requirements, we will get to that later in the install.
+
+Next, create any external accounts that you may need to use for your notifications. If you plan on using email notifications, please remember that your Pi <em>must</em> be configured ahead of time to send emails. This setup will vary based on what MTA you are using. I utilize Postfix, but please read the documentation for your particular MTA and make sure you can send emails from the command line before turning on email notifications. Signup and set up Pushbullet (free) and/or Twilio ($) if you plan on using them for notifications. Make sure to note down your API credentials as we will need them later in the setup. 
+
+Here is the overall directory structure that I use with my installation:
 
 ```
 root@scripts:/var/www/#
@@ -132,7 +140,8 @@ In the gardenpi_control directory is where ```run.py``` and my ```system_backup.
 
 Logs are stored in ```/var/log/gardenpi```
 
-Create the necessary directories and change ownership:
+
+Moving on, let's start by creating the necessary directories and change ownership:
 ```
 mkdir -p /var/www/gardenpi_control/
 chown www-data:www-data /var/www/gardenpi_control
@@ -140,7 +149,7 @@ mkdir /var/log/gardenpi
 chown www-data:www-data /var/log/gardenpi
 ```
 
-All directories should be owned by your web server user, in my case that is ```www-data```.
+All directories should be owned by your web server user, in my case this is ```www-data```.
 
 Once that is done and before we get started with the repo itself, we need to make sure all of our basic software has been installed. Before going any further, please install and <em>test/<em> the following packages:
 <ul>
@@ -152,42 +161,14 @@ Once that is done and before we get started with the repo itself, we need to mak
 </ul>
 
 Next you will need to setup your MySQL/OtherSQL database. Add the necessary user (we use a database name of ```neptune``` and a user of ```neptune``` but these can be anything you like. Use the <a href="https://github.com/rjsears/GardenPi/blob/master/neptune.sql">neptune.sql</a> file to get your structure and initial data setup. 
-Here is the basic setup of MySQ. First login to MySQL:
-```
-root gardenpi: ~ #  mysql -u root -p
-Enter password: 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 196236
-Server version: 10.3.22-MariaDB-0+deb10u1 Raspbian 10
 
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-MariaDB [(none)]>
-```
-From there, you can run the following commands to create teh neptune database. Don't forget to replace the 'PASS" fields with a password of your choice:
-```
-UPDATE mysql.user SET Password=PASSWORD('$DATABASE_PASS') WHERE User='root';
-DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
-DELETE FROM mysql.user WHERE User='';
-DELETE FROM mysql.db WHERE Db='test' OR Db='test\_%';
-FLUSH PRIVILEGES;
-CREATE DATABASE neptune /*\!40100 DEFAULT CHARACTER SET utf8 */;
-CREATE USER neptune@localhost IDENTIFIED BY '$NEPTUNE_DB_PASS';
-GRANT ALL PRIVILEGES ON neptune.* TO 'neptune'@'localhost';
-FLUSH PRIVILEGES;
-```
-Once you are done with that, then you can grab the neptune.sql file and run the following command:
+Once you are done with setting up and securing your database engine, then you can grab the neptune.sql file and run the following command:
 ```
 mysql -u root -p"$DATABASE_PASS" neptune < neptune.sql
 ```
-Check yur MySQL/OtherSQL setting to make sure that they work for you and the SQL portion setup should be complete.
+Check your MySQL/OtherSQL settings to make sure that they work for you and the SQL portion setup should be complete.
 
 
-
-
-My goal is to have multiple tanks being monitored so you may end up wanting to change the name, etc. If you do, please make sure you modify all the database calls to point to the correct database. This is setup in the <a href="https://github.com/rjsears/GardenPi/blob/master/GardenPi/utilities/system_info.py">system_info.py</a> file and we will modify that once we get the repo.
 
 Next, grab the repo via git or download it above and place it in the ```/var/www/gardenpi_control``` directory. Once you have done that, we need to modify the system_info.py file. This is the file where all of our database information and API credentials for Email, Twilio, Pushbullet are stored. Make all necessary changes and save the file. 
 
