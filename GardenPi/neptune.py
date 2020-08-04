@@ -1197,7 +1197,6 @@ def send_system_notifications():
 
                      
 def main():
-
     log.debug('neptune.py main() Started.')
     run_zone_scheduled_jobs()
     run_power_scheduled_jobs()
