@@ -9,7 +9,7 @@ garden, hydroponics and aquarium.
 """
 
 __author__ = 'Richard J. Sears'
-VERSION = "V1.0.0 (2020-07-31)"
+VERSION = "V1.0.0 (2020-08-04)"
 # richardjsears@gmail.com
 
 import sys
@@ -568,7 +568,10 @@ def get_allzone_water_stats():
     for zone in zone_data:
         zone_name = zone[0]
         zone_total_gallons = zone[11]
-        zone_water_info.update({zone_name : zone_total_gallons})
+        if system_info.water_monitoring:
+            zone_water_info.update({zone_name : zone_total_gallons})
+        else:
+            zone_water_info.update({zone_name: 0})
     return zone_water_info
 
 
