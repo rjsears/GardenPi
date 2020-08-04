@@ -44,7 +44,7 @@ i2c = busio.I2C(board.SCL, board.SDA)
 
 
 # Error reporting to Sentry.IO
-sentry_sdk.init("https://bdfdfdfsfasfasdfsdafsdfsadfdsa5@sentry.io/5189894",
+sentry_sdk.init("https://b7fa494cd9484fee8336e03f5b36d3a5@sentry.io/5189894",
                 integrations=[SqlalchemyIntegration()])
 from sentry_sdk import capture_exception
 
@@ -493,8 +493,11 @@ def get_gallons_total():
     smart water meters that I have installed on my home. If you do not have any smart
     water meters this function will not be usable.
     """
-    get_gallons_total = use_database.read_emoncms_database("data", system_info.irrigation_gallons_total)
-    return int("%1.0f" % get_gallons_total)
+    if system_info.water_monitoring:
+        get_gallons_total = use_database.read_emoncms_database("data", system_info.irrigation_gallons_total)
+        return int("%1.0f" % get_gallons_total)
+    else:
+        return 0
 
 
 def get_current_gpm():
@@ -502,7 +505,10 @@ def get_current_gpm():
     Utilizes an Emoncms system that I have in place that reads smart water meters that
     I have installed on my home and returns current Gallons Per Minute of water utilization.
     """
-    return (use_database.read_emoncms_database("data", system_info.current_gpm))
+    if system_info.water_monitoring:
+        return (use_database.read_emoncms_database("data", system_info.current_gpm))
+    else:
+        return 0
 
 
 def calculate_current_run_gallons(zone_name):
@@ -510,11 +516,14 @@ def calculate_current_run_gallons(zone_name):
     Utilizing smart water meters installed on my house calculates how many gallons have
     been used by a zone at this moment in time.
     """
-    run_gallons_start = get_gallons_total()
-    run_gallons_stop = use_database.water_usage(zone_name, 'read_gallons_stop', 0)
-    gallons_current_run = int(run_gallons_start) - int(run_gallons_stop)
-    use_database.water_usage(zone_name, 'update_gallons_current_run', gallons_current_run)
-    return gallons_current_run
+    if system_info.water_monitoring:
+        run_gallons_start = get_gallons_total()
+        run_gallons_stop = use_database.water_usage(zone_name, 'read_gallons_stop', 0)
+        gallons_current_run = int(run_gallons_start) - int(run_gallons_stop)
+        use_database.water_usage(zone_name, 'update_gallons_current_run', gallons_current_run)
+        return gallons_current_run
+    else:
+        return 0
 
 
 def calculate_gallons_used(zone_name):
@@ -522,16 +531,22 @@ def calculate_gallons_used(zone_name):
     Utilizing smart water meters I have installed on my house, calculates total gallons
     of water used each time it is called.
     """
-    gallons_start = use_database.water_usage(zone_name, 'read_gallons_start', 0)
-    gallons_stop = use_database.water_usage(zone_name, 'read_gallons_stop', 0)
-    gallons_used = int(gallons_stop) - int(gallons_start)
-    use_database.water_usage(zone_name, 'update_gallons_last_run', gallons_used)
+    if system_info.water_monitoring:
+        gallons_start = use_database.water_usage(zone_name, 'read_gallons_start', 0)
+        gallons_stop = use_database.water_usage(zone_name, 'read_gallons_stop', 0)
+        gallons_used = int(gallons_stop) - int(gallons_start)
+        use_database.water_usage(zone_name, 'update_gallons_last_run', gallons_used)
+    else:
+        pass
 
 
 def start_job_water_usage(zone_name):
     """ Make *sure* we start with zero gallons used. Only used once when we start a zone."""
-    use_database.water_usage(zone_name, 'update_gallons_stop', get_gallons_total())
-    use_database.water_usage(zone_name, 'update_gallons_start', get_gallons_total())
+    if system_info.water_monitoring:
+        use_database.water_usage(zone_name, 'update_gallons_stop', get_gallons_total())
+        use_database.water_usage(zone_name, 'update_gallons_start', get_gallons_total())
+    else:
+        pass
 
 
 def calculate_job_water_usage(zone_name):
@@ -539,14 +554,17 @@ def calculate_job_water_usage(zone_name):
     Function to calculate total water used for a zone or job. Must be utilizing some type of
     water monitoring.
     """
-    run_gallons_stop = get_gallons_total()
-    use_database.water_usage(zone_name, 'update_gallons_stop', run_gallons_stop)
-    calculate_gallons_used(zone_name)
-    use_database.water_usage(zone_name, 'update_gallons_current_run', 0)
-    current_total_gallons_used = use_database.water_usage(zone_name, 'read_total_gallons_used', 0)
-    gallons_last_run = use_database.water_usage(zone_name, 'read_gallons_last_run', 0)
-    new_total_gallons_used = (current_total_gallons_used + gallons_last_run)
-    use_database.water_usage(zone_name, 'update_total_gallons_used', new_total_gallons_used)
+    if system_info.water_monitoring:
+        run_gallons_stop = get_gallons_total()
+        use_database.water_usage(zone_name, 'update_gallons_stop', run_gallons_stop)
+        calculate_gallons_used(zone_name)
+        use_database.water_usage(zone_name, 'update_gallons_current_run', 0)
+        current_total_gallons_used = use_database.water_usage(zone_name, 'read_total_gallons_used', 0)
+        gallons_last_run = use_database.water_usage(zone_name, 'read_gallons_last_run', 0)
+        new_total_gallons_used = (current_total_gallons_used + gallons_last_run)
+        use_database.water_usage(zone_name, 'update_total_gallons_used', new_total_gallons_used)
+    else:
+        pass
 
 
 def update_water_stats():
@@ -1178,7 +1196,17 @@ def send_system_notifications():
             log.info(f'Your DC 5V Voltage is LOW at {use_database.electrical_data("readone", "dc_voltage", 0)}!')
 
 
+def power_data_test():
+    current_power_keys = ['total_current_power_utilization', 'total_current_power_import',
+                          'total_current_solar_production']
+    power_data = {}
+    for key in current_power_keys:
+        power_data[key] = use_database.read_mysql_database("power_solar", key)
+    print(power_data)
+
+
 def main():
+    #power_data_test()
     log.debug('neptune.py main() Started.')
     run_zone_scheduled_jobs()
     run_power_scheduled_jobs()
