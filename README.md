@@ -277,7 +277,10 @@ def gardenpi():
                            any_power_zones_running = any_power_zones_running,
                            **power_data)
 ```
-Here we can see that we are reading data for ```total_current_power_utilization```, ```total_current_power_import``` and ```total_current_power_import``` from our MySQL database and then rendering that ```**power_data``` to our template ```gardenpi_index.html```. If we attempt to run this before changing it, you will get an error and it will not start. So we need to modify it as follows:
+Here we can see that we are reading data for ```total_current_power_utilization```, ```total_current_power_import``` and ```total_current_power_import``` from our MySQL database and then rendering that ```**power_data``` to our template ```gardenpi_index.html```. If we attempt to run this before changing it, you will get an error and it will not start. 
+<br>
+So we need to modify it as follows:
+
 ```
 @app.route('/')
 def gardenpi():
@@ -359,6 +362,10 @@ Here is the what we would need to remove:
 
 
 
-Once you have completed all of these steps, the front page should load without any issues.
+Once you have completed all of these steps, the front page should load without any issues. However taking it a step further, each water Zone shows water utilization information of its page and when the zone is running, it shows current Gallons-per-minute usage as well:
+<br>
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_zone1_running.jpg" alt="GardenPi Control Zone1 Running" height="600" width="300">
+
+
 
 
