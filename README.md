@@ -281,12 +281,15 @@ Otherwsie make sure to update these variables:
 sprinklerstart = '04:00:00'
 sprinklerstop = '06:00:00'
 ```
-<br>
+
 <hr>
-<br>
 
 #### Kiosk Mode Setup
-If you are using a touchscreen with your GardenPi installation, there are server things you need to do in order for it to work properly and to be able to switch back and forth via the web interface.
+If you are using a touchscreen with your GardenPi installation, there are sereral things you need to do in order for it to work properly and to be able to switch back and forth via the web interface. Fist, you need to make sure your X is configured properly. I have included my ```lightdm.conf``` and the display setup script to rotate the display automaticaly to the verticle position. You will see this display script reference on line 120 of the lightdm configuration file: ```display-setup-script=/usr/share/dispsetup.sh``` 
+
+Place the ```dispsetup.sh``` script in ```/usr/share``` directory, the ```lightdm.cnf``` file in the ```/etc/lightdm``` directory and you are ready to move on to the next step.
+
+Next we want to be able to switch between kiosk mode and regular desktop mode via our interface. To do this, we need to make some system configuration changes and copy some files around as well as allow the changes to be done by our web server user. 
 
 First, make sure the following directory exists:
 ```/home/pi/.config/lxsession/LXDE-pi```
@@ -296,6 +299,18 @@ Once that directory exists, copy the file ```autostart``` from the repo into tha
 
 Once that has been completed, you need to modify your ```/etc/sudoers``` file to allow your web server user the ability to execute that script by adding this line to the bottom of the file:
 ```www-data ALL = NOPASSWD: /usr/bin/gardenpi_desktop.sh```
+This assumes that your web server runs as ```www-data```, if not, use the appropriate account here.
+
+Once you are done with all of that, reboot and test your setup. Your screen should come up in verticle orientation and you should be able to toggle between Desktop and Kiosk mode from the web interface.
+
+#### Reboot and Halt from Web Interface
+GardePi has the ability to reboot or halt your Pi from the GUI web interface, but in order for this to work, we need to modify the ```/etc/sudoers``` file by adding in the following lines at the bottom of the file:
+```
+www-data ALL = NOPASSWD: /sbin/halt
+www-data ALL = NOPASSWD: /sbin/shutdown
+```
+The Halt and reboot functions should now work from the web interface. This assumes that your web server runs as ```www-data```, if not, use the appropriate account here.
+
 
 #### In Conclusion
 I hope these instructions are enough to get you started on your project. As time permits I will be updating the code to make it mode modular at the system level, but until then, someone using this software will have to take the time to go through the code and modify it to meet their needs. I will do what I can to help, please just open an issue and I will do what I can to help out. Check back here often as I expand this readme and the install instruction as I make modifications to make things (installing and running) easier. 
