@@ -8,10 +8,13 @@
   </p>
 <h2 align="center">BOM For GardenPi</h2>
 <br>
-<h4>
+<div align="center"><a name="top_menu"></a>
+  <h4>
     <a href="https://github.com/rjsears/GardenPi">
-      Back to Main ReadMe
+      Back to Main Read Me
     </a>
+    </h4>
+</div>
 
 There are a <b><em>lot</em></b> of parts that went into building <b><em>our</em></b> version of GardenPi. GardenPi is designed to be scaled from a few zones to as many as 32 water zones or anywhere in between. Since you have to build your own enclosure, you can decide what parts of GardenPi meet your needs (such as the need for power control) and decide what you need from there. I love lots of data so I have sensors for AC and DC power, water utilization (albeit not from GardenPi), humidity, barometric pressure, etc. So when you view this parts list, keep in mind you may not need everything listed here and some are options (touchscreen, cover).
 <hr>
