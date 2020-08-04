@@ -285,6 +285,18 @@ sprinklerstop = '06:00:00'
 <hr>
 <br>
 
+#### Kiosk Mode Setup
+If you are using a touchscreen with your GardenPi installation, there are server things you need to do in order for it to work properly and to be able to switch back and forth via the web interface.
+
+First, make sure the following directory exists:
+```/home/pi/.config/lxsession/LXDE-pi```
+Once that directory exists, copy the file ```autostart``` from the repo into that directory. Next, place the ```gardenpi_desktop.sh``` script from the repo into a directory of your choosing. Modify like 877 of ```neptune.py``` to point to that directory:
+
+```subprocess.check_call(['sudo', '/usr/bin/gardenpi_desktop.sh', 'gardenpi'])```
+
+Once that has been completed, you need to modify your ```/etc/sudoers``` file to allow your web server user the ability to execute that script by adding this line to the bottom of the file:
+```www-data ALL = NOPASSWD: /usr/bin/gardenpi_desktop.sh```
+
 #### In Conclusion
 I hope these instructions are enough to get you started on your project. As time permits I will be updating the code to make it mode modular at the system level, but until then, someone using this software will have to take the time to go through the code and modify it to meet their needs. I will do what I can to help, please just open an issue and I will do what I can to help out. Check back here often as I expand this readme and the install instruction as I make modifications to make things (installing and running) easier. 
 
