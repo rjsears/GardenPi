@@ -1195,18 +1195,9 @@ def send_system_notifications():
             use_database.notification_alerts('dc_minimum_volts', 'set_alert_sent', 0, True)
             log.info(f'Your DC 5V Voltage is LOW at {use_database.electrical_data("readone", "dc_voltage", 0)}!')
 
-
-def power_data_test():
-    current_power_keys = ['total_current_power_utilization', 'total_current_power_import',
-                          'total_current_solar_production']
-    power_data = {}
-    for key in current_power_keys:
-        power_data[key] = use_database.read_mysql_database("power_solar", key)
-    print(power_data)
-
-
+                     
 def main():
-    #power_data_test()
+
     log.debug('neptune.py main() Started.')
     run_zone_scheduled_jobs()
     run_power_scheduled_jobs()
