@@ -6,7 +6,7 @@
 routes.py for use with neptune/GardenPi V1.0.0
 """
 
-VERSION = "V1.0.0 (2020-07-31)"
+VERSION = "V1.0.0 (2020-08-04)"
 
 
 # TODO Learn and implement Flask Blueprints
@@ -42,11 +42,14 @@ log.setLevel(level)
 def gardenpi():
     # Get Power Readings
     log.debug('gardenpi() called')
-    current_power_keys = ['total_current_power_utilization', 'total_current_power_import',
-                          'total_current_solar_production']
-    power_data = {}
-    for key in current_power_keys:
-        power_data[key] = read_mysql_database("power_solar", key)
+    if system_info.power_monitoring:
+        current_power_keys = ['total_current_power_utilization', 'total_current_power_import',
+                              'total_current_solar_production']
+        power_data = {}
+        for key in current_power_keys:
+            power_data[key] = read_mysql_database("power_solar", key)
+    else:
+        power_data = {'total_current_power_utilization': 0, 'total_current_power_import': 0, 'total_current_solar_production': 0}
     any_zones_running = neptune.any_zones_running('water')
     any_power_zones_running = neptune.any_zones_running('power')
     current_water_source = (neptune.get_water_source()['source_to_use'])
