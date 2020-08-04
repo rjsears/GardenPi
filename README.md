@@ -359,13 +359,126 @@ Here is the what we would need to remove:
              }
    </script>
 ```
+<br><br>
 
 
+Once you have completed all of these steps, the front page should load without any issues. 
 
-Once you have completed all of these steps, the front page should load without any issues. However taking it a step further, each water Zone shows water utilization information of its page and when the zone is running, it shows current Gallons-per-minute usage as well:
+However taking it a step further, each water Zone shows water utilization information of its page and when the zone is running, it shows current Gallons-per-minute usage as well:
 <br>
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_zone1_running.jpg" alt="GardenPi Control Zone1 Running" height="600" width="300">
+<br>
+So in this case we would have to modify our ```/zone``` route within ```routes.py``` to remove these lines:
+```
+total_zone_water_usage = water_usage(zone, 'read_total_gallons_used', 0)
+running_current_total_gallons = water_usage(zone, 'read_gallons_current_run', 0)
+current_gpm = neptune.get_current_gpm()
+current_water_source = (neptune.get_water_source()['source_to_use'])
+```    
+<br>
+And then remove their reference within ```zone.html```, removing this entire section:
+```
+<table>
+              <tr>{% if is_zone_running %}
+        <td>
+            <canvas id=CurrentGPH></canvas>
+        </td>
+        <td>
+            <canvas id=CurrentTotalGallons></canvas>
+        </td>
+        <td>
+            <canvas id=TotalZoneUse></canvas>
+        </td>
+                  {% else %}
 
+         <td>
+            <canvas id=TotalZoneUse></canvas>
+        </td>
+
+                  {% endif %}
+    </tr>
+
+          </table>
+
+      </body>
+{% if is_zone_running %}
+    <script>
+          function init()
+          {
+
+
+                  total_zone_usage = new steelseries.DisplaySingle('TotalZoneUse', {
+                                    width: 120,
+                                    height: 40,
+                                    lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Total Zone Gallons",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+                  current_gallons_per_hour = new steelseries.DisplaySingle('CurrentGPH', {
+                                    width: 120,
+                                    height: 40,
+    		    	                lcdDecimals:  2,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Current Gallons/Hour",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+                  current_total_gallons = new steelseries.DisplaySingle('CurrentTotalGallons', {
+                                    width: 120,
+                                    height: 40,
+    		    	                lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Current Total Gallons",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+
+
+
+
+                  total_zone_usage.setValue({{total_zone_water_usage}});
+                  current_gallons_per_hour.setValue({{current_gpm}});
+                  current_total_gallons.setValue({{running_current_total_gallons}});
+
+
+
+
+            }
+   </script>
+{% else %}
+
+<script>
+          function init()
+          {
+
+
+                  total_zone_usage = new steelseries.DisplaySingle('TotalZoneUse', {
+                                    width: 120,
+                                    height: 40,
+                                    lcdDecimals:  0,
+                                    unitString: "unit",
+                                    unitStringVisible: false,
+                                    headerString: "Total Zone Gallons",
+                                    headerStringVisible: true,
+                                    lcdColor: steelseries.LcdColor.SECTIONS,
+                                    });
+
+
+
+                  total_zone_usage.setValue({{total_zone_water_usage}});
+                  }
+</script>
+{% endif %}
+```
+<br>
+Hopefully, you get the idea of what types of things you need to look for and modify in order to make GardenPi <b><em>Your Own!</em></b>! 
 
 
 
