@@ -820,7 +820,9 @@ def get_gardenpi_power():
     """
     Utilizes I2C bus to read DC watt meter (voltage, current, power and shunt voltage) via
     a DFRobot digital DC Watt Meter. Utilizing a 'whole house' electrical monitoring system, we
-    also read AC current and voltage on the circuit dedicated to the system enclosure.
+    also read AC current and voltage on the circuit dedicated to the system enclosure. This is done
+    on another system that that data is written to our GardenPi database in the 'electrical_usage'
+    table. If you are not using this system, those fields will be 0.
     """
     log.debug('get_gardenpi_power() called')
     SHUNT_OHMS = 0.01
@@ -835,8 +837,6 @@ def get_gardenpi_power():
     use_database.electrical_data('update', 'dc_current', (ina.current()/1000))
     use_database.electrical_data('update', 'dc_power', (ina.power()/1000))
     use_database.electrical_data('update', 'dc_shunt_voltage', ina.shunt_voltage())
-    use_database.electrical_data('update', 'ac_current',use_database.read_influx_database_power("energy", system_info.gardenpi_power_circuit_current))
-    use_database.electrical_data('update', 'ac_voltage',(use_database.read_influx_database_power("energy", system_info.gardenpi_power_circuit_volts) + 2.0)) # Adjustment for low reading on transformer
 
 
 def read_temp_raw(onewire_id):
