@@ -217,7 +217,7 @@ Now, let's create any external accounts that you may need to use for your notifi
 <hr>
 
 ##### Cloning the Repo
-Next, grab the repo via git or download it above and place it in the ```/var/www/gardenpi_control``` directory. Once you have done that, we need to modify the system_info.py file. This is the file where all of our database information and API credentials for Email, Twilio, Pushbullet are stored. Make all necessary changes and save the file. 
+Next, grab the repo via git or download it and place it in the ```/var/www/gardenpi_control``` directory. Once you have done that, we need to modify the system_info.py file. This is the file where all of our database information and API credentials for Email, Twilio, Pushbullet are stored. Make all necessary changes and save the file. 
 
 The GardenPi software is written to utilize several other automation platforms that I have installed in our house. These are some areas within system_info.py you should attention to:
 
