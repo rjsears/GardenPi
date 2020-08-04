@@ -7,7 +7,7 @@
   Multizone Hydroponic / Aquaponic / Irrigation &amp; Fish Tank Water management and monitoring platform
   </p>
 <h2 align="center">BOM For GardenPi</h2>
-<br>
+
 <div align="center"><a name="top_menu"></a>
   <h4>
     <a href="https://github.com/rjsears/GardenPi">
