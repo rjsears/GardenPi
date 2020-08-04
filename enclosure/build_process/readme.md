@@ -11,7 +11,11 @@
 <div align="center"><a name="top_menu"></a>
   <h4>
     <a href="https://github.com/rjsears/GardenPi">
-      Back to Main Read Me
+      Main Read Me
+    </a>
+    <span> | </span>
+    <a href="https://github.com/rjsears/GardenPi/blob/master/enclosure/readme.md">
+      Parts List
     </a>
     </h4>
 </div>
