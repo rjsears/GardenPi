@@ -401,7 +401,7 @@ And then remove their reference within ```zone.html```, removing this entire sec
           </table>
 
       </body>
-{% if is_zone_running %}
+  {% if is_zone_running %}
     <script>
           function init()
           {
