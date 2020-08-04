@@ -139,11 +139,9 @@ Reboot your Pi and make sure that everything such as your network, SSH, etc stil
 <hr>
 
 ##### Installation Setup
+Please read over the software dependancies above and install and configure <b><em>at least</em></b> your web server (and uWSGI if using it) and database engines. Python3 should already be installed, but if not, go ahead and install that as well. Don't worry about the other Python requirements, we will get to that later in the install. You should be able to connect to your database from the command line and you should be able to get to your web server default webpage. If you cannot, please do not go any further until your resolve any issues you have with those installations.
 
-Please read over the software dependancies above and install and configure <em>at least</em> your web server and database engines. Python3 should already be installed, but if not, go ahead and install that as well. Don't worry about the other Python requirements, we will get to that later in the install.
-
-Next, create any external accounts that you may need to use for your notifications. If you plan on using email notifications, please remember that your Pi <em>must</em> be configured ahead of time to send emails. This setup will vary based on what MTA you are using. I utilize Postfix, but please read the documentation for your particular MTA and make sure you can send emails from the command line before turning on email notifications. Signup and set up Pushbullet (free) and/or Twilio ($) if you plan on using them for notifications. Make sure to note down your API credentials as we will need them later in the setup. 
-
+###### Directory Structure
 Here is the overall directory structure that I use with my installation:
 
 ```
@@ -159,8 +157,7 @@ In the gardenpi_control directory is where ```run.py``` and my ```system_backup.
 
 Logs are stored in ```/var/log/gardenpi```
 
-
-Moving on, let's start by creating the necessary directories and change ownership:
+Create the necessary directory structure and change ownership:
 ```
 mkdir -p /var/www/gardenpi_control/
 chown www-data:www-data /var/www/gardenpi_control
@@ -170,15 +167,7 @@ chown www-data:www-data /var/log/gardenpi
 
 All directories should be owned by your web server user, in my case this is ```www-data```.
 
-Once that is done and before we get started with the repo itself, we need to make sure all of our basic software has been installed. Before going any further, please install and <em>test/<em> the following packages:
-<ul>
-  <li>Web Server Software - If using Nginx, the <a href="https://github.com/rjsears/GardenPi/blob/master/gardenpi.conf">gardenpi.conf</a> file above should work for you.</li>
-  <li>uWSGI - needed for Flask</li>
-  <li>MySQL or other SQL engine & libraries</li>
-  <li>InfluxDB - If you plan on using it</li>
-  <li>Grafana - If you plan on using it</li>
-</ul>
-
+##### Database Configuration for GardenPi
 Next you will need to setup your MySQL/OtherSQL database. Add the necessary user (we use a database name of ```neptune``` and a user of ```neptune``` but these can be anything you like. Use the <a href="https://github.com/rjsears/GardenPi/blob/master/neptune.sql">neptune.sql</a> file to get your structure and initial data setup. 
 
 Once you are done with setting up and securing your database engine, then you can grab the neptune.sql file and run the following command:
@@ -187,7 +176,36 @@ mysql -u root -p"$DATABASE_PASS" neptune < neptune.sql
 ```
 Check your MySQL/OtherSQL settings to make sure that they work for you and the SQL portion setup should be complete.
 
+```
+MariaDB [(none)]> use neptune;
 
+Database changed
+MariaDB [neptune]> show tables;
++--------------------------+
+| Tables_in_neptune        |
++--------------------------+
+| electrical_usage         |
+| environmental            |
+| hydroponic_zones         |
+| logging                  |
+| power                    |
+| power_currently_running  |
+| power_scheduled_jobs     |
+| power_solar              |
+| scheduled_jobs           |
+| screen                   |
+| systemwide_alerts        |
+| systemwide_notifications |
+| temperatures             |
+| water_source             |
+| water_tanks              |
+| zones                    |
+| zones_currently_running  |
++--------------------------+
+17 rows in set (0.001 sec)
+```
+
+Now, let's create any external accounts that you may need to use for your notifications. If you plan on using email notifications, please remember that your Pi <em>must</em> be configured ahead of time to send emails. This setup will vary based on what MTA you are using. I utilize Postfix, but please read the documentation for your particular MTA and make sure you can send emails from the command line before turning on email notifications. Signup and set up Pushbullet (free) and/or Twilio ($) if you plan on using them for notifications. Make sure to note down your API credentials as we will need them later in the setup. 
 
 Next, grab the repo via git or download it above and place it in the ```/var/www/gardenpi_control``` directory. Once you have done that, we need to modify the system_info.py file. This is the file where all of our database information and API credentials for Email, Twilio, Pushbullet are stored. Make all necessary changes and save the file. 
 
