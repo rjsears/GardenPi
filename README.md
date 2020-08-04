@@ -221,6 +221,8 @@ Now, let's create any external accounts that you may need to use for your notifi
 ##### Cloning the Repo
 Next, grab the repo via git or download it and place it in the ```/var/www/gardenpi_control``` directory. Once you have done that, we need to modify the system_info.py file. This is the file where all of our database information and API credentials for Email, Twilio, Pushbullet are stored. Make all necessary changes and save the file. 
 
+You <b><em>DO NOT NEED</em></b> the ```images``` of the ```enclosure``` directories. These just hold information on the overall project build and for the various readme files. You can safely delete these directors after you clone.
+
 Once you have done this, the first thing you need to do is switch into the directory where you have placed the repo and run pip3 against the requirements.txt file:
 ```pip3 install -r requirements.txt```
 This will install all of the current python requirements needed for GardenPi to run.
