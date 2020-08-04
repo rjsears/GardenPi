@@ -88,7 +88,6 @@ GardenPi is very flexable in regards to what you use, how many zones you want, i
 <br><br>  
 Hopefully, this might provide some inspiration for others in regard to their garden automation projects.</em>
 <hr>
-<br>
 
 #### <a name="dependencies"></a>Software Dependencies
 There are a lot of moving parts to any particular project. I will try and list all of the dependencies that you will need to use this repo. It is outside the scope of this documentation to cover the installation and configuration of some of these items. Also, some of these are optional (like Influx/Grafana) depending on how much you want to impliment. Also, I don't plan on listing the more common libraries (like datetime) that come prepackaged with Python. If I had to add them (pip3 install xxx), I will try to list them here. I have included a <a href="https://github.com/rjsears/GardenPi/blob/master/GardenPi/requirements.txt">"requirements.txt"</a> file for use with pip3. Versions were as of this writing.
