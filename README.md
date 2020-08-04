@@ -83,7 +83,7 @@ The goal of version 1.0.0 of GardenPi was to build and test the hardware and get
 GardenPi is very flexable in regards to what you use, how many zones you want, if you want power zones, etc. If you have specific questions about the code or how things are put together, fell free to open an issue and I will do my best to help.
 <br><br>
 <hr>
-<em>PLEASE NOTE: This project <b>IS NOT</b> intended to be a "plug-and-play" installation, rather a starting point for someone that wants to use all (or part) of the repo to monitor and manage their irrigation system(s).  There <u>will be</u> significant modifications required by the user even if they are using a clean Pi install. Things in the code such as smart water monitoring and electrical monitoring are integrated with other sensors and automation platforms that I am currently using. I will try my best to point these areas out, but if you do not use those things, major code changes will have to be made to make GardenPi work <u>for you</u>. If you are not comfortable using Python and making these types of changes, this project might not be for you. 
+<em>PLEASE NOTE: This project <b>IS NOT</b> intended to be a "plug-and-play" installation, rather a starting point for someone that wants to use all (or part) of the repo to monitor and manage their irrigation system(s).  There <u>will be</u> significant modifications required by the user even if they are using a clean Pi install. Things in the code such as smart water monitoring and electrical monitoring are integrated with other sensors and automation platforms that I am currently using. I will try my best to point these areas out, but if you do not use those things, major code changes will have to be made to make GardenPi work <u>for you</u>. If you are not comfortable using Python and making these types of changes, this project might not be for you. My goal in later versions if to have flags for this and set them at runtime and not have so much code that needs to be manually corrected, but in version 1.0.0, that code will still need to be modified. Some examples are down further.
 <br><br>  
 Hopefully, this might provide some inspiration for others in regard to their garden automation projects.</em>
 <hr>
@@ -219,7 +219,44 @@ Now, let's create any external accounts that you may need to use for your notifi
 ##### Cloning the Repo
 Next, grab the repo via git or download it above and place it in the ```/var/www/gardenpi_control``` directory. Once you have done that, we need to modify the system_info.py file. This is the file where all of our database information and API credentials for Email, Twilio, Pushbullet are stored. Make all necessary changes and save the file. 
 
-The GardenPi software is written to utilize several other automation platforms that I have installed in our house. 
+The GardenPi software is written to utilize several other automation platforms that I have installed in our house. These are some areas within system_info.py you should attention to:
+
+```
+## Setup our EmonCMS Database Connection
+emoncms_servername = 
+emoncms_username = 
+emoncms_password = 
+emoncms_db = 
+```
+
+This is where I setup my connection to my EmonCMS database. This databse stores power and water utilization information. 
+
+These entries pertain to the database records in the above database that store our water information.
+```
+irrigation_gallons_total = "feed_62"
+current_gpm = "feed_63"
+```
+
+And these entire down the same for our power information:
+```
+gardenpi_power_circuit_current = 'XXX340_ch9_a'
+gardenpi_power_circuit_volts = 'XXX340_volts'
+```
+
+These entires are only good if you have a Rachio sprinkler system:
+```
+rachio_headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer xxxxxxxxxxxxxxxxxxxxxxxxx'}
+rachio_url = 'https://api.rach.io/1/public/device/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx/current_schedule'
+```
+
+Because these settings are integrated into GardenPi, changes would have to be made before you can start the system, you would have to modify GardenPi to <em>not</em> grab information from those systems.
+
+For example, on the main page we have solar and power monitoring showing up at the bottom of the page:
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_main_screen.jpg" alt="GardenPi Control Panel" height="400" width="200">
+
+
+
+
 
 Once you have completed all of these steps, you can change into your base directory and run the test flask file:
 
