@@ -223,7 +223,7 @@ Purchase Location: <a href="https://www.amazon.com/gp/product/B07KCR3Y7W/ref=ppx
 Purchase Price: <b><em>$18.99/each</em></b>
 <br><hr>
 
-### Inkbird 40A SOlid State Relays x 8
+### Inkbird 40A Solid State Relays x 8
 These relays are used on the 120V side of GardenPi. One relay per outlet (7) and an additional relay to power our AC-to-AC transformer as opposed to having it powered on 24x7.
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_40a_ss_relay.jpg" alt="GardenPi Serial Expander" height="200" width="175">
@@ -248,7 +248,7 @@ Purchase Price: <b><em>$18.99/each</em></b>
 <br><hr>
 
 
-### Power Distribution screw Terminal Blocks x 10
+### Power Distribution Screw Terminal Blocks x 10
 These are very nice, small power distribution blocks. I use them for AC, DC and onewire connections.
 
 <img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_terminal_blocks.jpg" alt="GardenPi Terminal Blocks" height="175" width="300">
