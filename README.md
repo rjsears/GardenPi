@@ -116,6 +116,8 @@ There are a lot of moving parts to any particular project. I will try and list a
   <li><a href="https://pypi.org/project/PyYAML/">PyYaml (5.3.1)</a></li>
  </ul>
  <hr>
+ 
+ I also use phpMyAdmin and so some of the configuration files reflect modifications for that. If you plan to use it as well, flling the install instructions and make the necessary changes. The configuration files for nginx assume phpmyadmin with fastcgi. You can remove these settings if you are not using phpmyadmin.
 
 #### <a name="install"></a>Installation & Configuration
 There are a <b><em>LOT</em></b> of different sites that will explain how to install and configure Nginx/Apache, MySQL, InfluxDB, Grafana, PHP, etc so I will not waste space here duplicating those instructions. 
