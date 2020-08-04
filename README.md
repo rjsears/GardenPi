@@ -84,7 +84,7 @@ GardenPi is very flexable in regards to what you use, how many zones you want, i
 <br><br>
 <hr>
 <em>PLEASE NOTE: This project <b>IS NOT</b> intended to be a "plug-and-play" installation, rather a starting point for someone that wants to use all (or part) of the repo to monitor and manage their irrigation system(s).  There <u>will be</u> significant modifications required by the user even if they are using a clean Pi install. Things in the code such as smart water monitoring and electrical monitoring are integrated with other sensors and automation platforms that I am currently using. I will try my best to point these areas out, but if you do not use those things, major code changes will have to be made to make GardenPi work <u>for you</u>. If you are not comfortable using Python and making these types of changes, this project might not be for you. 
-<br>  
+<br><br>  
 Hopefully, this might provide some inspiration for others in regard to their garden automation projects.</em>
 <hr>
 <br>
