@@ -301,9 +301,23 @@ Purchase Price: <b><em>$3.23/box</em></b>
 ### 32 Red In-Sure 2-Port Connectors (100-Pack)
 I use this type of wire connectors in my external zone/sensor extension boxes to connect the internal wiring. I prefer these to wire nuts. 
 
-<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_wire_connectors.jpg" alt="GardenPi Wie Connectors" height="125" width="175">
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_wire_connectors.jpg" alt="GardenPi Wire Connectors" height="125" width="175">
 Purchase Location: <a href="https://www.homedepot.com/p/Ideal-32-Red-In-Sure-2-Port-Connectors-100-Pack-30-1032P/202894308">Home Depot.com</a><br>
 Purchase Price: <b><em>$7.32/package</em></b>
 <br><hr>
 
+### 260 Pcs M3 Hex Socket Flat Head Countersunk Bolts Screw Nut Assortment Kit-304 Stainless Steel
+For anything that has to be screwed from the outside or bottom, I use these countersunk stainless steel screws.
 
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_countersunk_screws.jpg" alt="GardenPi Countersunk Screws" height="300" width="300">
+Purchase Location: <a href="https://www.amazon.com/gp/product/B076J3W7R4/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1">Amazon.com</a><br>
+Purchase Price: <b><em>$12.99</em></b>
+<br><hr>
+
+### 240 Pieces M3 Male Female Hex Brass Spacer Standoff Screw Nut Threaded Pillar PCB Motherboard Assortment Kit x 2
+Used to mount all sensores, relays, terminal blocks, etc to the inside of the enclosure plates.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_standoff_kit.jpg" alt="GardenPi Countersunk Screws" height="150" width="300">
+Purchase Location: <a href="https://www.amazon.com/gp/product/B07PK23VC4/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1">Amazon.com</a><br>
+Purchase Price: <b><em>$13.99/each</em></b>
+<br><hr>
