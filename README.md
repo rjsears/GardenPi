@@ -84,7 +84,7 @@ GardenPi is very flexable in regards to what you use, how many zones you want, i
 
 
 #### <a name="dependencies"></a>Software Dependencies
-GardenPi runs on the Raspberry Pi4. The following software is what I am using and to the extent you can replace the functionality with something else (apache vs nginx, for example) it should work fine. This is just what I chose to use. This is the base software, please see <a href="https://github.com/rjsears/GardenPi/blob/master/GardenPi/requirements.txt">equirements.txt</a> for a list of necessary python libraries needed to run GardenPi. If you are going to run GardenPi and the system backup and restore utility for GardenPi, you will need all of these programs:
+GardenPi runs on the Raspberry Pi4. The following software is what I am using and to the extent you can replace the functionality with something else (apache vs nginx, for example) it should work fine. This is just what I chose to use. This is the base software, please see <a href="https://github.com/rjsears/GardenPi/blob/master/GardenPi/requirements.txt">requirements.txt</a> for a list of necessary python libraries needed to run GardenPi. If you are going to run GardenPi and the system backup and restore utility for GardenPi, you will need all of these programs:
 
 
 <ul>
@@ -95,6 +95,6 @@ GardenPi runs on the Raspberry Pi4. The following software is what I am using an
   <li>uWsgi & uWsgi Emperor</li>
   <li>Locate</li>
   <li>Unclutter - Used to hide mouse in Kiosk mode</li>
-  <li>wGet</li>
   <li>Postfix (or other MAT) - Used for sending email notifications</li>
+  <li>Dialog - Default interface for our system backup and restore script</li>
 </ul>
