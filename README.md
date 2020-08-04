@@ -130,7 +130,7 @@ root@scripts:/var/www/#
 
 In the gardenpi_control directory is where ```run.py``` and my ```system_backup.sh``` script lives.
 
-Logs are stored in ```/var/log/tank_control```
+Logs are stored in ```/var/log/gardenpi```
 
 Create the necessary directories and change ownership:
 ```
