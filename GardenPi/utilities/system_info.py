@@ -103,10 +103,6 @@ sprinklerstop = '23:00:00'
 rachio_headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer xxxxxxxxx-xxxxxx-xxxxx-xxxxx-xxxxxxxxxxx'}
 rachio_url = 'https://api.rach.io/1/public/device/xxxxxxxxx-xxxxxx-xxxxx-xxxxx-xxxxxxxxxxx/current_schedule'
 
-#Where do we read our circuit power information from - used to track realtime power usage on 120V AC Circuit to GArdenPi
-gardenpi_power_circuit_current = 'XXX340_ch9_a'
-gardenpi_power_circuit_volts = 'XXX340_volts'
-
 
 def main():
     print("This script is not intended to be run directly.")
