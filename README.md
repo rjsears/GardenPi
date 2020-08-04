@@ -221,7 +221,19 @@ Next, grab the repo via git or download it and place it in the ```/var/www/garde
 
 
 #### Initial changes to make before starting
-The GardenPi software is written to utilize several other automation platforms that I have installed in our house. These system monitor our water usage with smart water meters and per-circuit power consumption for our AC circuits. The power information is simply dispayed on the main page of the GardenPi app while the water information is used to calculate and display zone water usage. If you have some type of power monitoring, then you could very easily These are some areas within system_info.py you should attention to:
+The GardenPi software is written to utilize several other automation platforms that I have installed in our house. These system monitor our water usage with smart water meters and per-circuit power consumption for our AC circuits. The power information is dispayed on the main page of the GardenPi app while the water information is used to calculate and display zone water usage. If you have some type of power monitoring, then you could very easily modify your software to update the 'electrical_usage' table in the GardenPi/neptune database with your ac current and voltage.
+
+If you do not have or do not want to use the water and AC power monitoring, make sure these fields in ```system_info.py``` are set to False (the default). 
+
+```
+power_monitoring = False
+water_monitoring = False
+```
+
+When you set these to ```False```, then the interface will just show 0 for water utilization and solar utilization. You could also modify the ```routes.py``` and associated template files to remove that code altogether.
+
+
+For those of you using EmonCMS to store water data, make the necessary changes to the following variables in ```system_info.py```:
 
 ```
 ## Setup our EmonCMS Database Connection
@@ -231,29 +243,29 @@ emoncms_password =
 emoncms_db = 
 ```
 
-This is where I setup my connection to my EmonCMS database. This databse stores power and water utilization information. 
+You will also need to update these variables to point to your specific emon feed:
 
-These entries pertain to the database records in the above database that store our water information.
 ```
 irrigation_gallons_total = "feed_62"
 current_gpm = "feed_63"
 ```
 
-
-Because these settings are integrated into GardenPi, changes would have to be made before you can start the system, you would have to modify GardenPi to <em>not</em> grab information from those systems.
-
-
-For Water and Power monitoring, modify these two lines in ```system_info.py```:
-
-```
-power_monitoring = True
-water_monitoring = True
-```
-
-If you set them to False, then the interface will just show 0 for water utilization and solar utilization. Otherwise you could also modify the ```routes.py``` and associated template files to remove that code altogether.
-
 These entires are only good if you have a Rachio sprinkler system:
 ```
 rachio_headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer xxxxxxxxxxxxxxxxxxxxxxxxx'}
 rachio_url = 'https://api.rach.io/1/public/device/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx/current_schedule'
+```
+
+If you have a Rachio, make sure to make changes to the following variables:
+```
+# Used for Sprinkler Bypass
+sprinkler_bypass = 'Yes'
+sprinkler_type = 'Rachio'  # Timer or Rachio - sprinkler_bypass must be set to "Yes" for this to make any difference
+```
+
+Otherwsie make sure to update these variables:
+```
+# Set Sprinkler start and stop times here if using 'Timer' setting above.
+sprinklerstart = '04:00:00'
+sprinklerstop = '06:00:00'
 ```
