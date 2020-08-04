@@ -221,8 +221,17 @@ Next, grab the repo via git or download it and place it in the ```/var/www/garde
 
 
 #### Initial changes to make before starting
+These setup instructions assume that you have built your GardenPi system exactly as I have built mine, including that all of your sensors and GPIO expanders are using the same I2C addresses that I am using in my setup. You can change these settings in the various function files as necessary to meet your needs. Take a look in ```zone_controller.py``` for the settings for GPIOs 64 - 95 and in ```power_controller.py``` for GPIOs 96 - 111. 
+
+Likewise, if you are using serial expanders, you would need to modify these two lines in ```/boot/confix.txt``` to meet the needs of both your inturrupt pin as well as your I2C address:
+```
+dtoverlay=sc16is752-i2c,int_pin=24,addr=0x48
+dtoverlay=sc16is752-i2c,int_pin=26,addr=0x4d
+```
+<hr>
 The GardenPi software is written to utilize several other automation platforms that I have installed in our house. These system monitor our water usage with smart water meters and per-circuit power consumption for our AC circuits. The power information is dispayed on the main page of the GardenPi app while the water information is used to calculate and display zone water usage. If you have some type of power monitoring, then you could very easily modify your software to update the 'electrical_usage' table in the GardenPi/neptune database with your ac current and voltage.
 
+##### Modify system_info.py
 If you do not have or do not want to use the water and AC power monitoring, make sure these fields in ```system_info.py``` are set to False (the default). 
 
 ```
@@ -269,3 +278,4 @@ Otherwsie make sure to update these variables:
 sprinklerstart = '04:00:00'
 sprinklerstop = '06:00:00'
 ```
+<hr>
