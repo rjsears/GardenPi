@@ -330,9 +330,9 @@ Purchase Price: <b><em>$13.99/each</em></b>
 <br><hr>
 
 ### Orbit 3/4 in. Plastic FPT Automatic Anti-Siphon Zone Valve (24VAC)
-These are the sprinkler/anti-siphon valves I use to the entire project.
+These are the sprinkler/anti-siphon valves I use for the entire project.
 
-<img src="https://github.com/rjsears/GardenPi/blob/master/images/gradenpi_sprinkler_valves.jpg" alt="GardenPi Sprinkler Valves" height="225" width="300">
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gradenpi_sprinkler_valves.jpg" alt="GardenPi Sprinkler Valves" height="275" width="300">
 Purchase Location: <a href="https://www.homedepot.com/p/Orbit-3-4-in-Plastic-FPT-Automatic-Anti-Siphon-Zone-Valve-57623/203020016">HomeDepot.com</a><br>
 Purchase Price: <b><em>$15.44/each</em></b>
 <br><hr>
