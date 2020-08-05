@@ -9,7 +9,7 @@ garden, hydroponics and aquarium.
 """
 
 __author__ = 'Richard J. Sears'
-VERSION = "V1.0.0 (2020-08-04)"
+VERSION = "V1.0.0 (2020-08-05)"
 # richardjsears@gmail.com
 
 import sys
@@ -802,17 +802,15 @@ def get_enclosure_environmentals():
         capture_exception(e)
 
 
-
 def get_shed_environmentals():
     """
     We have our system installed in our garden shed. Utilizing an existing Home automation and
-    tracking platform called EmonCMS, I read our shed information for use in our GUI. It is marked
-    garage here as I swiped my garage sensor and put it in the shed. Also grabs out "outdoor" temp
-    provided by by our Vantage Pro2.
+    tracking platform called EmonCMS, I read our shed information for use in our GUI. Also grabs
+    our "outdoor" temp provided by by our Vantage Pro2.
     """
     log.debug('get_shed_environmentals() called')
-    use_database.environmentals_data('update', 'shed_temp', use_database.read_influx_database_temps("'garage'")) #says garage but that is old sensor name now in the shed.
-    use_database.environmentals_data('update', 'shed_humidity', use_database.read_influx_database_temps("'garage_humidity'"))
+    use_database.environmentals_data('update', 'shed_temp', use_database.read_influx_database_temps("'shed_temp'"))
+    use_database.environmentals_data('update', 'shed_humidity', use_database.read_influx_database_temps("'shed_humidity'"))
     use_database.environmentals_data('update', 'outdoor_temperature', use_database.read_influx_database_temps("'outside'")) #outdoor temp
 
 
