@@ -328,3 +328,21 @@ Used to mount all sensors, relays, terminal blocks, etc to the inside of the enc
 Purchase Location: <a href="https://www.amazon.com/gp/product/B07PK23VC4/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1">Amazon.com</a><br>
 Purchase Price: <b><em>$13.99/each</em></b>
 <br><hr>
+
+### Orbit 3/4 in. Plastic FPT Automatic Anti-Siphon Zone Valve (24VAC)
+These are the sprinkler/anti-siphon valves I use to the entire project.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gradenpi_sprinkler_valves.jpg" alt="GardenPi Sprinkler Valves" height="225" width="300">
+Purchase Location: <a href="https://www.homedepot.com/p/Orbit-3-4-in-Plastic-FPT-Automatic-Anti-Siphon-Zone-Valve-57623/203020016">HomeDepot.com</a><br>
+Purchase Price: <b><em>$15.44/each</em></b>
+<br><hr>
+
+### IWAKI MD-70RLT - 1536 GPH Water Pump (Japanese Motor)
+These pumps are used for water pumping and circulation.
+
+<img src="https://github.com/rjsears/GardenPi/blob/master/images/gardenpi_circulation_pumps.jpg" alt="GardenPi Water Pump" height="200" width="300">
+Purchase Location: <a href="https://www.fishtanksdirect.com/iwaki-pumps-md-70rlt-aquarium-pump-iw00700.aspx">FishTanksDirect.com</a><br>
+Purchase Price: <b><em>$367.19/each</em></b>
+<br><hr>
+
+
