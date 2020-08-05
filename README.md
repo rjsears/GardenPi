@@ -37,7 +37,7 @@ Hopefully, this might provide some inspiration for others in regard to their aut
       Installation & Configuration
     </a>
     <span> | </span>
-    <a href="https://github.com/rjsears/GardenPi/tree/master/gardenpi">
+    <a href="https://github.com/rjsears/GardenPi/tree/master/GardenPi">
       Code
     </a>
     <span> | </span>
