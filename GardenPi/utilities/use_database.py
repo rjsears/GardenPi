@@ -7,7 +7,7 @@ use_database.py for use with neptune/GardenPi V1.0.0
 Systemwide database functions
 """
 
-VERSION = "V1.0.0 (2020-07-31)"
+VERSION = "V1.0.0 (2020-08-05)"
 
 #TODO Code and general cleanup and logging, move rest of MySQL calls over to SQLAlchemy
 
@@ -293,7 +293,15 @@ def electrical_data(action, field_name, field_value):
         else:
             conn.execute(electrical_usage.update().values({field_name: field_value}))
 
-
+def solar_data(action, field_name, field_value):
+    with engine.begin() as conn:
+        if action == 'readall':
+            return ((conn.execute(select([power_solar]))).fetchall())
+        elif action == 'readone':
+            return ((conn.execute(select([getattr(power_solar.c, field_name)])))).scalar()
+        else:
+            conn.execute(power_solar.update().values({field_name: field_value}))
+            
 def notification_alerts(sensor_name, action, field_name, field_value):
     with engine.begin() as conn:
         if action == 'enabled':
