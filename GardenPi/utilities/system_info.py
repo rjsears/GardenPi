@@ -7,7 +7,7 @@ Holds some basic system information and configuration.
 Will slowly move most of this to MySQL.
 """
 
-VERSION = "V1.0.0 (2020-08-04)"
+VERSION = "V1.0.0 (2020-08-06)"
 
 
 # URL that we use to check and see if we have internet connectivity.
