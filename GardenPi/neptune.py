@@ -42,7 +42,7 @@ import types
 ## Setup our i2c bus for our sensors
 i2c = busio.I2C(board.SCL, board.SDA)
 
-
+# Bogus Entries - You need to change these to use Sentry.IO
 # Error reporting to Sentry.IO
 sentry_sdk.init("https://b7fa494cd9484fee8336e03f5b36d3a5@sentry.io/5189894",
                 integrations=[SqlalchemyIntegration()])
