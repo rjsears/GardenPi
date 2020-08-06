@@ -6,7 +6,7 @@
 routes.py for use with neptune/GardenPi V1.0.0
 """
 
-VERSION = "V1.0.0 (2020-08-04)"
+VERSION = "V1.0.0 (2020-08-05)"
 
 
 # TODO Learn and implement Flask Blueprints
@@ -17,7 +17,8 @@ sys.path.append('/var/www/gardenpi_control/gardenpi/utilities')
 sys.path.append('/var/www/gardenpi_control/gardenpi')
 sys.path.append('/var/www/gardenpi_control')
 import neptune
-from use_database import sa_check_zone_times, onewire_temp_probes, screen_mode, sa_check_zone_times_jobid, sa_check_zone_times_conflict, read_mysql_database, water_usage, sa_check_power_zone_times_conflict, environmentals_data, electrical_data
+from use_database import onewire_temp_probes, screen_mode, sa_check_zone_times_jobid, sa_check_zone_times_conflict, solar_data
+from use_database import read_mysql_database, water_usage, sa_check_power_zone_times_conflict, environmentals_data, electrical_data
 from flask import render_template, redirect, url_for, request, flash, Flask
 from gardenpi import app
 from gardenpi.forms import Job1Form, Job2Form, PowerJob1Form, PowerJob2Form, SetTempAlertLimitForm, SetPowerAlertLimitForm
@@ -47,7 +48,7 @@ def gardenpi():
                               'total_current_solar_production']
         power_data = {}
         for key in current_power_keys:
-            power_data[key] = read_mysql_database("power_solar", key)
+            power_data[key] = solar_data('readone', key, 0)
     else:
         power_data = {'total_current_power_utilization': 0, 'total_current_power_import': 0, 'total_current_solar_production': 0}
     any_zones_running = neptune.any_zones_running('water')
