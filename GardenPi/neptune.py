@@ -758,23 +758,42 @@ def get_sprinkler_status():
     """
     This function determines if your sprinklers are running. It can be as simple
     as a "timer" mode, or in my case, utilizing the Rachio so I can query it
-    directly to see if it is running.
+    directly to see if it is running. Can also be set to "External" in system_info.py
+    if you have an external application updating this information in your db. For example,
+    you use a Rachio and multiple projects need that information, you have one script
+    that checks it and updates multiple databases instead of hitting Rachio all the time
+    since they limit you to 1700 hits/24 hours.
     """
     log.debug("get_sprinkler_status() Started.")
     """ Function to determine if our sprinklers are currently running. """
     if system_info.sprinkler_type == 'Timer':
         log.debug('get_sprinkler_status() called via \'Timer\'')
         if system_info.sprinklerstart < current_military_time < system_info.sprinklerstop:
+            use_database.environmentals_data('update', 'sprinklers_running', True)
             return True
         else:
+            use_database.environmentals_data('update', 'sprinklers_running', False)
             return False
-    else:
+    elif system_info.sprinkler_type == 'Rachio':
         log.debug("get_sprinkler_status() called via requests() (Rachio)")
         r = requests.get(system_info.rachio_url, headers=system_info.rachio_headers)
         if r.content == b'{}':
+            use_database.environmentals_data('update', 'sprinklers_running', False)
             return False
+        elif b'errors' in r.content:
+            log.debug(f'Rachio Return an Error: [{r.content}], falling back to Timer Mode.')
+            if system_info.sprinklerstart < current_military_time < system_info.sprinklerstop:
+                use_database.environmentals_data('update', 'sprinklers_running', True)
+                return True
+            else:
+                use_database.environmentals_data('update', 'sprinklers_running', False)
+                return False
         else:
+            use_database.environmentals_data('update', 'sprinklers_running', True)
             return True
+    else:
+        log.debug("get_sprinkler_status() called via External DB lookup")
+        return use_database.environmentals_data('readone', 'sprinklers_running', 0)
 
 
 def get_enclosure_environmentals():
