@@ -90,8 +90,9 @@ irrigation_gallons_total = "feed_62"
 current_gpm = "feed_63"
 
 # Used for Sprinkler Bypass
-sprinkler_bypass = 'Yes'  # Set this to "No" to disable all sprinkler checks
-sprinkler_type = 'Timer'  # Timer or Rachio - sprinkler_bypass must be set to "Yes" for this to make any difference
+sprinkler_bypass = 'Yes'     # Set this to "No" to disable all sprinkler checks
+sprinkler_type = 'Timer'  # Timer, Rachio or External. Set to External if you have an outside source
+                             # updating your environmental.sprinklers_running table in the DB.
 
 # Set Sprinkler start and stop times here if using 'Timer' setting above.
 sprinklerstart = '23:00:00'
