@@ -9,7 +9,7 @@ garden, hydroponics and aquarium.
 """
 
 __author__ = 'Richard J. Sears'
-VERSION = "V1.0.0 (2020-08-05)"
+VERSION = "V1.0.0 (2020-08-06)"
 # richardjsears@gmail.com
 
 import sys
@@ -902,7 +902,7 @@ def get_tank_gallons(tank_name):
                 return
             print(check_count)
         tank[tank_name].set_dis_range(dis_min, dis_max)
-        check_distance = (tank[tank_name].getDistance() / 25.4)
+        check_distance = (tank[tank_name].getDistance() / 25.4) #25.4 is mm to inches conversion factor
         distance = int(check_distance)
         if distance >= tank[tank_name].tank_empty_depth:
             tank_level = 0
