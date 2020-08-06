@@ -6,7 +6,7 @@
 tables.py for use with neptune/GardenPi V1.0.0
 """
 
-VERSION = "V1.0.0 (2020-07-31)"
+VERSION = "V1.0.0 (2020-08-05)"
 
 import sqlalchemy as sa
 metadata = sa.MetaData()
@@ -215,4 +215,12 @@ systemwide_alerts = sa.Table(
     sa.Column('alert_limit', sa.DECIMAL(4,1), nullable=False),
     sa.Column('alert_sent', sa.Boolean(), nullable=False),
 
+)
+
+power_solar = sa.Tables(
+    'power_solar',
+    metadata,
+    sa.Column('total_current_power_utilization', sa.SmallInteger(), primary_key=True, nullable=False),
+    sa.Column('total_current_power_import', sa.SmallInteger(),nullable=False),
+    sa.Column('total_current_solar_production', sa.SmallInteger(), nullable=False),
 )
