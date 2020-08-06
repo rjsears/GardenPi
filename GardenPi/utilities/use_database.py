@@ -17,7 +17,8 @@ import mysql.connector
 from mysql.connector import Error
 from influxdb import InfluxDBClient, exceptions
 from sqlalchemy import create_engine, update, select, and_, exists,  or_, func, not_
-from tables import zones, screen, scheduled_jobs, zones_currently_running, water_tanks, water_source, power, power_scheduled_jobs, environmental, electrical_usage, temperatures, systemwide_alerts, systemwide_notifications, hydroponic_zones
+from tables import zones, screen, scheduled_jobs, zones_currently_running, water_tanks, water_source, power, power_scheduled_jobs, environmental
+from tables import electrical_usage, temperatures, systemwide_alerts, systemwide_notifications, hydroponic_zones, power_solar
 from system_logging import setup_logging
 from system_logging import read_logging_config
 import logging
