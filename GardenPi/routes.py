@@ -18,7 +18,7 @@ sys.path.append('/var/www/gardenpi_control/gardenpi')
 sys.path.append('/var/www/gardenpi_control')
 import neptune
 from use_database import onewire_temp_probes, screen_mode, sa_check_zone_times_jobid, sa_check_zone_times_conflict, solar_data
-from use_database import read_mysql_database, water_usage, sa_check_power_zone_times_conflict, environmentals_data, electrical_data
+from use_database import water_usage, sa_check_power_zone_times_conflict, environmentals_data, electrical_data
 from flask import render_template, redirect, url_for, request, flash, Flask
 from gardenpi import app
 from gardenpi.forms import Job1Form, Job2Form, PowerJob1Form, PowerJob2Form, SetTempAlertLimitForm, SetPowerAlertLimitForm
