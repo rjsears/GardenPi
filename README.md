@@ -48,6 +48,10 @@ Hopefully, this might provide some inspiration for others in regard to their aut
     <a href="https://github.com/rjsears/GardenPi/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc">
       Todo List
     </a>
+    <span> | </span>
+    <a href="https://github.com/rjsears/GardenPi#icons">
+      Icons
+    </a>
   </h4>
 </div>
 
@@ -334,6 +338,7 @@ I hope these instructions are enough to get you started on your project. As time
 Also, take a minute to check out the <a href="https://github.com/rjsears/GardenPi/blob/master/GardenPi/utilities/system_backup_restore/system_backup.sh">"system backup and restore script"</a>. This is the utility that I wrote to backup a fully operational GardenPi instance including every configuration file needed to make gardenPi run and to restore it to a new Pi OS image automatically. I will be writing the basic readme soon with full instruction to follow. If you look at the code carefully, in the restore functionality you will find absolutely everything that I do to restore the image, what software is installed,   
 
 
-
+#### <a name="icons"></a>GardenPi Icons
+There are a LOT of icons in GardenPi. I could not have done such a good job without the help of <a href="https://www.flaticon.com/">FlatIcon.com</a>. If you ever need an icon, check them out. All of the icons here at GardenPi were free from FlatIcon!
 
 
