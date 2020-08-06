@@ -217,7 +217,7 @@ systemwide_alerts = sa.Table(
 
 )
 
-power_solar = sa.Tables(
+power_solar = sa.Table(
     'power_solar',
     metadata,
     sa.Column('total_current_power_utilization', sa.SmallInteger(), primary_key=True, nullable=False),
