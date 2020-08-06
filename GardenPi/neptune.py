@@ -1083,23 +1083,27 @@ def reboot_halt_system(action):
         subprocess.check_call(['sudo', 'shutdown', '-h', 'now'])
 
 
+#TODO Move temp settings to MySQL and add ability to update from Web Interface
 def enclosure_fan_control():
     """Function to turn on or off our intake/exhaust fans depending on temperature of enclosure."""
     log.debug('enclosure_fan_control() Started.')
-    if (use_database.environmentals_data('readone', 'enclosure_temp', 0)) > 80:
+    current_enclosure_temp = use_database.environmentals_data('readone', 'enclosure_temp', 0)
+    if current_enclosure_temp > 80:
         if not is_this_zone_running('intake_fan'):
             run_zone('intake_fan')
             log.debug('intake_fan is now running')
         if not is_this_zone_running('exhaust_fan'):
             run_zone('exhaust_fan')
             log.debug('exhaust_fan is now running')
-    else:
+    elif current_enclosure_temp < 78:  # added to help with hysteresis
         if is_this_zone_running('intake_fan'):
             stop_zone('intake_fan')
             log.debug('intake_fan has been stopped')
         if is_this_zone_running('exhaust_fan'):
             stop_zone('exhaust_fan')
             log.debug('exhaust_fan has stopped')
+    else:
+        pass
 
 def get_alert_limit(sensor):
     """ Used by send_system_notifications() to look up alert limits for system notifications."""
