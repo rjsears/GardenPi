@@ -59,7 +59,7 @@ Hopefully, this might provide some inspiration for others in regard to their aut
 
 #### <a name="overview"></a>Overview & Theory of Operation
 
-Please visit <a href="https://www.hackster.io/user3424878278/gardenpi-powered-by-neptune-py-c0a691">"HERE"</a> for a very indepth writeup on The capabilities and building of the actual hardware for GardenPi.
+Please visit <a href="https://www.hackster.io/user3424878278/gardenpi-powered-by-neptune-py-c0a691">"HERE"</a> for a very indepth writeup on more of the the capabilities or Neptune and the physical building of the actual hardware for GardenPi.
 
 GardenPi was designed around my family's desire to get more heavily into gardening, hydroponics, and eventually aquaponics. Since we have several fish tanks and do large water changes weekly, we wanted to be able to use that nutrient-rich water for the garden instead of just dumping it down the drain. So weekly my wife would have to cart fish tank water around the garden beds to water the plants manually and then switch back to a hose. This was getting very time consuming and tedious. Because of that, the basic concept of GardenPi was born.
 
