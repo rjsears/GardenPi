@@ -58,6 +58,9 @@ Hopefully, this might provide some inspiration for others in regard to their aut
 <hr>
 
 #### <a name="overview"></a>Overview & Theory of Operation
+
+Please visit <a href="https://www.hackster.io/user3424878278/gardenpi-powered-by-neptune-py-c0a691">"HERE"</a> for a very indepth writeup on The capabilities and building of the actual hardware for GardenPi.
+
 GardenPi was designed around my family's desire to get more heavily into gardening, hydroponics, and eventually aquaponics. Since we have several fish tanks and do large water changes weekly, we wanted to be able to use that nutrient-rich water for the garden instead of just dumping it down the drain. So weekly my wife would have to cart fish tank water around the garden beds to water the plants manually and then switch back to a hose. This was getting very time consuming and tedious. Because of that, the basic concept of GardenPi was born.
 
 The gardening part would have been pretty easy, we could have used a simple irrigation controller but as you can see we needed several water sources, in our case freshwater (street water) and water from our fish tanks and standard irrigation controllers did not provide the functions we needed to manage the process of moving back and forth between water sources. So I designed a new irrigation layout and my sons and I dug up the yard and installed six separate garden irrigation zones separate from our lawn irrigation and installed valves so we could switch between street water and an IBC tank filled with fish tank water. Now I just needed the software to manage it all.
