@@ -924,10 +924,9 @@ def get_tank_gallons(tank_name):
         check_distance = (tank[tank_name].getDistance() / 25.4) #25.4 is mm to inches conversion factor
         distance = int(check_distance)
         if distance >= tank[tank_name].tank_empty_depth:
-            tank_level = 0
+            return 0
         else:
-            tank_level = int(abs((distance * tank[tank_name].gallons_per_inch) - tank[tank_name].max_tank_volume))
-        return tank_level
+            return int(abs((distance * tank[tank_name].gallons_per_inch) - tank[tank_name].max_tank_volume))
     except Exception as e:
         log.debug(f'get_tank_gallons(): Unknown Error! Tank values not updated.')
         capture_exception(e)
