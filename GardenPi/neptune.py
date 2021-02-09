@@ -9,7 +9,7 @@ garden, hydroponics and aquarium.
 """
 
 __author__ = 'Richard J. Sears'
-VERSION = "V1.0.0 (2020-08-06)"
+VERSION = "V1.0.0 (2021-02-09)"
 # richardjsears@gmail.com
 
 import sys
@@ -1106,14 +1106,14 @@ def enclosure_fan_control():
     """Function to turn on or off our intake/exhaust fans depending on temperature of enclosure."""
     log.debug('enclosure_fan_control() Started.')
     current_enclosure_temp = use_database.environmentals_data('readone', 'enclosure_temp', 0)
-    if current_enclosure_temp > 80:
+    if current_enclosure_temp > 82:
         if not is_this_zone_running('intake_fan'):
             run_zone('intake_fan')
             log.debug('intake_fan is now running')
         if not is_this_zone_running('exhaust_fan'):
             run_zone('exhaust_fan')
             log.debug('exhaust_fan is now running')
-    elif current_enclosure_temp < 78:  # added to help with hysteresis
+    elif current_enclosure_temp < 76:  # added to help with hysteresis
         if is_this_zone_running('intake_fan'):
             stop_zone('intake_fan')
             log.debug('intake_fan has been stopped')
