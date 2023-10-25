@@ -12,7 +12,7 @@ PyMySQL==0.10.0
 pyserial==3.4
 PyYAML==5.4
 RPi.GPIO==0.7.0
-Werkzeug==2.2.3
+Werkzeug==3.0.1
 WTForms==2.3.3
 WTForms-Components==0.10.4
 sentry-sdk==1.14.0
