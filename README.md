@@ -344,4 +344,14 @@ Also, take a minute to check out the <a href="https://github.com/rjsears/GardenP
 #### <a name="icons"></a>GardenPi Icons
 There are a LOT of icons in GardenPi. I could not have done such a good job without the help of <a href="https://www.flaticon.com/">FlatIcon.com</a>. If you ever need an icon, check them out. All of the icons here at GardenPi were free from FlatIcon!
 
+## Author
+**Richard J. Sears** - *richardjsears@gmail.com* - [The RS Technical Group, Inc.](http://github.com/rjsears)
+
+## License
+This project is licensed under the MIT License - see the MIT License for details
+
+## Acknowledgments
+* **My Amazing and loving family!** My wonderful wife and kids put up with all my coding and automation projects and encouraged me in everything. Without them, this project would not be possible.
+* **My brother James**, who is a continual source of inspiration to me and others. Everyone should have a brother as awesome as mine!
+
 
